@@ -1,3 +1,4 @@
+"use client";
 import DarkModeToggle from "../components/DarkModeToggle";
 import SocialLinks from "../components/SocialLinks";
 import { useState } from "react";

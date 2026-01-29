@@ -1,5 +1,11 @@
+"use client";
+// Fix for TypeScript: declare gtag on window
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 // Google Analytics integration for Next.js (App Router)
-'use client';
 import { useEffect } from 'react';
 
 export default function Analytics() {
