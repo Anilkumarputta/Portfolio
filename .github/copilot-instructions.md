@@ -1,26 +1,20 @@
-<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
-- [x] Verify that the copilot-instructions.md file in the .github directory is created.
 
-- [x] Clarify Project Requirements
-	<!-- Project type: Next.js, Language: TypeScript, Frameworks: Tailwind CSS, ESLint, App Router. -->
+# Copilot Instructions – Portfolio Project
 
-- [x] Scaffold the Project
-	<!-- Next.js project created with Tailwind CSS, TypeScript, ESLint, App Router, src directory. -->
+Welcome! Here’s a quick overview of this portfolio project and what’s been done so far:
 
-- [ ] Customize the Project
-	<!-- Next: Add portfolio content, components, and styling. -->
+- ✅ Project scaffolded with Next.js, Tailwind CSS, TypeScript, ESLint, and App Router
+- ✅ All main content and features added: About, Skills, Timeline, Projects, Blog, Testimonials, Hobbies, Now, Resume, Social Links, Contact Modal, Animations, and more
+- ✅ Modern, mobile-friendly, and recruiter-ready design
+- ✅ GitHub and Vercel deployment set up and working
+- ✅ README and documentation updated in a friendly, human style
 
-- [ ] Install Required Extensions
-	<!-- No additional extensions required. -->
+### What’s Next?
 
-- [ ] Compile the Project
-	<!-- Next: Install any missing dependencies and run diagnostics. -->
+- Polish, review, and share your portfolio!
+- Add more content or features as you grow
+- Keep your resume and links up to date
 
-- [ ] Create and Run Task
-	<!-- Next: Add and run tasks if needed. -->
+If you need to update or extend the project, just edit `src/app/page.tsx` or add new components in `src/components/`.
 
-- [ ] Launch the Project
-	<!-- Next: Prompt user for debug mode and launch if confirmed. -->
-
-- [ ] Ensure Documentation is Complete
-	<!-- Next: Update README.md and copilot-instructions.md as needed. -->
+Happy coding! 🚀

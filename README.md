@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Anil Kumar Putta – Portfolio
 
-First, run the development server:
+Welcome to my personal portfolio! This site is built with Next.js and Tailwind CSS, and is designed to showcase my work, skills, and personality in a modern, interactive way.
+
+## 🚀 Features
+
+- Beautiful, mobile-friendly design with smooth animations
+- About, Skills, Experience, Projects, Blog, Testimonials, Hobbies, and Now sections
+- Interactive contact modal and downloadable resume
+- Dark mode toggle and custom color palette
+- GitHub and LinkedIn integration
+- Deployed and auto-updated via Vercel
+
+## 🛠️ Getting Started
+
+To run the project locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Then open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can edit your content in `src/app/page.tsx` and see changes instantly.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deployed on Vercel: [https://portfolio-yourname.vercel.app](https://portfolio-yourname.vercel.app)
 
-## Learn More
+## 📦 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org) (App Router, TypeScript)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Vercel](https://vercel.com) for deployment
+- Custom SVGs, icons, and modern UI patterns
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 How to Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push your code to GitHub (already set up!)
+2. Go to [Vercel](https://vercel.com), import your repo, and click Deploy
+3. Get your live URL and share it with the world!
 
-## Deploy on Vercel
+## 🙋‍♂️ About Me
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I’m Anil Kumar Putta, a Full Stack Java Developer passionate about building scalable, beautiful web apps. I love learning, collaborating, and turning ideas into reality. Let’s connect!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📫 Contact
+
+- Email: anilkumarputta01@gmail.com
+- LinkedIn: [anil-putta](http://linkedin.com/in/anil-putta)
+- GitHub: [Anilkumarputta](https://github.com/Anilkumarputta)
+
+---
+
+Thanks for visiting my portfolio! If you have feedback or want to collaborate, feel free to reach out.
