@@ -131,7 +131,7 @@ export default function Home() {
           </p>
           <a
             href="#projects"
-            className="mt-4 px-8 py-3 rounded-full bg-primary text-white font-semibold shadow hover:bg-primary-dark transition focus:outline-none focus:ring-4 focus:ring-primary-light"
+            className="mt-4 px-8 py-3 rounded-full bg-primary text-white font-bold shadow-lg border-2 border-primary-dark hover:bg-white hover:text-primary-dark hover:border-primary-dark focus:outline-none focus:ring-4 focus:ring-primary-light transition-colors duration-200"
             aria-label="Jump to Projects section"
           >
             See My Work
@@ -212,7 +212,7 @@ export default function Home() {
             <li>Fun Fact: I once built a chatbot that helps people find healthy recipes!</li>
             <li>Dream: To lead a team building impactful products for millions</li>
           </ul>
-          <a href="/resume.pdf" download className="inline-block mt-4 px-6 py-2 rounded-full bg-primary text-white font-semibold shadow hover:bg-primary-dark transition focus:outline-none focus:ring-4 focus:ring-primary-light" aria-label="Download Resume PDF">Download Resume</a>
+          <a href="/resume.pdf" download className="inline-block mt-4 px-6 py-2 rounded-full bg-primary text-white font-bold shadow-lg border-2 border-primary-dark hover:bg-white hover:text-primary-dark hover:border-primary-dark focus:outline-none focus:ring-4 focus:ring-primary-light transition-colors duration-200" aria-label="Download Resume PDF">Download Resume</a>
         </section>
 
         {/* Hobbies/Interests Section */}
@@ -263,63 +263,63 @@ export default function Home() {
               <Image src="/project2-placeholder.png" alt="TaskFlow Pro" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">TaskFlow Pro</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">A productivity app for managing tasks and deadlines, built with React, Node.js, and MongoDB. Used by 500+ users.</p>
-              <a href="https://github.com/Anilkumarputta/TaskFlowPro" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/TaskFlowPro" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* HealthTrackr */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 active:scale-95 transition-transform duration-200 hover:shadow-2xl">
               <Image src="/project3-placeholder.png" alt="HealthTrackr" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">HealthTrackr</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">A health dashboard for tracking fitness and nutrition, featuring real-time charts and personalized insights.</p>
-              <a href="https://github.com/Anilkumarputta/HealthTrackr" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/HealthTrackr" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* SmartCalc */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 active:scale-95 transition-transform duration-200 hover:shadow-2xl">
               <Image src="/project-placeholder.png" alt="SmartCalc" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">SmartCalc</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">A JavaScript calculator app with advanced features. Built with a focus on usability and clean code.</p>
-              <a href="https://github.com/Anilkumarputta/SmartCalc" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/SmartCalc" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* Project1 */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 active:scale-95 transition-transform duration-200 hover:shadow-2xl">
               <Image src="/project-placeholder.png" alt="Project1" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">Project1</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">A web project using HTML. Demonstrates front-end skills and project structure.</p>
-              <a href="https://github.com/Anilkumarputta/Project1" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/Project1" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* calculator2 */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 active:scale-95 transition-transform duration-200 hover:shadow-2xl">
               <Image src="/project-placeholder.png" alt="calculator2" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">calculator2</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">Extension for calculator MAUI example. Built in C#.</p>
-              <a href="https://github.com/Anilkumarputta/calculator2" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/calculator2" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* calc-prj2 */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 active:scale-95 transition-transform duration-200 hover:shadow-2xl">
               <Image src="/project-placeholder.png" alt="calc-prj2" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">calc-prj2</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">A C# calculator project. Focuses on core calculation logic and UI.</p>
-              <a href="https://github.com/Anilkumarputta/calc-prj2" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/calc-prj2" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* calc-proj3 */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 active:scale-95 transition-transform duration-200 hover:shadow-2xl">
               <Image src="/project-placeholder.png" alt="calc-proj3" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">calc-proj3</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">Calculator project with history feature. Built in C#.</p>
-              <a href="https://github.com/Anilkumarputta/calc-proj3" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/calc-proj3" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* calc-history1 */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 active:scale-95 transition-transform duration-200 hover:shadow-2xl">
               <Image src="/project-placeholder.png" alt="calc-history1" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">calc-history1</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">C# calculator with history tracking. Demonstrates state management.</p>
-              <a href="https://github.com/Anilkumarputta/calc-history1" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/calc-history1" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
             {/* calculator-4 */}
             <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-5 flex flex-col items-center hover:scale-105 transition-transform duration-200">
               <Image src="/project-placeholder.png" alt="calculator-4" width={320} height={128} className="w-full h-32 object-cover rounded mb-3 bg-zinc-200 dark:bg-zinc-700" loading="lazy" />
               <h3 className="text-lg font-semibold mb-1">calculator-4</h3>
               <p className="text-zinc-600 dark:text-zinc-300 text-sm mb-2">Forked calculator project. Explores C# and open-source collaboration.</p>
-              <a href="https://github.com/Anilkumarputta/calculator-4" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">View on GitHub</a>
+              <a href="https://github.com/Anilkumarputta/calculator-4" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-4 py-1 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-white hover:text-blue-700 border-2 border-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300">View on GitHub</a>
             </div>
           </div>
         </section>
@@ -335,7 +335,7 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-bold text-blue-700 dark:text-blue-300 mb-2">KYC Onboarding Dashboard</h3>
               <p className="text-zinc-700 dark:text-zinc-200 mb-2">A real-time onboarding and analytics dashboard for Citi, built with React, Angular, and Spring Boot. Features secure authentication, data visualization, and seamless user experience.</p>
-              <a href="https://github.com/Anilkumarputta/Project1" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-6 py-2 rounded-full bg-yellow-500 text-white font-semibold shadow hover:bg-yellow-600 transition">View Project</a>
+              <a href="https://github.com/Anilkumarputta/Project1" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 px-6 py-2 rounded-full bg-yellow-500 text-black font-bold shadow-lg border-2 border-yellow-700 hover:bg-white hover:text-yellow-700 hover:border-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-200 transition-colors duration-200">View Project</a>
             </div>
           </div>
         </section>
@@ -364,7 +364,7 @@ export default function Home() {
         <div className="flex justify-center my-8">
           <button
             onClick={() => setShowContact(true)}
-            className="px-8 py-3 rounded-full bg-highlight text-white font-semibold shadow hover:bg-highlight-dark transition text-lg animate-fade-in focus:outline-none focus:ring-4 focus:ring-highlight-light"
+            className="px-8 py-3 rounded-full bg-highlight text-white font-bold shadow-lg border-2 border-highlight-dark hover:bg-white hover:text-highlight-dark hover:border-highlight-dark focus:outline-none focus:ring-4 focus:ring-highlight-light text-lg animate-fade-in transition-colors duration-200"
             aria-label="Open contact form"
           >
             Contact Me
