@@ -53,6 +53,24 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Button glow effects */
+.btn-glow {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.btn-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.7);
+}
+
+/* Text shadow for better visibility */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-strong {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 /* Smooth transitions */
 * {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;

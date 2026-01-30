@@ -1,10 +1,10 @@
 "use client";
 
-import Image from 'next/image';
 import { ExternalLink, Code } from 'lucide-react';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
+import ImageWithFallback from '../ui/ImageWithFallback';
 
 const projects = [
   {
@@ -61,13 +61,14 @@ export default function ProjectsSection() {
         >
           <div className="grid md:grid-cols-2 gap-6">
             <div className="relative h-64 md:h-auto rounded-lg overflow-hidden group">
-              <Image
+              <ImageWithFallback
                 src={project.image}
                 alt={project.title}
                 width={600}
                 height={400}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                fallbackType="project"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <Badge
@@ -129,13 +130,14 @@ export default function ProjectsSection() {
             hover
           >
             <div className="relative h-48 rounded-lg overflow-hidden mb-4">
-              <Image
+              <ImageWithFallback
                 src={project.image}
                 alt={project.title}
                 width={400}
                 height={250}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                fallbackType="project"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-2">
                 <Button

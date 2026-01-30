@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import Button from './ui/Button';
 
 export default function Navigation() {
@@ -88,12 +88,24 @@ export default function Navigation() {
                   {link.label}
                 </button>
               ))}
-              <Button
-                size="sm"
-                onClick={() => scrollToSection('#contact')}
-              >
-                Contact
-              </Button>
+              <div className="flex items-center gap-3">
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  icon={<Download size={16} />}
+                  href="/resume.pdf"
+                  className="min-w-[120px]"
+                >
+                  Resume
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={() => scrollToSection('#contact')}
+                  className="min-w-[120px]"
+                >
+                  Contact
+                </Button>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -140,12 +152,22 @@ export default function Navigation() {
                   {link.label}
                 </button>
               ))}
-              <Button
-                fullWidth
-                onClick={() => scrollToSection('#contact')}
-              >
-                Contact
-              </Button>
+              <div className="space-y-3 pt-2">
+                <Button
+                  fullWidth
+                  variant="secondary"
+                  icon={<Download size={18} />}
+                  href="/resume.pdf"
+                >
+                  Resume
+                </Button>
+                <Button
+                  fullWidth
+                  onClick={() => scrollToSection('#contact')}
+                >
+                  Contact
+                </Button>
+              </div>
             </div>
           </div>
         </div>
