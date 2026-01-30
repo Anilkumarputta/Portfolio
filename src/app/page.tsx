@@ -349,11 +349,11 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-6 text-green-700 dark:text-green-300">Inspiration Gallery</h2>
           <div className="grid gap-6 md:grid-cols-2">
             <figure className="bg-white/90 dark:bg-zinc-900/90 rounded-xl shadow-lg overflow-hidden border-2 border-green-200 dark:border-green-700 hover:scale-105 transition-transform duration-200">
-              <Image src="/inspiration1.jpg" alt="Mountain landscape inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
+              <Image src="/inspiration1.svg" alt="Mountain landscape inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
               <figcaption className="p-4 text-center text-green-800 dark:text-green-200 font-medium">Nature's Calm: Mountain Landscape</figcaption>
             </figure>
             <figure className="bg-white/90 dark:bg-zinc-900/90 rounded-xl shadow-lg overflow-hidden border-2 border-green-200 dark:border-green-700 hover:scale-105 transition-transform duration-200">
-              <Image src="/inspiration2.jpg" alt="Creative workspace inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
+              <Image src="/inspiration2.svg" alt="Creative workspace inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
               <figcaption className="p-4 text-center text-green-800 dark:text-green-200 font-medium">Creative Flow: Modern Workspace</figcaption>
             </figure>
           </div>

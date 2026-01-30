@@ -26,7 +26,7 @@ You can edit your content in `src/app/page.tsx` and see changes instantly.
 
 ## 🌐 Live Demo
 
-Deployed on Vercel: [https://portfolio-yourname.vercel.app](https://portfolio-yourname.vercel.app)
+Deployed on Vercel: [https://portfolio-anilkumarputta.vercel.app](https://portfolio-anilkumarputta.vercel.app)
 
 ## 📦 Tech Stack
 
