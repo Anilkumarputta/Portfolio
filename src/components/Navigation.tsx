@@ -1,17 +1,23 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { Menu, X } from 'lucide-react';
 import Button from './ui/Button';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Update scroll progress
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / scrollHeight) * 100;
+      setScrollProgress(scrolled);
       
       // Update active section based on scroll position
       const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'blog', 'contact'];
@@ -96,7 +102,7 @@ export default function Navigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
             >
-              {isMobileMenuOpen ? <HiX /> : <HiMenu />}
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
@@ -106,7 +112,7 @@ export default function Navigation() {
           <div
             className="h-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-300"
             style={{
-              width: `${(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`,
+              width: `${scrollProgress}%`,
             }}
           />
         </div>
