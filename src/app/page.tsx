@@ -82,11 +82,11 @@ function Footer() {
   return (
     <footer className="w-full py-4 bg-white/80 dark:bg-zinc-900/80 border-t border-zinc-200 dark:border-zinc-800 flex flex-col items-center mt-8">
       <div className="flex gap-6 mb-1">
-        <a href="https://github.com/Anilkumarputta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-zinc-700 dark:text-zinc-200 hover:text-blue-700 dark:hover:text-blue-300 font-medium">
+        <a href="https://github.com/Anilkumarputta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-4 py-2 rounded-full bg-blue-700 text-white font-bold shadow-lg border-2 border-blue-900 hover:bg-white hover:text-blue-900 hover:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors duration-200">
           <Image src="/github-mark.svg" alt="GitHub" width={20} height={20} className="w-5 h-5" loading="lazy" />
           GitHub
         </a>
-        <a href="http://linkedin.com/in/anil-putta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-zinc-700 dark:text-zinc-200 hover:text-blue-700 dark:hover:text-blue-300 font-medium">
+        <a href="http://linkedin.com/in/anil-putta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-4 py-2 rounded-full bg-blue-700 text-white font-bold shadow-lg border-2 border-blue-900 hover:bg-white hover:text-blue-900 hover:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors duration-200">
           <Image src="/linkedin.svg" alt="LinkedIn" width={20} height={20} className="w-5 h-5" loading="lazy" />
           LinkedIn
         </a>
@@ -131,7 +131,7 @@ export default function Home() {
           </p>
           <a
             href="#projects"
-            className="mt-4 px-8 py-3 rounded-full bg-primary text-white font-bold shadow-lg border-2 border-primary-dark hover:bg-white hover:text-primary-dark hover:border-primary-dark focus:outline-none focus:ring-4 focus:ring-primary-light transition-colors duration-200"
+            className="mt-4 px-8 py-3 rounded-full bg-yellow-500 text-black font-extrabold shadow-2xl border-4 border-yellow-700 hover:bg-yellow-400 hover:border-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-colors duration-200"
             aria-label="Jump to Projects section"
           >
             See My Work
@@ -364,7 +364,7 @@ export default function Home() {
         <div className="flex justify-center my-8">
           <button
             onClick={() => setShowContact(true)}
-            className="px-8 py-3 rounded-full bg-highlight text-white font-bold shadow-lg border-2 border-highlight-dark hover:bg-white hover:text-highlight-dark hover:border-highlight-dark focus:outline-none focus:ring-4 focus:ring-highlight-light text-lg animate-fade-in transition-colors duration-200"
+            className="px-8 py-3 rounded-full bg-yellow-500 text-black font-extrabold shadow-2xl border-4 border-yellow-700 hover:bg-yellow-400 hover:border-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 text-lg animate-fade-in transition-colors duration-200"
             aria-label="Open contact form"
           >
             Contact Me
