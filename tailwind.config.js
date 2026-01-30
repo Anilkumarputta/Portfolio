@@ -9,60 +9,82 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Modern color palette
         primary: {
-          light: '#a7f3d0', // Mint
-          DEFAULT: '#06b6d4', // Cyan
-          dark: '#0e7490',
+          light: '#60A5FA', // Light Blue
+          DEFAULT: '#3B82F6', // Blue
+          dark: '#2563EB',
+        },
+        secondary: {
+          light: '#A78BFA', // Light Purple
+          DEFAULT: '#8B5CF6', // Purple
+          dark: '#7C3AED',
         },
         accent: {
-          light: '#fcd34d', // Gold
-          DEFAULT: '#f59e42', // Orange
-          dark: '#b45309',
-        },
-        highlight: {
-          light: '#f9a8d4', // Pink
-          DEFAULT: '#e11d48', // Rose
-          dark: '#be185d',
-        },
-        info: {
-          light: '#c7d2fe', // Periwinkle
-          DEFAULT: '#6366f1', // Indigo
-          dark: '#3730a3',
+          light: '#FCD34D', // Light Amber
+          DEFAULT: '#F59E0B', // Amber
+          dark: '#D97706',
         },
         success: {
-          light: '#bbf7d0',
-          DEFAULT: '#22c55e',
-          dark: '#166534',
+          light: '#6EE7B7',
+          DEFAULT: '#10B981', // Green
+          dark: '#059669',
+        },
+        error: {
+          light: '#FCA5A5',
+          DEFAULT: '#EF4444', // Red
+          dark: '#DC2626',
         },
         warning: {
-          light: '#fef9c3',
-          DEFAULT: '#eab308',
-          dark: '#a16207',
+          light: '#FCD34D',
+          DEFAULT: '#F59E0B',
+          dark: '#D97706',
         },
-        danger: {
-          light: '#fee2e2',
-          DEFAULT: '#ef4444',
-          dark: '#991b1b',
+        background: {
+          light: '#F9FAFB',
+          dark: '#111827',
+        },
+        text: {
+          light: '#1F2937',
+          dark: '#F9FAFB',
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+      },
       animation: {
-        'fade-in': 'fadeIn 0.4s cubic-bezier(0.4,0,0.2,1)',
-        'slide-up': 'slideUp 0.7s cubic-bezier(0.4,0,0.2,1)',
-        'gradient-border': 'gradientBorder 3s linear infinite',
+        'fade-in': 'fadeIn 0.6s cubic-bezier(0.4,0,0.2,1)',
+        'fade-in-fast': 'fadeIn 0.4s cubic-bezier(0.4,0,0.2,1)',
+        'slide-up': 'slideUp 0.6s cubic-bezier(0.4,0,0.2,1)',
+        'slide-in': 'slideIn 0.5s cubic-bezier(0.4,0,0.2,1)',
+        'scale-in': 'scaleIn 0.5s cubic-bezier(0.4,0,0.2,1)',
+        'glow': 'glow 2s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: 0, transform: 'scale(0.98)' },
-          '100%': { opacity: 1, transform: 'scale(1)' },
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { opacity: 0, transform: 'translateY(40px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        gradientBorder: {
-          '0%': { filter: 'hue-rotate(0deg)' },
-          '100%': { filter: 'hue-rotate(360deg)' },
+        slideIn: {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        glow: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
+          '50%': { boxShadow: '0 0 30px rgba(139, 92, 246, 0.7)' },
+        },
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },
