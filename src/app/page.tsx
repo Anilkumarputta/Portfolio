@@ -343,6 +343,21 @@ export default function Home() {
         <div className="w-full flex justify-center my-8">
           <div className="h-1 w-32 bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 rounded-full opacity-80 animate-fade-in" />
         </div>
+
+        {/* Inspiration Gallery Section */}
+        <section id="gallery" className="w-full max-w-2xl mb-12 animate-slide-up">
+          <h2 className="text-2xl font-bold mb-6 text-green-700 dark:text-green-300">Inspiration Gallery</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <figure className="bg-white/90 dark:bg-zinc-900/90 rounded-xl shadow-lg overflow-hidden border-2 border-green-200 dark:border-green-700 hover:scale-105 transition-transform duration-200">
+              <Image src="/inspiration1.jpg" alt="Mountain landscape inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
+              <figcaption className="p-4 text-center text-green-800 dark:text-green-200 font-medium">Nature's Calm: Mountain Landscape</figcaption>
+            </figure>
+            <figure className="bg-white/90 dark:bg-zinc-900/90 rounded-xl shadow-lg overflow-hidden border-2 border-green-200 dark:border-green-700 hover:scale-105 transition-transform duration-200">
+              <Image src="/inspiration2.jpg" alt="Creative workspace inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
+              <figcaption className="p-4 text-center text-green-800 dark:text-green-200 font-medium">Creative Flow: Modern Workspace</figcaption>
+            </figure>
+          </div>
+        </section>
         {/* Blog/Articles Preview Section */}
         <section id="blog" className="w-full max-w-2xl mb-12 animate-slide-up">
           <h2 className="text-2xl font-bold mb-6 text-pink-600 dark:text-pink-300">Blog & Articles</h2>
