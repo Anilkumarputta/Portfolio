@@ -7,13 +7,16 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="bg-slate-900 min-h-screen">
+    <div className="bg-slate-900 min-h-screen flex flex-col">
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Experience />
       <Contact />
+      <footer className="text-center text-gray-400 py-6">
+        © 2026 Anil Kumar. Built with React & Tailwind.
+      </footer>
     </div>
   );
 }
