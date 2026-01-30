@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowDown } from 'lucide-react';
-import Image from 'next/image';
 import Button from '../ui/Button';
 import SocialLinks from '../SocialLinks';
+import ImageWithFallback from '../ui/ImageWithFallback';
 
 interface HeroSectionProps {
   onContactClick: () => void;
@@ -32,14 +32,17 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
         <div className="relative inline-block animate-scale-in">
           <div className="absolute inset-0 bg-gradient-to-tr from-primary via-secondary to-accent rounded-full blur-xl opacity-50 animate-glow" />
           <div className="relative p-1 rounded-full bg-gradient-to-tr from-primary via-secondary to-accent">
-            <Image
-              src="/profile-placeholder.png"
-              alt="Anil Kumar Putta profile"
-              width={160}
-              height={160}
-              className="rounded-full shadow-2xl w-32 h-32 sm:w-40 sm:h-40 object-cover border-4 border-white dark:border-zinc-800 bg-zinc-200 dark:bg-zinc-700"
-              priority
-            />
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 shadow-2xl">
+              <ImageWithFallback
+                src="/profile-placeholder.png"
+                alt="Anil Kumar Putta profile"
+                width={160}
+                height={160}
+                className="rounded-full object-cover w-full h-full"
+                priority
+                fallbackType="profile"
+              />
+            </div>
           </div>
         </div>
 
