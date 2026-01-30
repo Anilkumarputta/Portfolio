@@ -11,9 +11,9 @@ module.exports = {
       colors: {
         // Modern color palette
         primary: {
-          light: '#60A5FA', // Light Blue
-          DEFAULT: '#3B82F6', // Blue
-          dark: '#2563EB',
+          light: '#60A5FA', // Bright blue light
+          DEFAULT: '#2563EB', // Bold blue - more vibrant and visible
+          dark: '#1E40AF', // Deep blue
         },
         secondary: {
           light: '#A78BFA', // Light Purple
