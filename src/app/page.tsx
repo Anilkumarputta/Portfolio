@@ -125,7 +125,7 @@ export default function Home() {
             aria-hidden="true"
             loading="lazy"
           />
-          <h1 className="text-4xl font-bold text-center rainbow-text animate-rainbow">Hi, I'm Anil Kumar Putta</h1>
+          <h1 className="text-4xl font-bold text-center rainbow-text animate-rainbow">Hi, I&apos;m Anil Kumar Putta</h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-300 text-center max-w-md">
             Full Stack Java Developer with 5+ years of experience building scalable web apps and microservices for finance, healthcare, and telecom. I love creating clean, secure, and high-performance solutions.
           </p>
@@ -350,7 +350,7 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             <figure className="bg-white/90 dark:bg-zinc-900/90 rounded-xl shadow-lg overflow-hidden border-2 border-green-200 dark:border-green-700 hover:scale-105 transition-transform duration-200">
               <Image src="/inspiration1.svg" alt="Mountain landscape inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
-              <figcaption className="p-4 text-center text-green-800 dark:text-green-200 font-medium">Nature's Calm: Mountain Landscape</figcaption>
+              <figcaption className="p-4 text-center text-green-800 dark:text-green-200 font-medium">Nature&apos;s Calm: Mountain Landscape</figcaption>
             </figure>
             <figure className="bg-white/90 dark:bg-zinc-900/90 rounded-xl shadow-lg overflow-hidden border-2 border-green-200 dark:border-green-700 hover:scale-105 transition-transform duration-200">
               <Image src="/inspiration2.svg" alt="Creative workspace inspiration" width={600} height={400} className="w-full h-48 object-cover" loading="lazy" />
