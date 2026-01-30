@@ -28,7 +28,7 @@ export default function Button({
   type = 'button',
   disabled = false,
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 focus:outline-none focus:ring-4';
+  const baseStyles = 'inline-flex items-center justify-center gap-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-4';
   
   const variantStyles = {
     primary: 'bg-primary text-white hover:bg-primary-dark hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:scale-105 focus:ring-primary/30 active:scale-95 font-bold',
