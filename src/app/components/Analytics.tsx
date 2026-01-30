@@ -2,7 +2,7 @@
 // Fix for TypeScript: declare gtag on window
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 // Google Analytics integration for Next.js (App Router)
