@@ -90,16 +90,16 @@ export default function Navigation() {
               ))}
               <div className="flex items-center gap-3">
                 <Button
-                  size="sm"
+                  size="md"
                   variant="secondary"
-                  icon={<Download size={16} />}
+                  icon={<Download size={18} />}
                   href="/resume.pdf"
                   className="min-w-[120px]"
                 >
                   Resume
                 </Button>
                 <Button
-                  size="sm"
+                  size="md"
                   onClick={() => scrollToSection('#contact')}
                   className="min-w-[120px]"
                 >

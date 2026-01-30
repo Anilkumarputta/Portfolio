@@ -69,7 +69,6 @@ export default function ImageWithFallback({
         height={height}
         className={className}
         priority={priority}
-        {...(!priority && { loading })}
         onError={() => setError(true)}
         onLoad={() => setIsLoading(false)}
       />
