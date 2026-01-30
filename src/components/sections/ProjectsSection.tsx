@@ -54,7 +54,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* Featured Project */}
-      {projects.filter(p => p.featured).map((project, index) => (
+      {projects.filter(p => p.featured).map((project) => (
         <Card
           key={project.title}
           className="mb-12 overflow-hidden animate-scale-in"
