@@ -23,7 +23,7 @@ export default function Projects() {
     <section ref={ref} id="projects" className={`bg-slate-800 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`} aria-labelledby="projects-heading">
       <h2 id="projects-heading" className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">💡 Projects</h2>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((p, i) => (
           <article
             key={i}
