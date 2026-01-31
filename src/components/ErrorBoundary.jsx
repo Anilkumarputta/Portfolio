@@ -11,8 +11,11 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    // Log error to console for debugging
-    console.error('Error caught by ErrorBoundary:', error, errorInfo);
+    // Log error for debugging in development only
+    // In production, this should use a proper error logging service like Sentry
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error caught by ErrorBoundary:', error, errorInfo);
+    }
     this.setState({
       error,
       errorInfo

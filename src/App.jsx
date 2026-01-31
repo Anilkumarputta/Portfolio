@@ -23,7 +23,7 @@ function App() {
     <div className="bg-slate-900 min-h-screen flex flex-col">
       {loading && <Loader />}
       <Navigation />
-      <main id="main-content" style={{ opacity: loading ? 0.2 : 1, pointerEvents: loading ? 'none' : 'auto', filter: loading ? 'blur(2px)' : 'none', transition: 'opacity 0.5s, filter 0.5s' }}>
+      <main id="main-content" className={loading ? 'content-loading' : 'content-loaded'}>
         <Hero />
         <About />
         <Skills />
