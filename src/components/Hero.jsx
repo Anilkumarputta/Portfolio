@@ -48,7 +48,7 @@ export default function Hero() {
           </svg>
         </a>
         <a
-          href={`https://${SOCIAL_LINKS.linkedin}`}
+          href={SOCIAL_LINKS.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className="text-cyan-400 hover:text-cyan-300 transition-all duration-200 hover:scale-110"

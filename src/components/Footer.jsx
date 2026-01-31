@@ -72,7 +72,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href={`https://${SOCIAL_LINKS.linkedin}`}
+                href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 transition-colors"
