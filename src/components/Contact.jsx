@@ -19,7 +19,7 @@ function useScrollFadeIn() {
 export default function Contact() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <div ref={ref} className={`bg-slate-800 text-white py-16 px-6 text-center transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+    <div id="contact" ref={ref} className={`bg-slate-800 text-white py-16 px-6 text-center transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
       <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x" tabIndex={0} aria-label="Contact">📞 Contact</h2>
       <p className="text-cyan-200" tabIndex={0} aria-label="Email">axputta91@gmail.com</p>
       <p className="text-cyan-200" tabIndex={0} aria-label="LinkedIn">LinkedIn: linkedin.com/in/anil-putta</p>

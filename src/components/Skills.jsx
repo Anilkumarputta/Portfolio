@@ -19,7 +19,7 @@ function useScrollFadeIn() {
 export default function Skills() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <div ref={ref} className={`bg-slate-800 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+    <div id="skills" ref={ref} className={`bg-slate-800 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
       <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">🛠️ Skills</h2>
 
       <div className="grid md:grid-cols-4 gap-6 text-center">

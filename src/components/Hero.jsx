@@ -19,7 +19,7 @@ function useScrollFadeIn() {
 export default function Hero() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <div ref={ref} className={`min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 text-white px-4 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+    <div id="hero" ref={ref} className={`min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 text-white px-4 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
       {/* Avatar image removed */}
       <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">
         👋 Anil Kumar

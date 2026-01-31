@@ -19,7 +19,7 @@ function useScrollFadeIn() {
 export default function Experience() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <div ref={ref} className={`bg-slate-900 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+    <div id="experience" ref={ref} className={`bg-slate-900 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
       <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">💼 Experience</h2>
 
       <div className="max-w-4xl mx-auto space-y-6">
