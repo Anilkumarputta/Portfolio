@@ -4,15 +4,18 @@ export default function GithubStats() {
       <h2 className="text-3xl font-bold mb-6">GitHub Activity</h2>
 
       <div className="flex flex-col items-center gap-4">
-        <img
-          src="https://github-readme-stats.vercel.app/api?username=Anilkumarputta&show_icons=true&theme=dark"
-          alt="GitHub Stats"
-        />
-
-        <img
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=Anilkumarputta&layout=compact&theme=dark"
-          alt="Top Languages"
-        />
+        <div className="bg-slate-900 border border-slate-700 p-4 rounded-lg shadow-lg">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=Anilkumarputta&show_icons=true&theme=dark"
+            alt="GitHub Stats"
+          />
+        </div>
+        <div className="bg-slate-900 border border-slate-700 p-4 rounded-lg shadow-lg">
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=Anilkumarputta&layout=compact&theme=dark"
+            alt="Top Languages"
+          />
+        </div>
       </div>
     </div>
   );

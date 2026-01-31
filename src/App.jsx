@@ -16,7 +16,7 @@ function App() {
       <Experience />
       <GithubStats />
       <Contact />
-      <footer className="text-center text-gray-400 py-6">
+      <footer className="text-center text-gray-500 border-t border-slate-700 py-6">
         © 2026 Anil Kumar. Built with React & Tailwind.
       </footer>
     </div>
