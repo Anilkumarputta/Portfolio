@@ -34,12 +34,12 @@ export default function Hero() {
       </p>
 
       <div className="mt-6 space-x-4">
-          <RippleButton href="#projects" className="bg-cyan-500 hover:bg-cyan-400 active:scale-95 text-black font-bold px-8 py-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-transform duration-200">
+          <a href="#projects" className="inline-block bg-cyan-500 hover:bg-cyan-400 active:scale-95 text-black font-bold px-8 py-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-transform duration-200">
             🚀 View Projects
-          </RippleButton>
-          <RippleButton href="/resume.pdf" className="border border-cyan-400 text-cyan-400 px-8 py-3 rounded-full font-bold hover:bg-cyan-500 hover:text-black active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-transform duration-200">
+          </a>
+          <a href="/resume.pdf" className="inline-block border border-cyan-400 text-cyan-400 px-8 py-3 rounded-full font-bold hover:bg-cyan-500 hover:text-black active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-transform duration-200">
             📄 Download Resume
-          </RippleButton>
+          </a>
       </div>
     </div>
   );

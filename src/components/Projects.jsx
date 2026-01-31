@@ -81,8 +81,8 @@ export default function Projects() {
             <p className="text-cyan-200 mt-2">{p.desc}</p>
             <p className="text-sm mt-2 text-cyan-400">{p.tech}</p>
             <div className="mt-4 space-x-4">
-              <a href={p.github} target="_blank" className="text-cyan-400 hover:text-violet-400 transition">GitHub</a>
-              <a href={p.live} className="text-cyan-400 hover:text-emerald-400 transition">Live</a>
+              <a href={p.github} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-violet-400 transition">GitHub</a>
+              <a href={p.live} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-emerald-400 transition">Live</a>
             </div>
           </div>
         ))}
