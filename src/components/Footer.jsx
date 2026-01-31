@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { SOCIAL_LINKS } from "../utils/constants";
 
 export default function Footer() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -60,7 +61,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-cyan-400 mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/Anilkumarputta"
+                href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -71,7 +72,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/anil-putta"
+                href={`https://${SOCIAL_LINKS.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -82,7 +83,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:axputta91@gmail.com"
+                href={`mailto:${SOCIAL_LINKS.email}`}
                 className="text-cyan-400 hover:text-cyan-300 transition-colors"
                 aria-label="Email"
               >

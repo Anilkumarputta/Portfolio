@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NAV_ITEMS } from "../utils/constants";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function Navigation() {
       setScrolled(window.scrollY > 50);
 
       // Determine active section
-      const sections = ["hero", "about", "skills", "projects", "experience", "contact"];
+      const sections = NAV_ITEMS.map(item => item.id);
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -36,15 +37,6 @@ export default function Navigation() {
     }
   };
 
-  const navItems = [
-    { id: "hero", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "experience", label: "Experience" },
-    { id: "contact", label: "Contact" },
-  ];
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -63,7 +55,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -107,7 +99,7 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-slate-900/98 backdrop-blur-sm border-t border-slate-700">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
