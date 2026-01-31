@@ -12,13 +12,15 @@ function App() {
   return (
     <div className="bg-slate-900 min-h-screen flex flex-col">
       <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <GithubStats />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <GithubStats />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

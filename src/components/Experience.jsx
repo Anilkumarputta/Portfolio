@@ -20,26 +20,24 @@ function useScrollFadeIn() {
 export default function Experience() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <div id="experience" ref={ref} className={`bg-slate-900 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
-      <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">💼 Experience</h2>
+    <section id="experience" ref={ref} className={`bg-slate-900 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`} aria-labelledby="experience-heading">
+      <h2 id="experience-heading" className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">💼 Experience</h2>
 
       <div className="max-w-4xl mx-auto space-y-6">
         {experiences.map((exp, idx) => (
-          <div
+          <article
             key={exp.role}
             className="bg-slate-800 border border-slate-700 p-6 rounded-lg shadow-lg flex items-center gap-4 transition-transform duration-300 hover:scale-105 hover:shadow-xl stagger-card"
             style={{ animationDelay: `${idx * 0.15}s` }}
-            tabIndex={0}
-            aria-label={exp.role}
           >
             {/* Icons removed */}
             <div>
               <h3 className="font-bold text-cyan-400">{exp.role}</h3>
               <p className="text-cyan-200">{exp.description}</p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
