@@ -1,5 +1,5 @@
 import { projects } from "../data/projects";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 function useScrollFadeIn() {
   const ref = useRef();
@@ -20,18 +20,15 @@ function useScrollFadeIn() {
 function Projects() {
   const [ref, visible] = useScrollFadeIn();
   const [query, setQuery] = useState("");
-  const [filtered, setFiltered] = useState(projects);
   const cardRefs = useRef([]);
 
-  useEffect(() => {
+  const filtered = useMemo(() => {
     const q = query.toLowerCase();
-    setFiltered(
-      projects.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.desc.toLowerCase().includes(q) ||
-          p.tech.toLowerCase().includes(q)
-      )
+    return projects.filter(
+      (p) =>
+        p.name.toLowerCase().includes(q) ||
+        p.desc.toLowerCase().includes(q) ||
+        p.tech.toLowerCase().includes(q)
     );
   }, [query]);
 

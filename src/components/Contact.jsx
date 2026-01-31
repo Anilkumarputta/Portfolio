@@ -50,7 +50,7 @@ export default function Contact() {
       }
     } catch (error) {
       // Log error for debugging
-      if (process.env.NODE_ENV === 'development') {
+      if (import.meta.env.DEV) {
         console.error('Contact form submission error:', error);
       }
       setStatus({ ok: false, msg: "There was an error. Please try again later." });

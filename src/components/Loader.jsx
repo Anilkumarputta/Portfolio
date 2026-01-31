@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 export default function Loader() {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-zinc-950/90 backdrop-blur-xl">

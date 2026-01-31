@@ -28,7 +28,7 @@ export default function SubmitTestimonial() {
       }
     } catch (error) {
       // Log error for debugging
-      if (process.env.NODE_ENV === 'development') {
+      if (import.meta.env.DEV) {
         console.error('Testimonial submission error:', error);
       }
       setStatus({ ok: false, msg: "There was an error. Please try again later." });

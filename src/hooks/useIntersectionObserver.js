@@ -14,27 +14,28 @@ export function useIntersectionObserver(options = {}) {
   const { threshold = 0.1, rootMargin = '0px 0px -100px 0px' } = options;
 
   useEffect(() => {
+    const currentRef = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Set visible to true when element enters viewport
         if (entry.isIntersecting) {
           setIsVisible(true);
           // Optionally unobserve after first intersection for performance
-          if (ref.current) {
-            observer.unobserve(ref.current);
+          if (currentRef) {
+            observer.unobserve(currentRef);
           }
         }
       },
       { threshold, rootMargin }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [threshold, rootMargin]);

@@ -6,14 +6,14 @@ class ErrorBoundary extends Component {
     this.state = { hasError: false, error: null, errorInfo: null };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
     // Log error for debugging in development only
     // In production, this should use a proper error logging service like Sentry
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error('Error caught by ErrorBoundary:', error, errorInfo);
     }
     this.setState({
@@ -40,7 +40,7 @@ class ErrorBoundary extends Component {
             >
               Reload Page
             </button>
-            {process.env.NODE_ENV === 'development' && this.state.error && (
+            {import.meta.env.DEV && this.state.error && (
               <details className="mt-6 text-left">
                 <summary className="text-cyan-400 cursor-pointer mb-2">Error Details</summary>
                 <pre className="text-xs text-red-400 bg-zinc-950 p-4 rounded overflow-auto">
