@@ -8,14 +8,17 @@ export default function GithubStats() {
           <img
             src="https://github-readme-stats.vercel.app/api?username=Anilkumarputta&show_icons=true&theme=dark"
             alt="GitHub Stats"
+            onError={(e) => { e.target.style.display = 'none'; }}
           />
         </div>
         <div className="bg-slate-900 border border-slate-700 p-4 rounded-lg shadow-lg">
           <img
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=Anilkumarputta&layout=compact&theme=dark"
             alt="Top Languages"
+            onError={(e) => { e.target.style.display = 'none'; }}
           />
         </div>
+        <p className="text-cyan-300 text-xs mt-2">If stats do not load, GitHub API may be rate-limited. Try again later.</p>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NAV_ITEMS } from "../utils/constants";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ export default function Navigation() {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center" role="menubar" aria-label="Main navigation">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
@@ -64,10 +65,14 @@ export default function Navigation() {
                     ? "text-cyan-400 border-b-2 border-cyan-400"
                     : "text-gray-300 hover:text-cyan-400"
                 }`}
+                aria-label={item.label}
+                tabIndex={0}
+                role="menuitem"
               >
                 {item.label}
               </button>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,7 +102,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-slate-900/98 backdrop-blur-sm border-t border-slate-700">
+        <div className="md:hidden bg-slate-900/98 backdrop-blur-sm border-t border-slate-700" role="menu" aria-label="Mobile navigation">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {NAV_ITEMS.map((item) => (
               <button
@@ -108,6 +113,9 @@ export default function Navigation() {
                     ? "text-cyan-400 bg-slate-800"
                     : "text-gray-300 hover:text-cyan-400 hover:bg-slate-800"
                 }`}
+                aria-label={item.label}
+                tabIndex={0}
+                role="menuitem"
               >
                 {item.label}
               </button>

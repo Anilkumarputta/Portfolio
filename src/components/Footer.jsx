@@ -41,13 +41,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold text-cyan-400 mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-bold text-cyan-300 mb-4">Quick Links</h3>
+            <ul className="flex flex-wrap gap-4 justify-center md:justify-start" aria-label="Footer quick links">
               {["About", "Skills", "Projects", "Experience", "Contact"].map((link) => (
                 <li key={link}>
                   <button
                     onClick={() => scrollToSection(link.toLowerCase())}
-                    className="text-cyan-200 hover:text-cyan-400 transition-colors text-sm"
+                    className="text-cyan-300 hover:text-cyan-400 focus:text-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 px-2 py-1 rounded transition-colors text-sm"
+                    aria-label={link}
+                    tabIndex={0}
                   >
                     {link}
                   </button>

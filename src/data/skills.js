@@ -1,7 +1,7 @@
 export const skillCategories = [
   {
     title: "Backend",
-    skills: "Java, Spring, Spring Boot, REST APIs, Microservices"
+    skills: "Java, Spring, Python, Spring Boot, REST APIs, Microservices"
   },
   {
     title: "Frontend",
@@ -14,5 +14,9 @@ export const skillCategories = [
   {
     title: "Cloud & DevOps",
     skills: "AWS, GCP, Docker, Kubernetes, Jenkins, Git"
+  },
+  {
+    title: "AI & Machine Learning",
+    skills: "LLMs, GPT-4, LangChain, OpenAI API, Hugging Face, Prompt Engineering, AI Integration, Github Copilot"
   }
 ];
