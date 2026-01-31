@@ -48,7 +48,11 @@ export default function Contact() {
       } else {
         setStatus({ ok: false, msg: "There was an error. Please try again later." });
       }
-    } catch {
+    } catch (error) {
+      // Log error for debugging
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Contact form submission error:', error);
+      }
       setStatus({ ok: false, msg: "There was an error. Please try again later." });
     }
   };

@@ -1,5 +1,22 @@
 import { projects } from "../data/projects";
 import { useEffect, useRef, useState } from "react";
+
+function useScrollFadeIn() {
+  const ref = useRef();
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return;
+      const top = ref.current.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) setVisible(true);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  return [ref, visible];
+}
+
 function Projects() {
   const [ref, visible] = useScrollFadeIn();
   const [query, setQuery] = useState("");
@@ -111,3 +128,5 @@ function Projects() {
     </section>
   );
 }
+
+export default Projects;
