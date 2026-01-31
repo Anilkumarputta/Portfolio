@@ -20,23 +20,34 @@ function useScrollFadeIn() {
 export default function Experience() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <section id="experience" ref={ref} className={`bg-slate-900 text-white py-16 px-6 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`} aria-labelledby="experience-heading">
-      <h2 id="experience-heading" className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">💼 Experience</h2>
-
-      <div className="max-w-4xl mx-auto space-y-6">
-        {experiences.map((exp, idx) => (
-          <article
-            key={exp.role}
-            className="bg-slate-800 border border-slate-700 p-6 rounded-lg shadow-lg flex items-center gap-4 transition-transform duration-300 hover:scale-105 hover:shadow-xl stagger-card"
-            style={{ animationDelay: `${idx * 0.15}s` }}
-          >
-            {/* Icons removed */}
-            <div>
-              <h3 className="font-bold text-cyan-400">{exp.role}</h3>
-              <p className="text-cyan-200">{exp.description}</p>
-            </div>
-          </article>
-        ))}
+    <section
+      id="experience"
+      ref={ref}
+      className={`relative py-20 px-4 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}
+      aria-labelledby="experience-heading"
+    >
+      {/* Futuristic blurred neon background shapes */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0">
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[260px] bg-gradient-to-tr from-purple-700/40 via-cyan-500/30 to-fuchsia-500/30 blur-3xl rounded-full opacity-60 animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-br from-cyan-400/30 via-purple-500/20 to-fuchsia-400/20 blur-2xl rounded-full opacity-50 animate-blob" />
+      </div>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h2 id="experience-heading" className="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-neon">💼 Experience</h2>
+        <div className="space-y-8">
+          {experiences.map((exp, idx) => (
+            <article
+              key={exp.role}
+              className="bg-white/10 backdrop-blur-xl border border-cyan-500/30 rounded-2xl shadow-xl p-8 flex flex-col sm:flex-row items-start gap-6 transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl glass-card group relative overflow-hidden"
+              style={{ animationDelay: `${idx * 0.15}s` }}
+            >
+              <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-cyan-400/30 via-purple-400/20 to-fuchsia-400/20 blur-2xl rounded-full opacity-40 group-hover:opacity-60 transition" />
+              <div>
+                <h3 className="font-bold text-cyan-300 text-lg mb-2 drop-shadow-neon">{exp.role}</h3>
+                <p className="text-cyan-200 text-base leading-relaxed">{exp.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

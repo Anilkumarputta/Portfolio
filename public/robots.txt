@@ -1,0 +1,4 @@
+# robots.txt for Portfolio
+User-agent: *
+Allow: /
+Sitemap: https://anilkumarputta.github.io/Portfolio/sitemap.xml

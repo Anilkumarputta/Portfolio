@@ -41,15 +41,16 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-slate-900/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        scrolled ? "bg-zinc-950/90 backdrop-blur-xl shadow-2xl border-b border-cyan-500/20" : "bg-transparent"
       }`}
+      style={{ WebkitBackdropFilter: 'blur(16px)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent hover:scale-105 transition-transform"
+            className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent hover:scale-105 transition-transform drop-shadow-neon tracking-wide"
           >
             Anil Kumar
           </button>
@@ -60,10 +61,9 @@ export default function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors duration-200 ${
+                className={`neon-link text-lg px-2 py-1 rounded transition-colors duration-200 ${
                   activeSection === item.id
-                    ? "text-cyan-400 border-b-2 border-cyan-400"
-                    : "text-gray-300 hover:text-cyan-400"
+                    ? "text-cyan-400 border-b-2 border-cyan-400 drop-shadow-neon" : "text-cyan-200 hover:text-fuchsia-400"
                 }`}
                 aria-label={item.label}
                 tabIndex={0}
@@ -78,11 +78,11 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded p-2"
+            className="md:hidden neon-icon-btn focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-full p-2"
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -102,16 +102,15 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-slate-900/98 backdrop-blur-sm border-t border-slate-700" role="menu" aria-label="Mobile navigation">
+        <div className="md:hidden bg-zinc-950/95 backdrop-blur-xl border-t border-cyan-500/20 shadow-2xl" role="menu" aria-label="Mobile navigation">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${
+                className={`block w-full text-left px-3 py-2 rounded-xl neon-link text-lg transition-colors duration-200 ${
                   activeSection === item.id
-                    ? "text-cyan-400 bg-slate-800"
-                    : "text-gray-300 hover:text-cyan-400 hover:bg-slate-800"
+                    ? "text-cyan-400 bg-zinc-900 drop-shadow-neon" : "text-cyan-200 hover:text-fuchsia-400 hover:bg-zinc-900"
                 }`}
                 aria-label={item.label}
                 tabIndex={0}

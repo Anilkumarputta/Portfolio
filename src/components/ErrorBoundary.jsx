@@ -22,10 +22,10 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
-          <div className="max-w-2xl w-full bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
-            <div className="text-6xl mb-4">⚠️</div>
-            <h1 className="text-3xl font-bold text-cyan-400 mb-4">
+        <div className="min-h-screen bg-zinc-950 flex items-center justify-center px-4">
+          <div className="max-w-2xl w-full bg-white/10 backdrop-blur-xl border border-cyan-500/40 rounded-2xl p-10 text-center shadow-2xl glass-card">
+            <div className="text-6xl mb-4 drop-shadow-neon">⚠️</div>
+            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-neon mb-4">
               Oops! Something went wrong
             </h1>
             <p className="text-cyan-200 mb-6">
@@ -33,14 +33,14 @@ class ErrorBoundary extends Component {
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8 py-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-200"
+              className="bg-gradient-to-r from-cyan-400 via-purple-500 to-fuchsia-400 hover:from-cyan-300 hover:to-fuchsia-300 text-zinc-950 font-bold px-8 py-3 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200 border border-cyan-400/40 tracking-wide text-lg drop-shadow-neon"
             >
               Reload Page
             </button>
             {process.env.NODE_ENV === 'development' && this.state.error && (
               <details className="mt-6 text-left">
                 <summary className="text-cyan-400 cursor-pointer mb-2">Error Details</summary>
-                <pre className="text-xs text-red-400 bg-slate-900 p-4 rounded overflow-auto">
+                <pre className="text-xs text-red-400 bg-zinc-950 p-4 rounded overflow-auto">
                   {this.state.error && this.state.error.toString()}
                   {this.state.errorInfo && this.state.errorInfo.componentStack}
                 </pre>

@@ -32,53 +32,66 @@ export default function SubmitTestimonial() {
   };
 
   return (
-    <section id="submit-testimonial" className="bg-slate-800 text-white py-12 px-6 text-center transition-opacity duration-1000" aria-labelledby="submit-testimonial-heading">
-      <h2 id="submit-testimonial-heading" className="text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">Submit a Testimonial</h2>
-      <form className="max-w-lg mx-auto space-y-6" onSubmit={handleSubmit} aria-label="Submit testimonial form">
-        <div>
-          <label htmlFor="name" className="block text-cyan-200 text-left mb-1">Your Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            className="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            aria-label="Your name"
-          />
-        </div>
-        <div>
-          <label htmlFor="title" className="block text-cyan-200 text-left mb-1">Your Title/Company</label>
-          <input
-            id="title"
-            name="title"
-            type="text"
-            required
-            className="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            aria-label="Your title or company"
-          />
-        </div>
-        <div>
-          <label htmlFor="quote" className="block text-cyan-200 text-left mb-1">Testimonial</label>
-          <textarea
-            id="quote"
-            name="quote"
-            rows={4}
-            required
-            className="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            aria-label="Your testimonial"
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-2 px-6 rounded focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
-          aria-label="Submit testimonial"
-        >
-          Submit
-        </button>
-        {status && (
-          <div className={status.ok ? "text-emerald-400" : "text-red-400"} role="alert">{status.msg}</div>
-        )}
-      </form>
+    <section
+      id="submit-testimonial"
+      className="relative py-16 px-4 transition-opacity duration-1000 text-center"
+      aria-labelledby="submit-testimonial-heading"
+    >
+      {/* Futuristic blurred neon background shapes */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0">
+        <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[400px] h-[180px] bg-gradient-to-tr from-purple-700/40 via-cyan-500/30 to-fuchsia-500/30 blur-3xl rounded-full opacity-60 animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-60 h-60 bg-gradient-to-br from-cyan-400/30 via-purple-500/20 to-fuchsia-400/20 blur-2xl rounded-full opacity-50 animate-blob" />
+      </div>
+      <div className="relative z-10 w-full max-w-xl mx-auto rounded-2xl bg-white/10 backdrop-blur-xl border border-cyan-500/40 shadow-xl p-8 glass-card">
+        <h2 id="submit-testimonial-heading" className="text-3xl font-extrabold mb-8 bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-neon">Submit a Testimonial</h2>
+        <form className="space-y-6" onSubmit={handleSubmit} aria-label="Submit testimonial form">
+          <div>
+            <label htmlFor="name" className="block text-cyan-200 text-left mb-1 font-medium tracking-wide">Your Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              className="w-full px-4 py-2 rounded-lg bg-zinc-950/80 border border-cyan-500/30 text-white placeholder:text-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-cyan-400 transition shadow-input backdrop-blur-md"
+              aria-label="Your name"
+              autoComplete="name"
+            />
+          </div>
+          <div>
+            <label htmlFor="title" className="block text-cyan-200 text-left mb-1 font-medium tracking-wide">Your Title/Company</label>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              required
+              className="w-full px-4 py-2 rounded-lg bg-zinc-950/80 border border-cyan-500/30 text-white placeholder:text-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-cyan-400 transition shadow-input backdrop-blur-md"
+              aria-label="Your title or company"
+              autoComplete="organization"
+            />
+          </div>
+          <div>
+            <label htmlFor="quote" className="block text-cyan-200 text-left mb-1 font-medium tracking-wide">Testimonial</label>
+            <textarea
+              id="quote"
+              name="quote"
+              rows={4}
+              required
+              className="w-full px-4 py-2 rounded-lg bg-zinc-950/80 border border-cyan-500/30 text-white placeholder:text-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-cyan-400 transition shadow-input backdrop-blur-md resize-none"
+              aria-label="Your testimonial"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-cyan-400 via-purple-500 to-fuchsia-400 hover:from-cyan-300 hover:to-fuchsia-300 text-zinc-950 font-bold py-2 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200 border border-cyan-400/40 tracking-wide text-lg drop-shadow-neon"
+            aria-label="Submit testimonial"
+          >
+            Submit
+          </button>
+          {status && (
+            <div className={status.ok ? "text-emerald-400" : "text-red-400"} role="alert">{status.msg}</div>
+          )}
+        </form>
+      </div>
     </section>
   );
 }
