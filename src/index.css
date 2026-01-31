@@ -12,6 +12,7 @@
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -47,7 +48,44 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+button:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #38bdf880;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background-color: rgba(56, 189, 248, 0.5);
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.stagger-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: staggerIn 0.7s cubic-bezier(.23,1,.32,1) forwards;
+}
+
+@keyframes staggerIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 button:hover {
   border-color: #646cff;
