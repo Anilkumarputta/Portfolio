@@ -19,11 +19,21 @@ function useScrollFadeIn() {
 export default function Contact() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <div ref={ref} className={`bg-slate-800 text-white py-16 px-6 text-center transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
-      <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x" tabIndex={0} aria-label="Contact">📞 Contact</h2>
-      <p className="text-cyan-200" tabIndex={0} aria-label="Email">axputta91@gmail.com</p>
-      <p className="text-cyan-200" tabIndex={0} aria-label="LinkedIn">LinkedIn: linkedin.com/in/anil-putta</p>
-      <p className="text-cyan-200" tabIndex={0} aria-label="GitHub">GitHub: github.com/Anilkumarputta</p>
-    </div>
+    <section id="contact" ref={ref} className={`bg-slate-800 text-white py-16 px-6 text-center transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`} aria-labelledby="contact-heading">
+      <h2 id="contact-heading" className="text-3xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">📞 Contact</h2>
+      <address className="not-italic">
+        <p className="text-cyan-200">
+          <a href="mailto:axputta91@gmail.com" className="hover:text-cyan-400 transition">axputta91@gmail.com</a>
+        </p>
+        <p className="text-cyan-200 mt-2">
+          <span className="font-semibold">LinkedIn:</span>{" "}
+          <a href="https://linkedin.com/in/anil-putta" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition">linkedin.com/in/anil-putta</a>
+        </p>
+        <p className="text-cyan-200 mt-2">
+          <span className="font-semibold">GitHub:</span>{" "}
+          <a href="https://github.com/Anilkumarputta" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition">github.com/Anilkumarputta</a>
+        </p>
+      </address>
+    </section>
   );
 }

@@ -19,9 +19,9 @@ function useScrollFadeIn() {
 export default function About() {
   const [ref, visible] = useScrollFadeIn();
   return (
-    <div ref={ref} className={`bg-slate-900 text-white py-16 px-6 text-center transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
-      <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x stagger-card" style={{ animationDelay: '0.1s' }} tabIndex={0} aria-label="About Me">👨‍💻 About Me</h2>
-      <p className="max-w-3xl mx-auto text-cyan-200 stagger-card" style={{ animationDelay: '0.25s' }} tabIndex={0} aria-label="About Me Description">
+    <section id="about" ref={ref} className={`bg-slate-900 text-white py-16 px-6 text-center transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`} aria-labelledby="about-heading">
+      <h2 id="about-heading" className="text-3xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x stagger-card" style={{ animationDelay: '0.1s' }}>👨‍💻 About Me</h2>
+      <p className="max-w-3xl mx-auto text-cyan-200 stagger-card" style={{ animationDelay: '0.25s' }}>
         I am a Full Stack Java Developer with over 5 years of experience building
         enterprise-grade backend systems and scalable microservices. My core
         expertise is in Java, Spring Boot, and RESTful API development, with
@@ -30,6 +30,6 @@ export default function About() {
         high-availability platforms, and I actively use AI-assisted development
         tools to improve productivity and code quality.
       </p>
-    </div>
+    </section>
   );
 }
