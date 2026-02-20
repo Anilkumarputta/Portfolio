@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/Portfolio/static/js/main.c5b68661.js",
+    "static/media/arte.png": "/Portfolio/static/media/arte.12d7978e7dc653fabd5a.png",
+    "static/media/about.png": "/Portfolio/static/media/about.9869fc8c0eebd9200887.png",
+    "static/media/contact.png": "/Portfolio/static/media/contact.063365f33af30bb81704.png",
+    "static/media/hero secction.png": "/Portfolio/static/media/hero secction.760c464c406e6da91e15.png",
+    "static/media/pokedex.png": "/Portfolio/static/media/pokedex.39b92e88f16965c2ae35.png",
+    "static/media/neuro.png": "/Portfolio/static/media/neuro.c75e67b4480299ef1b84.png",
+    "static/media/AnilKumar_CV[EN].pdf": "/Portfolio/static/media/AnilKumar_CV[EN].5a1e71710e6ceb7a48d0.pdf",
+    "static/media/splitter.png": "/Portfolio/static/media/splitter.3f60c545f58d570912ec.png",
+    "static/media/herbario.png": "/Portfolio/static/media/herbario.cbbab362010c7303b02f.png",
+    "index.html": "/Portfolio/index.html",
+    "main.c5b68661.js.map": "/Portfolio/static/js/main.c5b68661.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c5b68661.js"
+  ]
+}
