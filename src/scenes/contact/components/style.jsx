@@ -113,6 +113,25 @@ const FormStatus = styled.div`
   }
 `;
 
+const StatusCenter = styled.div`
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none;
+
+  ${FormStatus} {
+    width: min(92%, 430px);
+    margin: 0;
+    box-shadow: 0 18px 30px rgba(16, 27, 45, 0.22);
+    backdrop-filter: blur(10px) saturate(145%);
+    -webkit-backdrop-filter: blur(10px) saturate(145%);
+  }
+`;
+
 const TextArea = styled(Input).attrs({ as: "textarea" })`
   height: auto;
   min-height: 102px;
@@ -273,6 +292,7 @@ export {
   FormGroup,
   Label,
   FormStatus,
+  StatusCenter,
   TextArea,
   ContactSplit,
   ContactFormCard,

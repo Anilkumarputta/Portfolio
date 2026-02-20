@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import { Layout } from "./components/common/Layout";
 import Navbar from "./components/common/navbar/Navbar";
 import Home from "./scenes/home";
@@ -12,6 +12,17 @@ import Divider from "./components/common/Divider";
 import Footer from "./components/common/Footer";
 import Resume from "./scenes/resume";
 import Preloader from "./components/common/Preloader";
+
+const sectionViewport = { margin: "0px 0px -200px 0px", amount: 0.4 };
+
+const sections = [
+  { id: "home", Component: Home },
+  { id: "about", Component: About },
+  { id: "skills", Component: Skills },
+  { id: "projects", Component: Projects },
+  { id: "resume", Component: Resume },
+  { id: "contact", Component: Contact },
+];
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -47,57 +58,17 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <motion.div
-        viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => handleSectionEnter("home")}
-      >
-        <Home />
-      </motion.div>
-
-      <Divider />
-
-      <motion.div
-        viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => handleSectionEnter("about")}
-      >
-        <About />
-      </motion.div>
-
-      <Divider />
-
-      <motion.div
-        viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => handleSectionEnter("skills")}
-      >
-        <Skills />
-      </motion.div>
-
-      <Divider />
-
-      <motion.div
-        viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => handleSectionEnter("projects")}
-      >
-        <Projects />
-      </motion.div>
-
-      <Divider />
-
-      <motion.div
-        viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => handleSectionEnter("resume")}
-      >
-        <Resume />
-      </motion.div>
-
-      <Divider />
-
-      <motion.div
-        viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => handleSectionEnter("contact")}
-      >
-        <Contact />
-      </motion.div>
+      {sections.map(({ id, Component }, index) => (
+        <Fragment key={id}>
+          <motion.div
+            viewport={sectionViewport}
+            onViewportEnter={() => handleSectionEnter(id)}
+          >
+            <Component />
+          </motion.div>
+          {index < sections.length - 1 ? <Divider /> : null}
+        </Fragment>
+      ))}
 
       <Footer />
     </Layout>

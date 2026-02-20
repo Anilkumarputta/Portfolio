@@ -20,6 +20,7 @@ import {
   HoneypotField,
   Input,
   Label,
+  StatusCenter,
   TextArea,
 } from "./components/style";
 import Loading from "../../components/common/Loading";
@@ -225,17 +226,6 @@ const Contact = () => {
           <ContactFormCard>
             <form id="form" onSubmit={handleSubmit}>
               <Column style={{ gap: "0.72rem" }}>
-                {state.status !== "idle" && (
-                  <FormStatus $type={state.status} role="status" aria-live="polite">
-                    <span className="status-icon" aria-hidden="true">
-                      {state.status === "success" ? "OK" : state.status === "warning" ? "!" : "x"}
-                    </span>
-                    <span className="status-body">
-                      <strong>{state.title}</strong>
-                      <small>{state.message}</small>
-                    </span>
-                  </FormStatus>
-                )}
                 <HoneypotField>
                   <Label htmlFor="website">Website</Label>
                   <Input
@@ -306,6 +296,19 @@ const Contact = () => {
                 </Button>
               </Column>
             </form>
+            {state.status !== "idle" && (
+              <StatusCenter>
+                <FormStatus $type={state.status} role="status" aria-live="polite">
+                  <span className="status-icon" aria-hidden="true">
+                    {state.status === "success" ? "OK" : state.status === "warning" ? "!" : "x"}
+                  </span>
+                  <span className="status-body">
+                    <strong>{state.title}</strong>
+                    <small>{state.message}</small>
+                  </span>
+                </FormStatus>
+              </StatusCenter>
+            )}
           </ContactFormCard>
         </LeftSide>
       </ContactSplit>
