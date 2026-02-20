@@ -52,13 +52,7 @@ const About = () => {
         </motion.div>
         <Divider width={"30%"} />
 
-        <p>
-          {texts.en.about.text}{" "}
-          <a href={texts.en.about.link} className="empresa" target="_blank" rel="noopener noreferrer">
-            {texts.en.about.empresa}
-          </a>
-          {texts.en.about.text2}
-        </p>
+        <p>{texts.en.about.text} {texts.en.about.text2}</p>
 
         <Row
           justify={desktop ? "flex-start" : "center"}

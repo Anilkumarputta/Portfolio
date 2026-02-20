@@ -16,10 +16,8 @@ export const texts = {
     },
     about: {
       title: "<about/>",
-      text: "Hello, I'm Anil Kumar. I am a Full Stack Developer with a Master's degree in Computer Science. I currently work as a Mid-Level Full Stack Developer at",
-      empresa: "Sistema ESO",
-      link: "https://sistemaeso.com.br",
-      text2: ", where I build complete solutions from UI to backend infrastructure. I started my web development journey during the pandemic and have continued sharpening my skills through real projects and continuous learning. Here are the technologies I work with regularly:",
+      text: "Hello, I'm Anil Kumar. I have hands-on experience in frontend and backend development, and I started learning coding in 11th grade.",
+      text2: "I am very interested in problem solving and software development. In my free time, I build websites and side projects to improve my skills. During my bachelor's studies and coding activities, I received a few good compliments that motivated me to keep growing as a developer. Here are the technologies I use regularly:",
       text3: "Want a deeper look at my experience? You can download my resume below.",
       article: encv,
     },

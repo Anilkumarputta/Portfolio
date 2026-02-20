@@ -6,8 +6,7 @@ const HamburgerMenuContainer = styled.div`
   align-items: center;
   cursor: pointer;
   z-index: 9999999;
-  position: absolute;
-  right: 1rem;
+  position: relative;
   color: var(--text-strong);
   font-size: 1.4rem;
   width: 2.5rem;
@@ -30,25 +29,34 @@ const SideMenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  position: absolute;
-  right: 0;
-  top: ${(props) => (props.active ? "0" : "-100vh")};
-  padding: 1rem 1.25rem;
-  transition: top 0.4s ease-in-out;
+  position: fixed;
+  inset: 0;
+  transform: translateY(${(props) => (props.active ? "0" : "-100%")});
+  opacity: ${(props) => (props.active ? 1 : 0)};
+  pointer-events: ${(props) => (props.active ? "auto" : "none")};
+  padding: 1rem 1.25rem 2rem;
+  transition: transform 0.35s ease, opacity 0.35s ease;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(245, 250, 255, 0.9));
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  z-index: 1400;
 `;
 
 const SideMenuNavContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
-  align-items: flex-start;
+  gap: 1.25rem;
+  align-items: center;
   justify-content: flex-start;
-  margin-top: 4rem;
+  margin: 5.2rem auto 0;
+  width: min(92vw, 520px);
+  padding: 1.2rem 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  box-shadow: 0 14px 28px rgba(20, 28, 45, 0.12);
   font-size: 1rem;
 `;
 

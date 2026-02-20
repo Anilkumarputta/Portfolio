@@ -2,6 +2,7 @@ import {
   ProjectLink,
   ProjectTechnologies,
 } from "../../../scenes/projects/components/project/components/style";
+import { createPortal } from "react-dom";
 import { Row } from "../Layout";
 import {
   ModalBody,
@@ -17,7 +18,11 @@ const Modal = ({ setModal, project }) => {
     setModal(false);
   };
 
-  return (
+  if (typeof document === "undefined") {
+    return null;
+  }
+
+  return createPortal(
     <ModalOverlay onClick={() => setModal(false)}>
       <ModalContainer onClick={(event) => event.stopPropagation()}>
         <ModalClose onClick={handleModal}>
@@ -57,7 +62,8 @@ const Modal = ({ setModal, project }) => {
           </Row>
         </ModalBody>
       </ModalContainer>
-    </ModalOverlay>
+    </ModalOverlay>,
+    document.body
   );
 };
 

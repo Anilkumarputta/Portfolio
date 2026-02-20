@@ -9,7 +9,7 @@ const ProjectCard = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.68);
   overflow: hidden;
   width: min(100%, 340px);
-  height: 330px;
+  height: clamp(250px, 28vw, 330px);
   padding: 0.75rem;
   position: relative;
   cursor: pointer;
@@ -42,7 +42,7 @@ const ProjectCard = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    height: 250px;
+    height: 245px;
     width: 100%;
   }
 
@@ -52,6 +52,14 @@ const ProjectCard = styled.div`
 
   @media screen and (min-width: 1240px) {
     width: calc(33.333% - 0.75rem);
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 228px;
+
+    .project-hover {
+      min-height: 5.2rem;
+    }
   }
 
 `;
@@ -109,7 +117,8 @@ const ProjectDescription = styled.p`
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
-    font-size: 0.76rem;
+    font-size: 0.74rem;
+    -webkit-line-clamp: 1;
   }
 `;
 

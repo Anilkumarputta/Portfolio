@@ -89,14 +89,18 @@ const SceneLayout = styled.div`
     gap: 3.4rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1059px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.6rem;
-    padding: 1.3rem;
+    gap: 1.4rem;
     min-height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    gap: 1.15rem;
+    padding: 1.15rem;
   }
 `;
 
@@ -174,15 +178,15 @@ const RightSideContent = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    margin-top: 0.4rem;
+    margin-top: 0.2rem;
   }
 
   @media screen and (max-width: 480px) {
-    padding: 0.5rem;
-    border-radius: 20px;
+    padding: 0.45rem;
+    border-radius: 16px;
 
     img {
-      width: min(100%, 320px);
+      width: min(100%, 300px);
     }
   }
 `;
@@ -213,6 +217,7 @@ const LeftSide = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    max-width: 100%;
   }
 `;
 

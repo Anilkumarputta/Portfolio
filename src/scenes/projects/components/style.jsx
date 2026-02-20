@@ -9,29 +9,35 @@ const Controls = styled.div`
   padding: 0.9rem;
   border-radius: 14px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68));
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(25, 32, 48, 0.2);
   box-shadow: 0 10px 20px rgba(20, 28, 45, 0.09);
 `;
 
 const SearchInput = styled.input`
-  height: 44px;
+  height: 46px;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.66);
+  border: 1.5px solid rgba(25, 32, 48, 0.56);
   border-radius: 12px;
-  padding: 0.55rem 0.85rem;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76));
+  padding: 0.6rem 0.9rem;
+  background: #ffffff;
   color: var(--text-strong);
   font-size: 0.92rem;
+  font-weight: 500;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85), 0 4px 12px rgba(20, 28, 45, 0.08);
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 
   &::placeholder {
-    color: var(--text-soft);
+    color: rgba(68, 87, 110, 0.9);
+  }
+
+  &:hover {
+    border-color: rgba(25, 32, 48, 0.68);
   }
 
   &:focus {
     outline: none;
-    border-color: rgba(47, 134, 255, 0.42);
-    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.16);
+    border-color: rgba(47, 134, 255, 0.78);
+    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.2), 0 8px 16px rgba(47, 134, 255, 0.12);
     transform: translateY(-1px);
   }
 `;

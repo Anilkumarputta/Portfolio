@@ -69,6 +69,10 @@ const ContactSplit = styled.div`
   width: 100%;
   gap: ${({ $desktop }) => ($desktop ? "2.4rem" : "1.4rem")};
   flex-direction: ${({ $desktop }) => ($desktop ? "row" : "column")};
+
+  @media screen and (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 const ContactFormCard = styled.div`
@@ -83,6 +87,12 @@ const ContactFormCard = styled.div`
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 18px 30px rgba(20, 28, 45, 0.16);
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 1rem;
+    padding: 0.9rem;
+    border-radius: 14px;
   }
 `;
 

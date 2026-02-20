@@ -10,10 +10,10 @@ const Nav = styled.nav`
   top: 0;
   right: 0;
   z-index: 1000;
-  padding: 0.75rem 0;
+  padding: 0.72rem 0;
   box-shadow: 0 12px 24px rgba(20, 28, 45, 0.1);
   height: fit-content;
-  overflow: hidden;
+  overflow: visible;
 
   &::after {
     content: "";
@@ -31,6 +31,10 @@ const NavContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   width: min(1120px, 92%);
+
+  @media screen and (max-width: 1024px) {
+    width: min(1120px, 94%);
+  }
 
   @media screen and (max-width: 768px) {
     justify-content: space-between;
@@ -64,6 +68,11 @@ const NavLinkContainer = styled.div`
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: lowercase;
+
+  @media screen and (max-width: 1200px) {
+    gap: 1.2rem;
+    padding: 0.36rem 0.72rem;
+  }
 `;
 
 export { Nav, NavContainer, NavBrandLink, NavLinkContainer };

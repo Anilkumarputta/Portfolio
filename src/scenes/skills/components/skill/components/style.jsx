@@ -38,6 +38,10 @@ const SkillContainer = styled.div`
     width: 30%;
   }
 
+  @media screen and (min-width: 769px) and (max-width: 1278px) {
+    width: calc(50% - 0.6rem);
+  }
+
   @media screen and (max-width: 768px) {
     width: 100%;
     margin-top: 1rem;
