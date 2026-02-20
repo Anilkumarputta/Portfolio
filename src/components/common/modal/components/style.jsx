@@ -6,7 +6,7 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(16, 24, 32, 0.45);
+  background-color: rgba(16, 24, 32, 0.55);
   z-index: 1200;
   display: flex;
   align-items: center;
@@ -15,15 +15,15 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContainer = styled.div`
-  background-color: #fffdfa;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(246, 251, 255, 0.88));
   border-radius: 18px;
-  border: 1px solid rgba(16, 24, 32, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   padding: 1.3rem;
   width: 60%;
   position: relative;
   max-width: 1024px;
   animation: slide-in-top 0.35s ease both;
-  box-shadow: 0 26px 44px rgba(16, 24, 32, 0.24);
+  box-shadow: 0 30px 46px rgba(20, 28, 45, 0.25);
 
   @keyframes slide-in-top {
     0% {
@@ -47,7 +47,13 @@ const ModalClose = styled.span`
   right: 1rem;
   font-size: 1.1rem;
   cursor: pointer;
-  color: var(--brand-orange);
+  color: var(--brand-pink);
+  transition: transform var(--transition-base), color var(--transition-base);
+
+  &:hover {
+    transform: scale(1.1);
+    color: var(--brand-sky);
+  }
 `;
 
 const ModalBody = styled.div`
@@ -74,7 +80,7 @@ const ModalTitle = styled.h1`
     width: 100%;
     height: 3px;
     border-radius: 999px;
-    background: linear-gradient(90deg, var(--brand-teal), var(--brand-orange));
+    background: linear-gradient(90deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
   }
 
   @media screen and (max-width: 768px) {

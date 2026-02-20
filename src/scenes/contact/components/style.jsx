@@ -3,18 +3,20 @@ import styled from "styled-components";
 const Input = styled.input`
   height: 44px;
   width: 100%;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   padding: 0.55rem 0.75rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.74));
   color: var(--text-strong);
   font-size: 0.95rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 
   &:focus {
     outline: none;
-    border-color: var(--brand-teal);
-    box-shadow: 0 0 0 3px rgba(32, 180, 170, 0.18);
+    border-color: rgba(47, 134, 255, 0.45);
+    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.16);
+    transform: translateY(-1px);
   }
 `;
 
@@ -42,11 +44,11 @@ const FormStatus = styled.div`
   margin-bottom: 0.8rem;
   border: 1px solid;
   background: ${({ $type }) =>
-    $type === "success" ? "rgba(32, 180, 170, 0.12)" : "rgba(255, 110, 45, 0.14)"};
+    $type === "success" ? "rgba(25, 198, 186, 0.14)" : "rgba(241, 69, 181, 0.14)"};
   color: ${({ $type }) =>
-    $type === "success" ? "var(--text-strong)" : "#9a2f09"};
+    $type === "success" ? "var(--text-strong)" : "#8f1b67"};
   border-color: ${({ $type }) =>
-    $type === "success" ? "rgba(32, 180, 170, 0.4)" : "rgba(255, 110, 45, 0.42)"};
+    $type === "success" ? "rgba(25, 198, 186, 0.42)" : "rgba(241, 69, 181, 0.42)"};
 `;
 
 const ErrorMessage = styled.p`
@@ -68,7 +70,7 @@ const TextArea = styled(Input).attrs({ as: "textarea" })`
 `;
 
 const Button = styled.button`
-  background: linear-gradient(120deg, var(--brand-teal), var(--brand-orange));
+  background: linear-gradient(120deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
   color: white;
   border: none;
   padding: 0.75rem 1rem;
@@ -78,12 +80,14 @@ const Button = styled.button`
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), filter var(--transition-base);
   width: 100%;
+  box-shadow: 0 10px 20px rgba(241, 69, 181, 0.2);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(16, 24, 32, 0.18);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 28px rgba(47, 134, 255, 0.24);
+    filter: saturate(1.1);
   }
 
   &:disabled {

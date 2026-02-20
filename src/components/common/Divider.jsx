@@ -11,9 +11,24 @@ const DividerContainer = styled.div`
 const DividerComponent = styled.div`
   width: ${(props) => props.width || "80%"};
   max-width: 220px;
-  height: 4px;
+  height: 5px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--brand-teal), var(--brand-orange));
+  background: linear-gradient(90deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
+  background-size: 200% 100%;
+  box-shadow: 0 8px 14px rgba(47, 134, 255, 0.2);
+  animation: pulseLine 3s ease infinite;
+
+  @keyframes pulseLine {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 const Divider = ({ width }) => {

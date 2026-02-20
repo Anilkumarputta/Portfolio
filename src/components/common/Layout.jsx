@@ -14,9 +14,33 @@ const SceneLayout = styled.div`
   padding: 2rem;
   min-height: calc(100vh - 110px);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: var(--surface);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(125deg, rgba(47, 134, 255, 0.34), rgba(25, 198, 186, 0.34), rgba(255, 127, 63, 0.34));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.9;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 42px rgba(20, 28, 45, 0.16);
+  }
 
   @media screen and (min-width: 1060px) {
     display: flex;
@@ -71,9 +95,10 @@ const RightSideContent = styled.div`
   justify-content: center;
   padding: clamp(0.5rem, 1.5vw, 0.9rem);
   border-radius: clamp(16px, 2vw, 24px);
-  background: #ffffff;
-  border: 1px solid rgba(16, 24, 32, 0.1);
-  box-shadow: 0 10px 24px rgba(16, 24, 32, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78));
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 
   img {
     width: 100%;
@@ -82,6 +107,17 @@ const RightSideContent = styled.div`
     object-fit: contain;
     border-radius: clamp(12px, 2vw, 18px);
     display: block;
+    transition: transform var(--transition-base), filter var(--transition-base);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px rgba(20, 28, 45, 0.14);
+  }
+
+  &:hover img {
+    transform: scale(1.025);
+    filter: saturate(1.08);
   }
 
   @media screen and (min-width: 1060px) {
@@ -120,12 +156,13 @@ const LeftSide = styled.div`
   .empresa {
     font-weight: 700;
     margin: 0;
-    color: var(--brand-orange);
+    color: var(--brand-pink);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
 
     &:hover {
-      opacity: 0.75;
+      opacity: 0.9;
+      color: var(--brand-sky);
     }
   }
 

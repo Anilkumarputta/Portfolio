@@ -7,13 +7,29 @@ const FooterContainer = styled.footer`
   width: 100%;
   margin-top: 2.5rem;
   padding: 2rem 0 1.2rem;
-  background: #101820;
+  background: linear-gradient(130deg, #171d2e 0%, #17263f 52%, #2c1f49 100%);
   color: #f7f1de;
-  border-top: 1px solid rgba(247, 241, 222, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: min(56vw, 700px);
+    height: min(56vw, 700px);
+    left: -180px;
+    top: -240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(47, 134, 255, 0.26), rgba(47, 134, 255, 0));
+    pointer-events: none;
+  }
 `;
 
 const SocialLinks = styled.div`
   margin-top: 0.9rem;
+  position: relative;
+  z-index: 1;
   a {
     color: #f7f1de;
     margin: 0 0.7rem;
@@ -21,7 +37,8 @@ const SocialLinks = styled.div`
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 999px;
-    border: 1px solid rgba(247, 241, 222, 0.25);
+    border: 1px solid rgba(247, 241, 222, 0.34);
+    background: rgba(255, 255, 255, 0.05);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +46,9 @@ const SocialLinks = styled.div`
     &:hover {
       color: #101820;
       border-color: transparent;
-      background: linear-gradient(120deg, #20b4aa, #ff6e2d);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(241, 69, 181, 0.28);
+      background: linear-gradient(120deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
     }
   }
 `;
@@ -38,6 +57,8 @@ const FooterInner = styled.div`
   width: min(1120px, 92%);
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 `;
 
 const FooterText = styled.p`
@@ -54,7 +75,7 @@ export default function Footer() {
     <FooterContainer>
       <FooterInner>
         <Row justify="center">
-          <BrandLogo showText size={44} />
+          <BrandLogo showText size={44} light />
         </Row>
         <SocialLinks>
           <a href="http://linkedin.com/in/anil-putta" target="_blank" rel="noopener noreferrer" title="LinkedIn">

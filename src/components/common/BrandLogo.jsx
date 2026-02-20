@@ -11,6 +11,12 @@ const LogoMark = styled.svg`
   width: ${({ size }) => `${size}px`};
   height: ${({ size }) => `${size}px`};
   flex-shrink: 0;
+  transition: transform var(--transition-base), filter var(--transition-base);
+
+  ${Brand}:hover & {
+    transform: translateY(-2px) rotate(-2deg);
+    filter: saturate(1.12);
+  }
 `;
 
 const BrandText = styled.div`
@@ -24,7 +30,7 @@ const BrandName = styled.span`
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--text-strong);
+  color: ${({ $light }) => ($light ? "#f7f1de" : "var(--text-strong)")};
   text-transform: uppercase;
 `;
 
@@ -33,11 +39,11 @@ const BrandRole = styled.span`
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
+  color: ${({ $light }) => ($light ? "rgba(247, 241, 222, 0.74)" : "var(--text-muted)")};
   text-transform: uppercase;
 `;
 
-const BrandLogo = ({ showText = true, size = 52 }) => {
+const BrandLogo = ({ showText = true, size = 52, light = false }) => {
   const gradientId = useId();
 
   return (
@@ -55,7 +61,7 @@ const BrandLogo = ({ showText = true, size = 52 }) => {
             <stop offset="1" stopColor="#FF6E2D" />
           </linearGradient>
         </defs>
-        <rect x="4" y="4" width="56" height="56" rx="16" fill="#101820" />
+        <rect x="4" y="4" width="56" height="56" rx="16" fill={light ? "#0d1322" : "#101820"} />
         <rect
           x="4"
           y="4"
@@ -73,8 +79,8 @@ const BrandLogo = ({ showText = true, size = 52 }) => {
       </LogoMark>
       {showText && (
         <BrandText>
-          <BrandName>Anil Kumar</BrandName>
-          <BrandRole>Full Stack Developer</BrandRole>
+          <BrandName $light={light}>Anil Kumar</BrandName>
+          <BrandRole $light={light}>Full Stack Developer</BrandRole>
         </BrandText>
       )}
     </Brand>

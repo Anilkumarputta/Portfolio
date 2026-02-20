@@ -5,16 +5,16 @@ const ProjectCard = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background: #ffffff;
-  border: 1px solid rgba(16, 24, 32, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74));
+  border: 1px solid rgba(255, 255, 255, 0.68);
   overflow: hidden;
   width: min(100%, 340px);
   height: 330px;
   padding: 0.75rem;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 12px 26px rgba(16, 24, 32, 0.1);
-  transition: transform 0.26s ease, box-shadow 0.26s ease;
+  box-shadow: 0 12px 24px rgba(20, 28, 45, 0.12);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 
   .project-hover {
     position: absolute;
@@ -24,15 +24,21 @@ const ProjectCard = styled.div`
     bottom: 0.75rem;
     left: 0.75rem;
     min-height: 5.8rem;
-    background: rgba(255, 255, 255, 0.94);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 255, 0.84));
     overflow: hidden;
     border-radius: 12px;
-    border: 1px solid rgba(16, 24, 32, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    box-shadow: 0 8px 18px rgba(20, 28, 45, 0.12);
   }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 30px rgba(16, 24, 32, 0.14);
+    transform: translateY(-6px);
+    box-shadow: 0 22px 34px rgba(20, 28, 45, 0.2);
+  }
+
+  &:hover .project-image {
+    transform: scale(1.06);
+    filter: saturate(1.15);
   }
 
   @media screen and (max-width: 768px) {
@@ -63,7 +69,7 @@ const ProjectImage = styled.div`
   background-color: rgba(16, 24, 32, 0.12);
   background-image: url(${(props) =>
     props.src ? props.src : "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80"});
-  transition: transform 0.35s ease;
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
 
   &::after {
     content: "";
@@ -79,9 +85,9 @@ const ProjectTitle = styled.h3`
   font-size: 1rem;
   font-family: var(--font-code);
   font-weight: 700;
-  color: var(--text-strong);
+  color: #17203a;
   padding: 0.7rem 0.9rem 0.45rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   transition: all 0.25s ease;
 
@@ -94,7 +100,7 @@ const ProjectDescription = styled.p`
   font-size: 0.88rem;
   font-family: var(--font-body);
   font-weight: 500;
-  color: var(--text-soft);
+  color: #53667d;
   padding: 0 0.9rem 0.9rem;
   transition: all 0.25s ease;
   display: -webkit-box;

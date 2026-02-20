@@ -11,13 +11,13 @@ const Controls = styled.div`
 const SearchInput = styled.input`
   height: 44px;
   width: 100%;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.66);
   border-radius: 12px;
   padding: 0.55rem 0.85rem;
-  background-color: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76));
   color: var(--text-strong);
   font-size: 0.92rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 
   &::placeholder {
     color: var(--text-soft);
@@ -25,8 +25,9 @@ const SearchInput = styled.input`
 
   &:focus {
     outline: none;
-    border-color: var(--brand-teal);
-    box-shadow: 0 0 0 3px rgba(32, 180, 170, 0.18);
+    border-color: rgba(47, 134, 255, 0.42);
+    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.16);
+    transform: translateY(-1px);
   }
 `;
 
@@ -37,10 +38,10 @@ const FilterRow = styled.div`
 `;
 
 const FilterButton = styled.button`
-  border: 1px solid ${({ $active }) => ($active ? "transparent" : "var(--line)")};
+  border: 1px solid ${({ $active }) => ($active ? "transparent" : "rgba(255, 255, 255, 0.72)")};
   background: ${({ $active }) =>
     $active
-      ? "linear-gradient(120deg, var(--brand-teal), var(--brand-orange))"
+      ? "linear-gradient(120deg, var(--brand-sky), var(--brand-pink), var(--brand-orange))"
       : "rgba(255, 255, 255, 0.72)"};
   color: ${({ $active }) => ($active ? "#fff" : "var(--text-strong)")};
   border-radius: 999px;
@@ -50,11 +51,13 @@ const FilterButton = styled.button`
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), filter var(--transition-base);
+  box-shadow: ${({ $active }) => ($active ? "0 10px 18px rgba(241, 69, 181, 0.24)" : "none")};
 
   &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 16px rgba(16, 24, 32, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(47, 134, 255, 0.18);
+    filter: saturate(1.1);
   }
 `;
 
@@ -92,12 +95,14 @@ const ResetButton = styled.button`
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
-  background: var(--surface-strong);
+  background: linear-gradient(120deg, var(--surface-strong), #1f2941);
   cursor: pointer;
-  transition: opacity 0.25s ease;
+  transition: transform var(--transition-base), opacity var(--transition-base), box-shadow var(--transition-base);
 
   &:hover {
-    opacity: 0.85;
+    opacity: 0.94;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(20, 28, 45, 0.2);
   }
 `;
 

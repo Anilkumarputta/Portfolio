@@ -2,19 +2,23 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import styled from "styled-components";
 
 const LinkComponent = styled.p`
-  color: var(--text-muted);
+  color: ${(props) => (props.selected ? "var(--text-strong)" : "var(--text-muted)")};
   font-family: var(--font-code);
   position: relative;
-  transition: color 0.25s ease;
+  transition: color var(--transition-base), transform var(--transition-base);
+  padding: 0.28rem 0.2rem;
+  font-weight: ${(props) => (props.selected ? "700" : "600")};
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 
   &::after {
     content: "";
     display: block;
     width: ${(props) => (props.selected ? "100%" : "0")};
-    height: 3px;
-    background-image: linear-gradient(90deg, var(--brand-teal), var(--brand-orange));
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
     transition: width 0.35s ease;
-    border-radius: 3px;
+    border-radius: 999px;
   }
 
   &:hover::after {
@@ -23,6 +27,7 @@ const LinkComponent = styled.p`
 
   &:hover {
     color: var(--text-strong);
+    transform: translateY(-1px);
   }
 `;
 
