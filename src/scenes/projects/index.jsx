@@ -17,11 +17,6 @@ import {
   ResultsText,
   SearchInput,
 } from "./components/style";
-import {
-  staggerContainerVariants,
-  staggerItemVariants,
-  titleSlideVariants,
-} from "../../utils/motion";
 
 const Projects = () => {
   const desktop = useMediaQuery("(min-width: 1279px)");
@@ -86,8 +81,12 @@ const Projects = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.56 }}
-          variants={titleSlideVariants}
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: desktop ? -200 : -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
         >
           <PageTitle>{texts.en.projects.title}</PageTitle>
           <Divider width={"30%"} />
@@ -124,30 +123,21 @@ const Projects = () => {
       )}
 
       {filteredProjects.length > 0 ? (
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.24 }}
-          variants={staggerContainerVariants}
-          style={{ width: "100%" }}
+        <Row
+          align="flex-start"
+          justify="center"
+          gap={desktop ? "1.1rem" : "0.9rem"}
+          style={{ marginTop: desktop ? "0" : "0.75rem" }}
         >
-          <Row
-            align="flex-start"
-            justify="center"
-            gap={desktop ? "1.1rem" : "0.9rem"}
-            style={{ marginTop: desktop ? "0" : "0.75rem" }}
-          >
-            {filteredProjects.map((project) => (
-              <motion.div variants={staggerItemVariants} key={project.title}>
-                <Project
-                  project={project}
-                  handleClick={() => handleModal(project)}
-                  isMobile={project?.isMobile}
-                />
-              </motion.div>
-            ))}
-          </Row>
-        </motion.div>
+          {filteredProjects.map((project) => (
+            <Project
+              project={project}
+              handleClick={() => handleModal(project)}
+              isMobile={project?.isMobile}
+              key={project.title}
+            />
+          ))}
+        </Row>
       ) : (
         <EmptyState>
           <p>No projects matched this filter. Try another search or reset filters.</p>

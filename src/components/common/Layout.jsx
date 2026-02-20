@@ -71,8 +71,6 @@ const SceneLayout = styled.div`
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  content-visibility: auto;
-  contain-intrinsic-size: 940px;
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background var(--transition-base);
   animation: sceneLift 520ms ease both;
 

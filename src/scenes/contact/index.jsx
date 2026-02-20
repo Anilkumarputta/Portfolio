@@ -26,11 +26,6 @@ import Loading from "../../components/common/Loading";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
-import {
-  staggerContainerVariants,
-  staggerItemVariants,
-  titleSlideVariants,
-} from "../../utils/motion";
 
 const SERVICE_ID = "service_ilga7yp";
 const TEMPLATE_ID = "template_dy0u7yh";
@@ -206,31 +201,25 @@ const Contact = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.56 }}
-          variants={titleSlideVariants}
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: desktop ? -200 : -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
         >
           <PageTitle>{texts.en.contact.title}</PageTitle>
           <Divider width={"30%"} />
         </motion.div>
       </Column>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.35 }}
-        variants={staggerContainerVariants}
-        style={{ width: "100%" }}
-      >
       <ContactSplit $desktop={desktop}>
         {desktop && (
-          <motion.div variants={staggerItemVariants}>
-            <RightSide>
-              <RightSideContent>
-                <img src={profile} alt="Anil Kumar" loading="lazy" decoding="async" />
-              </RightSideContent>
-            </RightSide>
-          </motion.div>
+          <RightSide>
+            <RightSideContent>
+              <img src={profile} alt="Anil Kumar" />
+            </RightSideContent>
+          </RightSide>
         )}
-        <motion.div variants={staggerItemVariants} style={{ width: desktop ? "44%" : "100%" }}>
         <LeftSide>
           <p>{texts.en.contact.text}</p>
           <ContactFormCard>
@@ -319,9 +308,7 @@ const Contact = () => {
             </form>
           </ContactFormCard>
         </LeftSide>
-        </motion.div>
       </ContactSplit>
-      </motion.div>
     </SceneLayout>
   );
 };
