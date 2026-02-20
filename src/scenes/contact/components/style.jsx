@@ -48,16 +48,69 @@ const Label = styled.label`
 const FormStatus = styled.div`
   width: 100%;
   border-radius: 10px;
-  padding: 0.7rem 0.9rem;
+  padding: 0.72rem 0.85rem;
   font-size: 0.88rem;
   margin-bottom: 0.8rem;
   border: 1px solid;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.62rem;
   background: ${({ $type }) =>
-    $type === "success" ? "rgba(25, 198, 186, 0.14)" : "rgba(241, 69, 181, 0.14)"};
+    $type === "success"
+      ? "rgba(25, 198, 186, 0.14)"
+      : $type === "warning"
+        ? "rgba(255, 127, 63, 0.14)"
+        : "rgba(241, 69, 181, 0.14)"};
   color: ${({ $type }) =>
-    $type === "success" ? "var(--text-strong)" : "#8f1b67"};
+    $type === "success"
+      ? "var(--text-strong)"
+      : $type === "warning"
+        ? "#8f481d"
+        : "#8f1b67"};
   border-color: ${({ $type }) =>
-    $type === "success" ? "rgba(25, 198, 186, 0.42)" : "rgba(241, 69, 181, 0.42)"};
+    $type === "success"
+      ? "rgba(25, 198, 186, 0.42)"
+      : $type === "warning"
+        ? "rgba(255, 127, 63, 0.46)"
+        : "rgba(241, 69, 181, 0.42)"};
+
+  .status-icon {
+    width: 1.45rem;
+    height: 1.25rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-code);
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #fff;
+    background: ${({ $type }) =>
+      $type === "success"
+        ? "linear-gradient(120deg, var(--brand-teal), var(--brand-sky))"
+        : $type === "warning"
+          ? "linear-gradient(120deg, var(--brand-orange), #f0a000)"
+          : "linear-gradient(120deg, var(--brand-pink), #c6287d)"};
+    box-shadow: 0 8px 12px rgba(16, 27, 45, 0.14);
+    flex-shrink: 0;
+  }
+
+  .status-body {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.18rem;
+  }
+
+  .status-body strong {
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .status-body small {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: inherit;
+  }
 `;
 
 const TextArea = styled(Input).attrs({ as: "textarea" })`
@@ -147,6 +200,29 @@ const ContactFormCard = styled.div`
   }
 `;
 
+const HoneypotField = styled.div`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
+  opacity: 0;
+`;
+
+const FormHint = styled.p`
+  width: 100%;
+  margin: 0.08rem 0 0.02rem;
+  font-family: var(--font-code);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+`;
+
 const Button = styled.button`
   background: linear-gradient(120deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
   color: white;
@@ -200,5 +276,7 @@ export {
   TextArea,
   ContactSplit,
   ContactFormCard,
+  HoneypotField,
+  FormHint,
   Button,
 };

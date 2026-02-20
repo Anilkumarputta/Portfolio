@@ -91,6 +91,10 @@ const ProjectCard = styled.div`
   }
 
   &:hover .project-image {
+    transform: scale(1.015);
+  }
+
+  &:hover .project-image img {
     transform: scale(1.09);
     filter: saturate(1.22);
   }
@@ -141,14 +145,18 @@ const ProjectImage = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  object-fit: cover;
   overflow: hidden;
   background-color: rgba(16, 24, 32, 0.12);
-  background-image: url(${(props) =>
-    props.src ? props.src : "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80"});
-  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
+  }
 
   &::before {
     content: "";

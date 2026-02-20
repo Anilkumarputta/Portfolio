@@ -5,6 +5,11 @@ import { texts } from "./../../utils/texts";
 import Divider from "./../../components/common/Divider";
 import Skill from "./components/skill";
 import { motion } from "framer-motion";
+import {
+  staggerContainerVariants,
+  staggerItemVariants,
+  titleSlideVariants,
+} from "../../utils/motion";
 
 const Skills = () => {
   const desktop = useMediaQuery("(min-width: 1279px)");
@@ -23,23 +28,29 @@ const Skills = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.8 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: desktop ? -200 : -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
+          viewport={{ once: false, amount: 0.56 }}
+          variants={titleSlideVariants}
         >
           <PageTitle>{texts.en.skills.title}</PageTitle>
           <Divider width={"30%"} />
         </motion.div>
         <p style={{ textAlign: "center" }}>{texts.en.skills.text}</p>
       </Column>
-      <Row align="flex-start" justify="center" gap="1rem">
-        <Skill skill={texts.en.skills[1]} index={1} />
-        <Skill skill={texts.en.skills[2]} index={2} />
-        <Skill skill={texts.en.skills[3]} index={3} />
-      </Row>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.35 }}
+        variants={staggerContainerVariants}
+        style={{ width: "100%" }}
+      >
+        <Row align="flex-start" justify="center" gap="1rem">
+          {[1, 2, 3].map((index) => (
+            <motion.div variants={staggerItemVariants} key={index}>
+              <Skill skill={texts.en.skills[index]} index={index} />
+            </motion.div>
+          ))}
+        </Row>
+      </motion.div>
     </SceneLayout>
   );
 };
