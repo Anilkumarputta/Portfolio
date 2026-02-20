@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const Input = styled.input`
-  height: 44px;
+  height: 40px;
   width: 100%;
   border: 1px solid rgba(25, 32, 48, 0.32);
-  padding: 0.55rem 0.75rem;
+  padding: 0.45rem 0.7rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.98);
   color: var(--text-strong);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 1px 0 rgba(25, 32, 48, 0.06);
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 
@@ -29,15 +29,15 @@ const FormGroup = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  gap: 0.18rem;
+  gap: 0.12rem;
 `;
 
 const Label = styled.label`
   font-family: var(--font-code);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
   color: var(--text-soft);
 `;
 
@@ -58,7 +58,7 @@ const FormStatus = styled.div`
 
 const TextArea = styled(Input).attrs({ as: "textarea" })`
   height: auto;
-  min-height: 140px;
+  min-height: 102px;
   resize: vertical;
 `;
 
@@ -67,6 +67,8 @@ const ContactSplit = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+  max-width: 1020px;
+  margin-top: 0.35rem;
   gap: ${({ $desktop }) => ($desktop ? "2.4rem" : "1.4rem")};
   flex-direction: ${({ $desktop }) => ($desktop ? "row" : "column")};
 
@@ -76,8 +78,8 @@ const ContactSplit = styled.div`
 `;
 
 const ContactFormCard = styled.div`
-  margin: 1.3rem 0 0;
-  padding: 1.1rem;
+  margin: 0.85rem 0 0;
+  padding: 0.9rem;
   border-radius: 16px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 255, 0.84));
   border: 1px solid rgba(255, 255, 255, 0.72);
@@ -90,8 +92,8 @@ const ContactFormCard = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: 1rem;
-    padding: 0.9rem;
+    margin-top: 0.75rem;
+    padding: 0.8rem;
     border-radius: 14px;
   }
 `;
@@ -100,10 +102,10 @@ const Button = styled.button`
   background: linear-gradient(120deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
   color: white;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.68rem 0.9rem;
   border-radius: 10px;
   font-family: var(--font-code);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;

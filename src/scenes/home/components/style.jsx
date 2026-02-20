@@ -15,6 +15,10 @@ const MainTitle = styled.h1`
   z-index: 10;
   text-shadow: 0 14px 22px rgba(47, 134, 255, 0.2);
 
+  .accent {
+    letter-spacing: 0.06em;
+  }
+
   @media screen and (max-width: 768px) {
     margin-top: 0.6rem;
   }

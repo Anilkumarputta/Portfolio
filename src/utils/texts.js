@@ -10,19 +10,19 @@ export const texts = {
       cv_hi: null,
     },
     landing: {
-      subtitle: "Full Stack Developer building fast, scalable web products.",
+      subtitle: "Full Stack Developer with a Master's in Computer Science, building fast and scalable web products.",
       contact: "Contact Me",
       talk: "Let's talk.",
     },
     about: {
-      title: "<about/>",
-      text: "Hello, I'm Anil Kumar. I have hands-on experience in frontend and backend development, and I started learning coding in 11th grade.",
-      text2: "I am very interested in problem solving and software development. In my free time, I build websites and side projects to improve my skills. During my bachelor's studies and coding activities, I received a few good compliments that motivated me to keep growing as a developer. Here are the technologies I use regularly:",
+      title: "About Me",
+      text: "Hello, I'm Anil Kumar. I completed my Master's in Computer Science and I have hands-on experience in both frontend and backend development.",
+      text2: "I started learning coding in 11th grade, and since then I have been highly interested in problem solving and software development. During my master's, I worked on multiple projects that improved my practical skills in building real web applications. In my free time, I continue creating websites and side projects to keep improving. Here are the technologies I use regularly:",
       text3: "Want a deeper look at my experience? You can download my resume below.",
       article: encv,
     },
     skills: {
-      title: "<skills/>",
+      title: "Skills",
       text: "I combine technical depth, product thinking, and ownership to help teams ship high-quality features consistently.",
       1: {
         title: "product-focused engineering",
@@ -38,11 +38,11 @@ export const texts = {
       },
     },
     projects: {
-      title: "<projects/>",
-      text: "A selection of projects that reflect practical engineering, clean UI, and consistent delivery.",
+      title: "Projects",
+      text: "A curated selection of projects that highlight practical engineering, clean UI, and consistent delivery.",
     },
     contact: {
-      title: "<contact/>",
+      title: "Contact",
       text: "Have a project in mind? Send a message and I'll get back to you.",
       btn: "Send a message",
     },

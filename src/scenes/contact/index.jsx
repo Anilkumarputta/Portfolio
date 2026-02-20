@@ -30,7 +30,7 @@ const TEMPLATE_ID = "template_dy0u7yh";
 const USER_ID = "_dkHQucs13j32kCb7";
 
 const Contact = () => {
-  const desktop = useMediaQuery("(min-width: 1019px)");
+  const desktop = useMediaQuery("(min-width: 1280px)");
   const [state, setState] = useState({
     status: "idle",
     message: "",
@@ -67,10 +67,11 @@ const Contact = () => {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
+        minHeight: "auto",
       }}
     >
       {state.submitting && <Loading />}
-      <Column width={desktop ? "50%" : "100%"}>
+      <Column width={desktop ? "62%" : "100%"}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -86,16 +87,18 @@ const Contact = () => {
         </motion.div>
       </Column>
       <ContactSplit $desktop={desktop}>
-        <RightSide>
-          <RightSideContent>
-            <img src={profile} alt="Anil Kumar" />
-          </RightSideContent>
-        </RightSide>
+        {desktop && (
+          <RightSide>
+            <RightSideContent>
+              <img src={profile} alt="Anil Kumar" />
+            </RightSideContent>
+          </RightSide>
+        )}
         <LeftSide>
           <p>{texts.en.contact.text}</p>
           <ContactFormCard>
             <form id="form" onSubmit={handleSubmit}>
-              <Column>
+              <Column style={{ gap: "0.72rem" }}>
                 {state.status !== "idle" && (
                   <FormStatus $type={state.status} role="status" aria-live="polite">
                     {state.message}
@@ -139,7 +142,7 @@ const Contact = () => {
                     type="text"
                     placeholder="Message"
                     cols={30}
-                    rows={10}
+                    rows={5}
                     name="message"
                     id="message"
                     required

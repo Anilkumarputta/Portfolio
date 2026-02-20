@@ -6,10 +6,10 @@ const ProjectCard = styled.div`
   justify-content: center;
   border-radius: 16px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74));
-  border: 1px solid rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(25, 32, 48, 0.16);
   overflow: hidden;
-  width: min(100%, 340px);
-  height: clamp(250px, 28vw, 330px);
+  width: min(100%, 320px);
+  height: clamp(220px, 24vw, 290px);
   padding: 0.75rem;
   position: relative;
   cursor: pointer;
@@ -23,7 +23,7 @@ const ProjectCard = styled.div`
     max-width: 100%;
     bottom: 0.75rem;
     left: 0.75rem;
-    min-height: 5.8rem;
+    min-height: 5.1rem;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 255, 0.84));
     overflow: hidden;
     border-radius: 12px;
@@ -42,7 +42,7 @@ const ProjectCard = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    height: 245px;
+    height: 218px;
     width: 100%;
   }
 
@@ -55,10 +55,10 @@ const ProjectCard = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    height: 228px;
+    height: 210px;
 
     .project-hover {
-      min-height: 5.2rem;
+      min-height: 4.9rem;
     }
   }
 
@@ -90,26 +90,26 @@ const ProjectImage = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: var(--font-code);
   font-weight: 700;
   color: #17203a;
-  padding: 0.7rem 0.9rem 0.45rem;
-  letter-spacing: 0.07em;
+  padding: 0.62rem 0.82rem 0.35rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: all 0.25s ease;
 
   @media screen and (max-width: 768px) {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 `;
 
 const ProjectDescription = styled.p`
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   font-family: var(--font-body);
   font-weight: 500;
   color: #53667d;
-  padding: 0 0.9rem 0.9rem;
+  padding: 0 0.82rem 0.72rem;
   transition: all 0.25s ease;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -117,7 +117,7 @@ const ProjectDescription = styled.p`
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     -webkit-line-clamp: 1;
   }
 `;

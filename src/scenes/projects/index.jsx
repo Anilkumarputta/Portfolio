@@ -75,7 +75,7 @@ const Projects = () => {
         justifyContent: "center",
       }}
     >
-      <Column width={desktop ? "70%" : "100%"}>
+      <Column width={desktop ? "76%" : "100%"}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -124,7 +124,7 @@ const Projects = () => {
         <Row
           align="flex-start"
           justify="center"
-          gap="1rem"
+          gap={desktop ? "1.1rem" : "0.9rem"}
           style={{ marginTop: desktop ? "0" : "1rem" }}
         >
           {filteredProjects.map((project) => (

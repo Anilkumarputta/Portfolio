@@ -29,9 +29,9 @@ const Home = () => {
           }}
         >
           <MainTitle>
-            {`<Anil`}
+            <span>Anil</span>
             <br />
-            {`Kumar/>`}
+            <span className="accent">Kumar</span>
           </MainTitle>
           <HeroSubtitle>{texts.en.landing.subtitle}</HeroSubtitle>
           <Row
