@@ -75,6 +75,7 @@ const Contact = () => {
     submitting: false,
   });
   const [cooldownRemaining, setCooldownRemaining] = useState(0);
+  const [showStatus, setShowStatus] = useState(false);
 
   useEffect(() => {
     const current = parseRateLimit();
@@ -140,6 +141,7 @@ const Contact = () => {
     const honeypotValue = String(formData.get("website") || "").trim();
 
     setState({ status: "idle", title: "", message: "", submitting: true });
+    setShowStatus(false);
 
     if (honeypotValue) {
       setState({
@@ -148,6 +150,8 @@ const Contact = () => {
         message: "Thanks for reaching out. I will get back to you soon.",
         submitting: false,
       });
+      setShowStatus(true);
+      setTimeout(() => setShowStatus(false), 3000);
       form.reset();
       return;
     }
@@ -161,6 +165,8 @@ const Contact = () => {
         message: `Too many attempts detected. Try again in ${attemptState.remainingSeconds}s.`,
         submitting: false,
       });
+      setShowStatus(true);
+      setTimeout(() => setShowStatus(false), 3000);
       return;
     }
 
@@ -172,6 +178,8 @@ const Contact = () => {
         message: "Thanks for your message. I will get back to you soon.",
         submitting: false,
       });
+      setShowStatus(true);
+      setTimeout(() => setShowStatus(false), 3000);
       form.reset();
     } catch (error) {
       setState({
@@ -182,6 +190,8 @@ const Contact = () => {
           "There was an error sending your message. Please try again in a moment.",
         submitting: false,
       });
+      setShowStatus(true);
+      setTimeout(() => setShowStatus(false), 3000);
     }
   };
 
@@ -297,17 +307,19 @@ const Contact = () => {
               </Column>
             </form>
             {state.status !== "idle" && (
-              <StatusCenter>
-                <FormStatus $type={state.status} role="status" aria-live="polite">
-                  <span className="status-icon" aria-hidden="true">
-                    {state.status === "success" ? "OK" : state.status === "warning" ? "!" : "x"}
-                  </span>
-                  <span className="status-body">
-                    <strong>{state.title}</strong>
-                    <small>{state.message}</small>
-                  </span>
-                </FormStatus>
-              </StatusCenter>
+              {showStatus && (
+                <StatusCenter>
+                  <FormStatus $type={state.status} role="status" aria-live="polite">
+                    <span className="status-icon" aria-hidden="true">
+                      {state.status === "success" ? "OK" : state.status === "warning" ? "!" : "x"}
+                    </span>
+                    <span className="status-body">
+                      <strong>{state.title}</strong>
+                      <small>{state.message}</small>
+                    </span>
+                  </FormStatus>
+                </StatusCenter>
+              )}
             )}
           </ContactFormCard>
         </LeftSide>
