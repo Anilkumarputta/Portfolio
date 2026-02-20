@@ -10,7 +10,16 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import { texts } from "../../utils/texts";
 import Divider from "./../../components/common/Divider";
 import profile from "./../../assets/images/contact.png";
-import { Button, FormGroup, FormStatus, Input, Label, TextArea } from "./components/style";
+import {
+  Button,
+  ContactFormCard,
+  ContactSplit,
+  FormGroup,
+  FormStatus,
+  Input,
+  Label,
+  TextArea,
+} from "./components/style";
 import Loading from "../../components/common/Loading";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -76,16 +85,7 @@ const Contact = () => {
           <Divider width={"30%"} />
         </motion.div>
       </Column>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          gap: desktop ? "2.4rem" : "1.4rem",
-          flexDirection: desktop ? "row" : "column",
-        }}
-      >
+      <ContactSplit $desktop={desktop}>
         <RightSide>
           <RightSideContent>
             <img src={profile} alt="Anil Kumar" />
@@ -93,71 +93,67 @@ const Contact = () => {
         </RightSide>
         <LeftSide>
           <p>{texts.en.contact.text}</p>
-          <form
-            id="form"
-            onSubmit={handleSubmit}
-            style={{
-              margin: "2rem 0",
-            }}
-          >
-            <Column>
-              {state.status !== "idle" && (
-                <FormStatus $type={state.status} role="status" aria-live="polite">
-                  {state.message}
-                </FormStatus>
-              )}
-              <FormGroup>
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                  id="name"
-                  required
-                  minLength={2}
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="email">E-mail</Label>
-                <Input
-                  type="email"
-                  placeholder="e-mail"
-                  name="email"
-                  id="email"
-                  required
-                  pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="phone">Phone</Label>
-                <Input
-                  type="tel"
-                  placeholder="Phone (optional)"
-                  name="phone"
-                  id="phone"
-                  pattern="^[0-9\-\+\s()]{7,}$"
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="message">Message</Label>
-                <TextArea
-                  type="text"
-                  placeholder="Message"
-                  cols={30}
-                  rows={10}
-                  name="message"
-                  id="message"
-                  required
-                  minLength={10}
-                />
-              </FormGroup>
-              <Button type="submit" disabled={state.submitting}>
-                {state.submitting ? "Sending..." : texts.en.contact.btn}
-              </Button>
-            </Column>
-          </form>
+          <ContactFormCard>
+            <form id="form" onSubmit={handleSubmit}>
+              <Column>
+                {state.status !== "idle" && (
+                  <FormStatus $type={state.status} role="status" aria-live="polite">
+                    {state.message}
+                  </FormStatus>
+                )}
+                <FormGroup>
+                  <Label htmlFor="name">Name</Label>
+                  <Input
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    id="name"
+                    required
+                    minLength={2}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="email">E-mail</Label>
+                  <Input
+                    type="email"
+                    placeholder="e-mail"
+                    name="email"
+                    id="email"
+                    required
+                    pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input
+                    type="tel"
+                    placeholder="Phone (optional)"
+                    name="phone"
+                    id="phone"
+                    pattern="^[0-9\-\+\s()]{7,}$"
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="message">Message</Label>
+                  <TextArea
+                    type="text"
+                    placeholder="Message"
+                    cols={30}
+                    rows={10}
+                    name="message"
+                    id="message"
+                    required
+                    minLength={10}
+                  />
+                </FormGroup>
+                <Button type="submit" disabled={state.submitting}>
+                  {state.submitting ? "Sending..." : texts.en.contact.btn}
+                </Button>
+              </Column>
+            </form>
+          </ContactFormCard>
         </LeftSide>
-      </div>
+      </ContactSplit>
     </SceneLayout>
   );
 };

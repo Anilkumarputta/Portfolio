@@ -6,6 +6,11 @@ const Controls = styled.div`
   flex-direction: column;
   gap: 0.75rem;
   margin-top: 1.2rem;
+  padding: 0.9rem;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 20px rgba(20, 28, 45, 0.09);
 `;
 
 const SearchInput = styled.input`
@@ -72,9 +77,10 @@ const ResultsText = styled.p`
 const EmptyState = styled.div`
   margin-top: 1rem;
   width: 100%;
-  border: 1px dashed var(--line);
+  border: 1px dashed rgba(47, 134, 255, 0.36);
   border-radius: 14px;
   padding: 1rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(248, 252, 255, 0.62));
   display: flex;
   align-items: flex-start;
   justify-content: space-between;

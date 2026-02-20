@@ -58,6 +58,12 @@ const SkillTitle = styled.h3`
   max-width: 70%;
   word-wrap: break-word;
   color: var(--text-strong);
+  transition: color var(--transition-base), transform var(--transition-base);
+
+  ${SkillContainer}:hover & {
+    color: #243f74;
+    transform: translateX(1px);
+  }
 
   @media screen and (max-width: 768px) {
     width: 100%;

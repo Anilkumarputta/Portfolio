@@ -3,19 +3,23 @@ import styled from "styled-components";
 const Input = styled.input`
   height: 44px;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(25, 32, 48, 0.32);
   padding: 0.55rem 0.75rem;
   border-radius: 12px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.74));
+  background: rgba(255, 255, 255, 0.98);
   color: var(--text-strong);
   font-size: 0.95rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 1px 0 rgba(25, 32, 48, 0.06);
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+
+  &:hover {
+    border-color: rgba(25, 32, 48, 0.42);
+  }
 
   &:focus {
     outline: none;
-    border-color: rgba(47, 134, 255, 0.45);
-    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.16);
+    border-color: rgba(47, 134, 255, 0.62);
+    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.2), 0 8px 16px rgba(47, 134, 255, 0.12);
     transform: translateY(-1px);
   }
 `;
@@ -25,6 +29,7 @@ const FormGroup = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  gap: 0.18rem;
 `;
 
 const Label = styled.label`
@@ -69,6 +74,30 @@ const TextArea = styled(Input).attrs({ as: "textarea" })`
   resize: vertical;
 `;
 
+const ContactSplit = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: ${({ $desktop }) => ($desktop ? "2.4rem" : "1.4rem")};
+  flex-direction: ${({ $desktop }) => ($desktop ? "row" : "column")};
+`;
+
+const ContactFormCard = styled.div`
+  margin: 1.3rem 0 0;
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 255, 0.84));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 24px rgba(20, 28, 45, 0.12);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(20, 28, 45, 0.16);
+  }
+`;
+
 const Button = styled.button`
   background: linear-gradient(120deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
   color: white;
@@ -98,4 +127,14 @@ const Button = styled.button`
   }
 `;
 
-export { Input, FormGroup, Label, FormStatus, ErrorMessage, TextArea, Button };
+export {
+  Input,
+  FormGroup,
+  Label,
+  FormStatus,
+  ErrorMessage,
+  TextArea,
+  ContactSplit,
+  ContactFormCard,
+  Button,
+};

@@ -6,6 +6,34 @@ const Layout = styled.div`
   width: 100%;
   overflow-x: hidden;
   padding-top: 6.3rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 92px;
+    bottom: 22px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      180deg,
+      rgba(47, 134, 255, 0) 0%,
+      rgba(47, 134, 255, 0.24) 12%,
+      rgba(241, 69, 181, 0.2) 50%,
+      rgba(255, 127, 63, 0.22) 88%,
+      rgba(255, 127, 63, 0) 100%
+    );
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 1180px) {
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 const SceneLayout = styled.div`
@@ -22,6 +50,7 @@ const SceneLayout = styled.div`
   position: relative;
   overflow: hidden;
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  animation: sceneLift 520ms ease both;
 
   &::before {
     content: "";
@@ -40,6 +69,17 @@ const SceneLayout = styled.div`
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 24px 42px rgba(20, 28, 45, 0.16);
+  }
+
+  @keyframes sceneLift {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media screen and (min-width: 1060px) {

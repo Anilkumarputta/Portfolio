@@ -55,11 +55,26 @@ const HeroCta = styled.a`
   letter-spacing: 0.04em;
   border: 1px solid rgba(255, 255, 255, 0.38);
   transition: transform var(--transition-base), box-shadow var(--transition-base), filter var(--transition-base);
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 16px 28px rgba(47, 134, 255, 0.26);
     filter: saturate(1.1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.28) 48%, rgba(255, 255, 255, 0) 80%);
+    transform: translateX(-130%);
+    transition: transform 0.9s ease;
+  }
+
+  &:hover::after {
+    transform: translateX(130%);
   }
 `;
 
