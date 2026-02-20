@@ -66,6 +66,40 @@ const ResultsText = styled.p`
   color: var(--text-soft);
 `;
 
+const ProjectGrid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: stretch;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (min-width: 1180px) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    .project-card {
+      grid-column: span 4;
+    }
+
+    .project-card:nth-child(1) {
+      grid-column: span 8;
+      height: 360px;
+    }
+
+    .project-card:nth-child(2) {
+      grid-column: span 4;
+      height: 360px;
+    }
+
+    .project-card:nth-child(5n) {
+      grid-column: span 6;
+    }
+  }
+`;
+
 const EmptyState = styled.div`
   margin-top: 1rem;
   width: 100%;
@@ -107,6 +141,7 @@ export {
   FilterRow,
   FilterButton,
   ResultsText,
+  ProjectGrid,
   EmptyState,
   ResetButton,
 };

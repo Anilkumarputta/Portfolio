@@ -10,8 +10,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import { texts } from "../../utils/texts";
 import Divider from "./../../components/common/Divider";
 import profile from "./../../assets/images/contact.png";
-import { Button, FormGroup, Input, Label, TextArea } from "./components/style";
-import Toast from "./components/toast";
+import { Button, FormGroup, FormStatus, Input, Label, TextArea } from "./components/style";
 import Loading from "../../components/common/Loading";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -24,29 +23,31 @@ const USER_ID = "_dkHQucs13j32kCb7";
 const Contact = () => {
   const desktop = useMediaQuery("(min-width: 1019px)");
   const [state, setState] = useState({
-    succeeded: false,
-    errors: null,
+    status: "idle",
+    message: "",
     submitting: false,
   });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setState((prev) => ({ ...prev, submitting: true }));
+    setState({ status: "idle", message: "", submitting: true });
     const form = event.target;
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, form, USER_ID)
-      .then(() => {
-        setState({ succeeded: true, errors: null, submitting: false });
-        form.reset();
-      })
-      .catch((error) => {
-        setState({
-          succeeded: false,
-          errors: [error?.text || "Unexpected error"],
-          submitting: false,
-        });
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, USER_ID);
+      setState({
+        status: "success",
+        message: "Thanks for your message. I will get back to you soon.",
+        submitting: false,
       });
+      form.reset();
+    } catch (error) {
+      setState({
+        status: "error",
+        message: error?.text || "There was an error sending your message. Please try again.",
+        submitting: false,
+      });
+    }
   };
 
   return (
@@ -86,24 +87,6 @@ const Contact = () => {
         }}
       >
         <RightSide>
-          {state.succeeded && (
-            <Toast
-              title="Success!"
-              text="Your message has been sent successfully!"
-              type={"success"}
-              className="show"
-            />
-          )}
-
-          {state.errors && (
-            <Toast
-              title="Error!"
-              text="There was an error sending your message. Try again later."
-              type={"error"}
-              className="show"
-            />
-          )}
-
           <RightSideContent>
             <img src={profile} alt="Anil Kumar" />
           </RightSideContent>
@@ -118,6 +101,11 @@ const Contact = () => {
             }}
           >
             <Column>
+              {state.status !== "idle" && (
+                <FormStatus $type={state.status} role="status" aria-live="polite">
+                  {state.message}
+                </FormStatus>
+              )}
               <FormGroup>
                 <Label htmlFor="name">Name</Label>
                 <Input

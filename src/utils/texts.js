@@ -25,18 +25,18 @@ export const texts = {
     },
     skills: {
       title: "<skills/>",
-      text: "I focus on strong communication, rapid learning, and practical problem-solving to deliver reliable products in team environments.",
+      text: "I combine technical depth, product thinking, and ownership to help teams ship high-quality features consistently.",
       1: {
-        title: "continuous learning",
-        text: "I keep up with changing tools and frameworks, then apply what matters most in production.",
+        title: "product-focused engineering",
+        text: "I connect technical decisions to real user outcomes so features are useful, maintainable, and ready to scale.",
       },
       2: {
-        title: "clear communication",
-        text: "I value concise collaboration across design, product, and engineering to reduce delivery risk.",
+        title: "systematic problem solving",
+        text: "I break complex challenges into clear steps, validate quickly, and deliver solutions with measurable impact.",
       },
       3: {
-        title: "adaptable mindset",
-        text: "I embrace new constraints, feedback, and priorities while keeping quality and velocity balanced.",
+        title: "collaboration and ownership",
+        text: "I communicate tradeoffs early, document decisions, and take responsibility from planning to production release.",
       },
     },
     projects: {

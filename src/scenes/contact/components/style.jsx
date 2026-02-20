@@ -34,6 +34,21 @@ const Label = styled.label`
   color: var(--text-soft);
 `;
 
+const FormStatus = styled.div`
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid;
+  background: ${({ $type }) =>
+    $type === "success" ? "rgba(32, 180, 170, 0.12)" : "rgba(255, 110, 45, 0.14)"};
+  color: ${({ $type }) =>
+    $type === "success" ? "var(--text-strong)" : "#9a2f09"};
+  border-color: ${({ $type }) =>
+    $type === "success" ? "rgba(32, 180, 170, 0.4)" : "rgba(255, 110, 45, 0.42)"};
+`;
+
 const ErrorMessage = styled.p`
   color: red;
   font-size: 12px;
@@ -79,4 +94,4 @@ const Button = styled.button`
   }
 `;
 
-export { Input, FormGroup, Label, ErrorMessage, TextArea, Button };
+export { Input, FormGroup, Label, FormStatus, ErrorMessage, TextArea, Button };
