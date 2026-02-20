@@ -32,9 +32,22 @@ const SocialMediaWrapper = styled.a`
     transition: transform var(--transition-base);
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    border: 1px solid rgba(47, 134, 255, 0.35);
+    opacity: 0;
+    transform: scale(0.88);
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  }
+
   i {
     position: relative;
     z-index: 1;
+    transition: transform var(--transition-base);
   }
 
   &:hover {
@@ -49,6 +62,16 @@ const SocialMediaWrapper = styled.a`
 
   &:hover::before {
     transform: translateY(8px);
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: scale(1.08);
+    border-color: rgba(255, 255, 255, 0.52);
+  }
+
+  &:hover i {
+    transform: translateY(-1px) rotate(-10deg);
   }
 `;
 

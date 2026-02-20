@@ -28,6 +28,7 @@ const SideMenu = ({ selectedPage, setSelectedPage }) => {
           <Link page="about" label="about" selectedPage={selectedPage} setSelectedPage={() => handlePages("about")} />
           <Link page="skills" label="skills" selectedPage={selectedPage} setSelectedPage={() => handlePages("skills")} />
           <Link page="projects" label="projects" selectedPage={selectedPage} setSelectedPage={() => handlePages("projects")} />
+          <Link page="resume" label="resume" selectedPage={selectedPage} setSelectedPage={() => handlePages("resume")} />
           <Link page="contact" label="contact" selectedPage={selectedPage} setSelectedPage={() => handlePages("contact")} />
         </SideMenuNavContainer>
       </SideMenuContainer>

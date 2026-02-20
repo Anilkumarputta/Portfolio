@@ -41,6 +41,39 @@ export const texts = {
       title: "Projects",
       text: "A curated selection of projects that highlight practical engineering, clean UI, and consistent delivery.",
     },
+    resume: {
+      title: "Resume Timeline",
+      text: "A quick snapshot of my education and hands-on development journey.",
+      items: [
+        {
+          period: "2024 - Present",
+          category: "Experience",
+          title: "Full Stack & AI Project Development",
+          organization: "Independent and Collaborative Projects",
+          description:
+            "Built and refined production-style web apps with React, Node.js, and modern UI patterns while integrating AI/LLM-driven workflows for practical user features.",
+          skills: ["React", "Node.js", "Styled-Components", "LLM APIs"],
+        },
+        {
+          period: "2023 - 2024",
+          category: "Education",
+          title: "Master's in Computer Science",
+          organization: "Graduate Program",
+          description:
+            "Strengthened software engineering fundamentals through applied coursework and project delivery across frontend, backend, databases, and software architecture.",
+          skills: ["Algorithms", "System Design", "Databases", "Software Engineering"],
+        },
+        {
+          period: "Ongoing",
+          category: "Focus",
+          title: "Product-Focused Learning and Delivery",
+          organization: "Continuous Practice",
+          description:
+            "Continuously improving quality through side projects, better UI systems, and deployment-ready coding standards with a focus on maintainability and user value.",
+          skills: ["UX", "Performance", "Testing", "Iteration"],
+        },
+      ],
+    },
     contact: {
       title: "Contact",
       text: "Have a project in mind? Send a message and I'll get back to you.",

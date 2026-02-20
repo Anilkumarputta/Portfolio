@@ -1,5 +1,62 @@
 import styled from "styled-components";
 
+const HeroGreeting = styled.p`
+  width: max-content;
+  margin: 0 auto 0.72rem;
+  padding: 0.38rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.66)),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  color: var(--text-soft);
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 18px rgba(16, 27, 45, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+`;
+
+const WaveIcon = styled.i`
+  display: inline-flex;
+  color: var(--brand-orange);
+  animation-name: wave-animation;
+  animation-duration: 2.1s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+
+  @keyframes wave-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+`;
+
 const MainTitle = styled.h1`
   font-size: clamp(2.35rem, 1.75rem + 2.8vw, 3.85rem);
   line-height: 0.95;
@@ -53,6 +110,15 @@ const HeroSubtitle = styled(Subtitle)`
   color: var(--text-muted);
   margin: 1rem 0 1.45rem;
   line-height: 1.65;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.6)),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 0.72rem 0.82rem;
+  box-shadow: 0 10px 18px rgba(16, 27, 45, 0.1);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
 `;
 
 const HeroCta = styled.a`
@@ -76,9 +142,9 @@ const HeroCta = styled.a`
   overflow: hidden;
 
   &:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 16px 28px rgba(47, 134, 255, 0.26);
-    filter: saturate(1.1);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 18px 30px rgba(47, 134, 255, 0.3);
+    filter: saturate(1.14);
   }
 
   &::after {
@@ -95,4 +161,4 @@ const HeroCta = styled.a`
   }
 `;
 
-export { MainTitle, Subtitle, HeroSubtitle, HeroCta };
+export { HeroGreeting, WaveIcon, MainTitle, Subtitle, HeroSubtitle, HeroCta };

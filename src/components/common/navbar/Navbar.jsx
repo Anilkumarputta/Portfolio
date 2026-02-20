@@ -34,6 +34,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
             <Link page="about" label="about" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
             <Link page="skills" label="skills" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
             <Link page="projects" label="projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <Link page="resume" label="resume" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
             <Link page="contact" label="contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
           </NavLinkContainer>
         )}

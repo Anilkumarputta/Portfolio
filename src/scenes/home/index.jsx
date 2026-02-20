@@ -5,7 +5,13 @@ import {
   Row,
   SceneLayout,
 } from "../../components/common/Layout";
-import { HeroCta, HeroSubtitle, MainTitle } from "./components/style";
+import {
+  HeroCta,
+  HeroGreeting,
+  HeroSubtitle,
+  MainTitle,
+  WaveIcon,
+} from "./components/style";
 import { motion } from "framer-motion";
 import { texts } from "./../../utils/texts";
 import profile from "./../../assets/images/hero.png";
@@ -35,6 +41,10 @@ const Home = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
+          <HeroGreeting>
+            Hello and welcome
+            <WaveIcon className="fa-solid fa-hand-sparkles" aria-hidden="true" />
+          </HeroGreeting>
           <MainTitle>
             <span>Anil</span>
             <br />

@@ -36,6 +36,22 @@ const ProjectCard = styled.div`
     z-index: 4;
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    inset: auto -24% -42%;
+    height: 190px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 18% 34%, rgba(47, 134, 255, 0.34), rgba(47, 134, 255, 0)),
+      radial-gradient(circle at 72% 42%, rgba(241, 69, 181, 0.28), rgba(241, 69, 181, 0));
+    filter: blur(24px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+    z-index: 1;
+  }
+
   .project-hover {
     position: absolute;
     z-index: 3;
@@ -67,6 +83,11 @@ const ProjectCard = styled.div`
 
   &:hover::before {
     opacity: 0.96;
+  }
+
+  &:hover::after {
+    opacity: 0.78;
+    transform: translateY(-10px) scale(1.06);
   }
 
   &:hover .project-image {
