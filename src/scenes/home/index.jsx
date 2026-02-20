@@ -19,6 +19,7 @@ const Home = () => {
     <SceneLayout
       className="md"
       id="home"
+      $tone="sunrise"
       style={{
         minHeight: "auto",
       }}

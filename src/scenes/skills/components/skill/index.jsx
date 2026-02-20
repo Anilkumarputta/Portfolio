@@ -2,6 +2,7 @@ import {
   SkillContainer,
   SkillMarker,
   SkillNumber,
+  SkillText,
   SkillTitle,
 } from "./components/style";
 
@@ -10,7 +11,7 @@ const Skill = ({ skill, index }) => {
     <SkillContainer>
       <SkillNumber>0{index}</SkillNumber>
       <SkillTitle>{skill.title}</SkillTitle>
-      <p style={{ marginTop: "10px" }}>{skill.text}</p>
+      <SkillText>{skill.text}</SkillText>
       <SkillMarker number={index} />
     </SkillContainer>
   );

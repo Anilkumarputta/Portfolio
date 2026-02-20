@@ -30,6 +30,7 @@ const About = () => {
   return (
     <SceneLayout
       id="about"
+      $tone="ocean"
       style={{
         minHeight: "auto",
       }}
@@ -92,3 +93,4 @@ const About = () => {
 };
 
 export default About;
+

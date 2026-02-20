@@ -12,6 +12,7 @@ const Skills = () => {
     <SceneLayout
       className="md"
       id="skills"
+      $tone="mint"
       style={{
         flexDirection: "column",
         alignItems: "center",
@@ -44,3 +45,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

@@ -9,13 +9,18 @@ const SkillContainer = styled.div`
   justify-content: flex-start;
   padding: 1rem;
   gap: 0.55rem;
-  border-radius: 14px;
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
-  border: 1px solid rgba(255, 255, 255, 0.68);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.74));
+  border-radius: 16px;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+  border: 1px solid var(--glass-border);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72)),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
   height: max-content;
-  box-shadow: 0 10px 22px rgba(20, 28, 45, 0.1);
+  box-shadow: 0 14px 26px rgba(16, 27, 45, 0.12);
   overflow: hidden;
+  isolation: isolate;
+  backdrop-filter: blur(10px) saturate(145%);
+  -webkit-backdrop-filter: blur(10px) saturate(145%);
 
   &::before {
     content: "";
@@ -28,10 +33,32 @@ const SkillContainer = styled.div`
     pointer-events: none;
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(130deg, rgba(47, 134, 255, 0.56), rgba(241, 69, 181, 0.5), rgba(255, 127, 63, 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.65;
+    transition: opacity var(--transition-base);
+  }
+
   &:hover {
-    border-color: rgba(47, 134, 255, 0.28);
-    box-shadow: 0 16px 28px rgba(20, 28, 45, 0.16);
-    transform: translateY(-4px);
+    border-color: rgba(47, 134, 255, 0.32);
+    box-shadow: 0 20px 34px rgba(16, 27, 45, 0.18);
+    transform: translateY(-6px);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.76)),
+      linear-gradient(160deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  }
+
+  &:hover::after {
+    opacity: 0.95;
   }
 
   @media screen and (min-width: 1279px) {
@@ -52,7 +79,7 @@ const SkillNumber = styled.p`
   font-family: var(--font-code);
   font-weight: 600;
   font-size: 1.9rem;
-  color: rgba(47, 134, 255, 0.68);
+  color: rgba(47, 134, 255, 0.76);
 `;
 
 const SkillTitle = styled.h3`
@@ -65,8 +92,8 @@ const SkillTitle = styled.h3`
   transition: color var(--transition-base), transform var(--transition-base);
 
   ${SkillContainer}:hover & {
-    color: #243f74;
-    transform: translateX(1px);
+    color: #20468d;
+    transform: translateX(2px);
   }
 
   @media screen and (max-width: 768px) {
@@ -76,6 +103,14 @@ const SkillTitle = styled.h3`
   }
 `;
 
+const SkillText = styled.p`
+  margin-top: 0.3rem;
+  line-height: 1.62;
+  font-size: 0.92rem;
+  position: relative;
+  z-index: 1;
+`;
+
 const SkillMarker = styled.div`
   position: absolute;
   top: 0.95rem;
@@ -83,16 +118,16 @@ const SkillMarker = styled.div`
   width: 80%;
   height: 0.33rem;
   border-radius: 999px;
-  background-color: ${(props) => {
+  background: ${(props) => {
     switch (props.number) {
       case 1:
-        return colors.teal;
+        return `linear-gradient(90deg, ${colors.teal}, ${colors.blue})`;
 
       case 2:
-        return colors.orange;
+        return `linear-gradient(90deg, ${colors.orange}, ${colors.pink})`;
 
       case 3:
-        return colors.blue;
+        return `linear-gradient(90deg, ${colors.blue}, ${colors.teal})`;
       default:
         break;
     }
@@ -103,4 +138,4 @@ const SkillMarker = styled.div`
   }
 `;
 
-export { SkillContainer, SkillNumber, SkillTitle, SkillMarker };
+export { SkillContainer, SkillNumber, SkillTitle, SkillText, SkillMarker };

@@ -69,6 +69,7 @@ const Projects = () => {
     <SceneLayout
       className="md"
       id="projects"
+      $tone="violet"
       style={{
         flexDirection: "column",
         alignItems: "center",
@@ -150,3 +151,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

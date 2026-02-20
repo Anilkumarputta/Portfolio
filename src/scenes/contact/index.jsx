@@ -63,6 +63,7 @@ const Contact = () => {
     <SceneLayout
       className="md"
       id="contact"
+      $tone="sunset"
       style={{
         alignItems: "center",
         justifyContent: "center",
@@ -162,3 +163,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

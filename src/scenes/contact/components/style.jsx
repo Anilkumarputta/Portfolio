@@ -3,14 +3,18 @@ import styled from "styled-components";
 const Input = styled.input`
   height: 40px;
   width: 100%;
-  border: 1px solid rgba(25, 32, 48, 0.32);
+  border: 1px solid rgba(25, 32, 48, 0.28);
   padding: 0.45rem 0.7rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.98);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(252, 253, 255, 0.8)),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
   color: var(--text-strong);
   font-size: 0.9rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 1px 0 rgba(25, 32, 48, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88), 0 8px 14px rgba(16, 27, 45, 0.06);
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
 
   &:hover {
     border-color: rgba(25, 32, 48, 0.42);
@@ -18,9 +22,9 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-color: rgba(47, 134, 255, 0.62);
-    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.2), 0 8px 16px rgba(47, 134, 255, 0.12);
-    transform: translateY(-1px);
+    border-color: rgba(47, 134, 255, 0.68);
+    box-shadow: 0 0 0 3px rgba(47, 134, 255, 0.24), 0 10px 18px rgba(47, 134, 255, 0.16);
+    transform: translateY(-2px);
   }
 `;
 
@@ -79,21 +83,66 @@ const ContactSplit = styled.div`
 
 const ContactFormCard = styled.div`
   margin: 0.85rem 0 0;
-  padding: 0.9rem;
-  border-radius: 16px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 255, 0.84));
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  box-shadow: 0 14px 24px rgba(20, 28, 45, 0.12);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  padding: 0.95rem;
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 252, 255, 0.76)),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0));
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 16px 28px rgba(16, 27, 45, 0.14);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px) saturate(145%);
+  -webkit-backdrop-filter: blur(10px) saturate(145%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -36% -20% auto;
+    height: 88%;
+    background:
+      radial-gradient(circle at 18% 42%, rgba(47, 134, 255, 0.2), rgba(47, 134, 255, 0)),
+      radial-gradient(circle at 78% 36%, rgba(241, 69, 181, 0.16), rgba(241, 69, 181, 0));
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(130deg, rgba(47, 134, 255, 0.5), rgba(241, 69, 181, 0.42), rgba(255, 127, 63, 0.42));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.68;
+    transition: opacity var(--transition-base);
+  }
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 30px rgba(20, 28, 45, 0.16);
+    transform: translateY(-4px);
+    border-color: rgba(47, 134, 255, 0.3);
+    box-shadow: 0 20px 34px rgba(16, 27, 45, 0.2);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(248, 252, 255, 0.8)),
+      linear-gradient(160deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+  }
+
+  &:hover::after {
+    opacity: 0.94;
+  }
+
+  form {
+    position: relative;
+    z-index: 1;
   }
 
   @media screen and (max-width: 768px) {
     margin-top: 0.75rem;
-    padding: 0.8rem;
+    padding: 0.82rem;
     border-radius: 14px;
   }
 `;
@@ -101,9 +150,9 @@ const ContactFormCard = styled.div`
 const Button = styled.button`
   background: linear-gradient(120deg, var(--brand-sky), var(--brand-pink), var(--brand-orange));
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.34);
   padding: 0.68rem 0.9rem;
-  border-radius: 10px;
+  border-radius: 12px;
   font-family: var(--font-code);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -111,12 +160,28 @@ const Button = styled.button`
   cursor: pointer;
   transition: transform var(--transition-base), box-shadow var(--transition-base), filter var(--transition-base);
   width: 100%;
-  box-shadow: 0 10px 20px rgba(241, 69, 181, 0.2);
+  box-shadow: 0 12px 22px rgba(241, 69, 181, 0.24);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0.26) 48%, rgba(255, 255, 255, 0) 80%);
+    transform: translateX(-140%);
+    transition: transform 0.85s ease;
+    pointer-events: none;
+  }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 28px rgba(47, 134, 255, 0.24);
-    filter: saturate(1.1);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(47, 134, 255, 0.3);
+    filter: saturate(1.14);
+  }
+
+  &:hover::after {
+    transform: translateX(130%);
   }
 
   &:disabled {
