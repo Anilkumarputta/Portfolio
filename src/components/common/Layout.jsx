@@ -17,8 +17,6 @@ const SceneLayout = styled.div`
   border: 1px solid var(--line);
   background: var(--surface);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 
   @media screen and (min-width: 1060px) {
     display: flex;
@@ -67,61 +65,23 @@ const RightSide = styled.div`
 `;
 
 const RightSideContent = styled.div`
-  position: relative;
   width: min(100%, 560px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.5rem, 1.6vw, 0.95rem);
-  border-radius: clamp(20px, 3vw, 34px);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.56));
+  padding: clamp(0.5rem, 1.5vw, 0.9rem);
+  border-radius: clamp(16px, 2vw, 24px);
+  background: #ffffff;
   border: 1px solid rgba(16, 24, 32, 0.1);
-  box-shadow: 0 18px 38px rgba(16, 24, 32, 0.14);
-  overflow: hidden;
-  transition: transform 0.32s ease, box-shadow 0.32s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -34% -24% auto;
-    height: 54%;
-    background: radial-gradient(circle, rgba(32, 180, 170, 0.36), rgba(32, 180, 170, 0));
-    filter: blur(12px);
-    pointer-events: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: auto -16% -30% -26%;
-    height: 50%;
-    background: radial-gradient(circle, rgba(255, 110, 45, 0.3), rgba(255, 110, 45, 0));
-    filter: blur(12px);
-    pointer-events: none;
-  }
+  box-shadow: 0 10px 24px rgba(16, 24, 32, 0.1);
 
   img {
-    position: relative;
-    z-index: 1;
     width: 100%;
     max-width: 520px;
     height: auto;
     object-fit: contain;
-    border-radius: clamp(14px, 2vw, 24px);
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
-    box-shadow: 0 16px 30px rgba(16, 24, 32, 0.18);
-    transition: transform 0.35s ease, filter 0.35s ease;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 22px 46px rgba(16, 24, 32, 0.18);
-  }
-
-  &:hover img {
-    transform: scale(1.02);
-    filter: saturate(1.06);
+    border-radius: clamp(12px, 2vw, 18px);
+    display: block;
   }
 
   @media screen and (min-width: 1060px) {
