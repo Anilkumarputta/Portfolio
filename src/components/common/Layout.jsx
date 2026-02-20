@@ -18,33 +18,6 @@ const Layout = styled.div`
   overflow-x: hidden;
   padding-top: 6.3rem;
   position: relative;
-
-  &::before {
-    content: "";
-    position: fixed;
-    top: 92px;
-    bottom: 22px;
-    left: 50%;
-    width: 2px;
-    transform: translateX(-50%);
-    background: linear-gradient(
-      180deg,
-      rgba(47, 134, 255, 0) 0%,
-      rgba(47, 134, 255, 0.34) 12%,
-      rgba(241, 69, 181, 0.28) 50%,
-      rgba(255, 127, 63, 0.3) 88%,
-      rgba(255, 127, 63, 0) 100%
-    );
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0.9;
-  }
-
-  @media screen and (max-width: 1180px) {
-    &::before {
-      display: none;
-    }
-  }
 `;
 
 const SceneLayout = styled.div`
