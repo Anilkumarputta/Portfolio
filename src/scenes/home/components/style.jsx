@@ -42,7 +42,10 @@ const HeroSubtitle = styled(Subtitle)`
 `;
 
 const HeroCta = styled.a`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
   background: linear-gradient(92deg, var(--brand-sky) 0%, var(--brand-pink) 52%, var(--brand-orange) 100%);
   color: #fff;
   font-weight: 700;
@@ -51,7 +54,7 @@ const HeroCta = styled.a`
   border-radius: 999px;
   box-shadow: 0 12px 24px rgba(241, 69, 181, 0.24);
   text-decoration: none;
-  margin-top: 0.5rem;
+  margin: 0.5rem auto 0;
   letter-spacing: 0.04em;
   border: 1px solid rgba(255, 255, 255, 0.38);
   transition: transform var(--transition-base), box-shadow var(--transition-base), filter var(--transition-base);

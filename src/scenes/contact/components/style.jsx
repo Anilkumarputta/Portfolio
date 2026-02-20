@@ -56,18 +56,6 @@ const FormStatus = styled.div`
     $type === "success" ? "rgba(25, 198, 186, 0.42)" : "rgba(241, 69, 181, 0.42)"};
 `;
 
-const ErrorMessage = styled.p`
-  color: red;
-  font-size: 12px;
-  margin-top: 0.5rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-
-  &.show {
-    opacity: 1;
-  }
-`;
-
 const TextArea = styled(Input).attrs({ as: "textarea" })`
   height: auto;
   min-height: 140px;
@@ -132,7 +120,6 @@ export {
   FormGroup,
   Label,
   FormStatus,
-  ErrorMessage,
   TextArea,
   ContactSplit,
   ContactFormCard,

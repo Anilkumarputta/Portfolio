@@ -29,13 +29,7 @@ const Modal = ({ setModal, project }) => {
             <div className="divider"></div>
           </ModalTitle>
           <ModalText>{project.subtitle}</ModalText>
-          <ModalText>Technologies:</ModalText>
-          <Row justify="flex-start">
-            {project.technologies.map((tech, index) => (
-              <ProjectTechnologies key={index}>{tech}</ProjectTechnologies>
-            ))}
-          </Row>
-          <ModalText style={{ marginTop: "1rem" }}>Learn more:</ModalText>
+          <ModalText>Links:</ModalText>
           <Row justify="flex-start">
             {project.git && (
               <ProjectLink target="_blank" href={project.git}>
@@ -51,9 +45,15 @@ const Modal = ({ setModal, project }) => {
                 ></i>{" "}
                 {project?.isMobile
                   ? "Download for Android"
-                  : "Visit"}
+                  : "Visit Live"}
               </ProjectLink>
             )}
+          </Row>
+          <ModalText>Technologies:</ModalText>
+          <Row justify="flex-start">
+            {project.technologies.map((tech, index) => (
+              <ProjectTechnologies key={index}>{tech}</ProjectTechnologies>
+            ))}
           </Row>
         </ModalBody>
       </ModalContainer>

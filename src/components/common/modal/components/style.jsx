@@ -9,9 +9,10 @@ const ModalOverlay = styled.div`
   background-color: rgba(16, 24, 32, 0.55);
   z-index: 1200;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.4rem 1rem;
+  overflow-y: auto;
 `;
 
 const ModalContainer = styled.div`
@@ -19,11 +20,22 @@ const ModalContainer = styled.div`
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.72);
   padding: 1.3rem;
-  width: 60%;
+  width: min(760px, 96%);
   position: relative;
-  max-width: 1024px;
+  max-height: calc(100vh - 2.8rem);
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
   animation: slide-in-top 0.35s ease both;
   box-shadow: 0 30px 46px rgba(20, 28, 45, 0.25);
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--brand-sky), var(--brand-pink));
+  }
 
   @keyframes slide-in-top {
     0% {
@@ -37,7 +49,9 @@ const ModalContainer = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 90%;
+    width: 100%;
+    max-height: calc(100vh - 2.2rem);
+    padding: 1.2rem;
   }
 `;
 
@@ -61,6 +75,7 @@ const ModalBody = styled.div`
   flex-direction: column;
   gap: 1rem;
   color: var(--text-strong);
+  padding-top: 0.2rem;
 `;
 
 const ModalTitle = styled.h1`
