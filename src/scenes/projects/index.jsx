@@ -1,5 +1,5 @@
 import Divider from "../../components/common/Divider";
-import { Column, SceneLayout } from "../../components/common/Layout";
+import { Column, Row, SceneLayout } from "../../components/common/Layout";
 import PageTitle from "../../components/common/PageTitle";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { texts } from "../../utils/texts";
@@ -13,7 +13,6 @@ import {
   EmptyState,
   FilterButton,
   FilterRow,
-  ProjectGrid,
   ResetButton,
   ResultsText,
   SearchInput,
@@ -122,7 +121,12 @@ const Projects = () => {
       )}
 
       {filteredProjects.length > 0 ? (
-        <ProjectGrid style={{ marginTop: desktop ? "0.8rem" : "1rem" }}>
+        <Row
+          align="flex-start"
+          justify="center"
+          gap="1rem"
+          style={{ marginTop: desktop ? "0" : "1rem" }}
+        >
           {filteredProjects.map((project) => (
             <Project
               project={project}
@@ -131,7 +135,7 @@ const Projects = () => {
               key={project.title}
             />
           ))}
-        </ProjectGrid>
+        </Row>
       ) : (
         <EmptyState>
           <p>No projects matched this filter. Try another search or reset filters.</p>

@@ -8,8 +8,8 @@ const ProjectCard = styled.div`
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.56));
   border: 1px solid rgba(16, 24, 32, 0.1);
   overflow: hidden;
-  width: 100%;
-  height: clamp(240px, 30vw, 330px);
+  width: min(100%, 340px);
+  height: 330px;
   padding: 0.75rem;
   position: relative;
   cursor: pointer;
@@ -61,6 +61,15 @@ const ProjectCard = styled.div`
 
   @media screen and (max-width: 768px) {
     height: 250px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1239px) {
+    width: calc(50% - 0.5rem);
+  }
+
+  @media screen and (min-width: 1240px) {
+    width: calc(33.333% - 0.75rem);
   }
 
   @media screen and (max-width: 480px) {
@@ -77,7 +86,7 @@ const ProjectImage = styled.div`
   height: 100%;
   border-radius: 12px;
   background-size: cover;
-  background-position: center top;
+  background-position: center;
   object-fit: cover;
   overflow: hidden;
   background-color: rgba(16, 24, 32, 0.12);

@@ -12,7 +12,7 @@ const Project = ({ project, language, handleClick }) => {
       : project.subtitle?.[language] || "";
 
   return (
-    <ProjectCard className="project-card" onClick={handleClick}>
+    <ProjectCard onClick={handleClick}>
       <ProjectImage className="project-image" src={project.img} />
       <div className="project-hover">
         <ProjectTitle>{project.title}</ProjectTitle>
