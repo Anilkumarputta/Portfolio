@@ -1,28 +1,23 @@
 import styled from "styled-components";
 
 const PDFViewer = styled.button`
-  padding: 10px;
-  border-radius: 6px;
-  background: linear-gradient(
-    64.5deg,
-    rgba(245, 116, 185, 1) 14.7%,
-    rgba(89, 97, 223, 1) 88.7%
-  );
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  background: linear-gradient(120deg, var(--brand-teal), var(--brand-orange));
   box-shadow: none;
   color: white;
   margin-top: 1rem;
   border: none;
-  font-size: 1rem;
+  font-size: 0.92rem;
+  font-family: var(--font-code);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.25s ease;
 
   &:hover {
-    transition: all 0.3s ease-in-out;
-    background: linear-gradient(
-      64.5deg,
-      rgba(89, 97, 223, 1) 14.7%,
-      rgba(245, 116, 185, 1) 88.7%
-    );
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 24, 32, 0.2);
   }
 `;
 

@@ -9,47 +9,44 @@ import PageTitle from "../../components/common/PageTitle";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { texts } from "../../utils/texts";
 import Divider from "./../../components/common/Divider";
-import profile from "./../../assets/svg/contact.svg";
+import profile from "./../../assets/images/contact.png";
 import { Button, FormGroup, Input, Label, TextArea } from "./components/style";
-import { ValidationError } from "@formspree/react";
 import Toast from "./components/toast";
 import Loading from "../../components/common/Loading";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import api from "../../services/api";
+import emailjs from "emailjs-com";
 
-const Contact = ({ language }) => {
+const SERVICE_ID = "service_ilga7yp";
+const TEMPLATE_ID = "template_dy0u7yh";
+const USER_ID = "_dkHQucs13j32kCb7";
+
+const Contact = () => {
   const desktop = useMediaQuery("(min-width: 1019px)");
-  const [state, setState] = useState(
-    {
-      succeeded: false,
-      errors: null,
-      submitting: false,
-    },
-    () => {
-      setState({ ...state, submitting: true });
-    }
-  );
+  const [state, setState] = useState({
+    succeeded: false,
+    errors: null,
+    submitting: false,
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setState({ ...state, submitting: true });
+    setState((prev) => ({ ...prev, submitting: true }));
     const form = event.target;
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-
-    const response = await api.sendMessage(data);
-
-    if (response) {
-      setState({ ...state, succeeded: true, submitting: false });
-      form.reset();
-    } else {
-      setState({ ...state, errors: true, submitting: false });
-    }
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form, USER_ID)
+      .then(() => {
+        setState({ succeeded: true, errors: null, submitting: false });
+        form.reset();
+      })
+      .catch((error) => {
+        setState({
+          succeeded: false,
+          errors: [error?.text || "Unexpected error"],
+          submitting: false,
+        });
+      });
   };
 
   return (
@@ -57,8 +54,8 @@ const Contact = ({ language }) => {
       className="md"
       id="contact"
       style={{
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
+        alignItems: "center",
+        justifyContent: "center",
         flexDirection: "column",
       }}
     >
@@ -74,7 +71,7 @@ const Contact = ({ language }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <PageTitle>{texts[language].contact.title}</PageTitle>
+          <PageTitle>{texts.en.contact.title}</PageTitle>
           <Divider width={"30%"} />
         </motion.div>
       </Column>
@@ -84,18 +81,15 @@ const Contact = ({ language }) => {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
+          gap: desktop ? "2.4rem" : "1.4rem",
           flexDirection: desktop ? "row" : "column",
         }}
       >
         <RightSide>
           {state.succeeded && (
             <Toast
-              title={language === "en" ? "Success!" : "Sucesso!"}
-              text={
-                language === "en"
-                  ? "Your message has been sent successfully!"
-                  : "Sua mensagem foi enviada com sucesso!"
-              }
+              title="Success!"
+              text="Your message has been sent successfully!"
               type={"success"}
               className="show"
             />
@@ -103,23 +97,19 @@ const Contact = ({ language }) => {
 
           {state.errors && (
             <Toast
-              title={language === "en" ? "Error!" : "Erro!"}
-              text={
-                language === "en"
-                  ? "There was an error sending your message. Try again later."
-                  : "Houve um erro ao enviar sua mensagem. Tente novamente mais tarde."
-              }
+              title="Error!"
+              text="There was an error sending your message. Try again later."
               type={"error"}
               className="show"
             />
           )}
 
           <RightSideContent>
-            <img src={profile} alt="Beatriz Neaime" />
+            <img src={profile} alt="Anil Kumar" />
           </RightSideContent>
         </RightSide>
         <LeftSide>
-          <p>{texts[language].contact.text}</p>
+          <p>{texts.en.contact.text}</p>
           <form
             id="form"
             onSubmit={handleSubmit}
@@ -127,23 +117,16 @@ const Contact = ({ language }) => {
               margin: "2rem 0",
             }}
           >
-            {" "}
             <Column>
               <FormGroup>
-                <Label htmlFor="name">
-                  {language === "en" ? "Name" : "Nome"}
-                </Label>
+                <Label htmlFor="name">Name</Label>
                 <Input
                   type="text"
-                  placeholder={language === "en" ? "Name" : "Nome"}
+                  placeholder="Name"
                   name="name"
                   id="name"
                   required
-                />
-                <ValidationError
-                  prefix="Name"
-                  field="name"
-                  errors={state.errors}
+                  minLength={2}
                 />
               </FormGroup>
               <FormGroup>
@@ -154,34 +137,34 @@ const Contact = ({ language }) => {
                   name="email"
                   id="email"
                   required
-                />
-                <ValidationError
-                  prefix="Email"
-                  field="email"
-                  errors={state.errors}
+                  pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
                 />
               </FormGroup>
               <FormGroup>
-                <Label htmlFor="message">
-                  {language === "en" ? "Message" : "Mensagem"}
-                </Label>
+                <Label htmlFor="phone">Phone</Label>
+                <Input
+                  type="tel"
+                  placeholder="Phone (optional)"
+                  name="phone"
+                  id="phone"
+                  pattern="^[0-9\-\+\s()]{7,}$"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor="message">Message</Label>
                 <TextArea
                   type="text"
-                  placeholder={language === "en" ? "Message" : "Mensagem"}
+                  placeholder="Message"
                   cols={30}
                   rows={10}
                   name="message"
                   id="message"
                   required
-                />
-                <ValidationError
-                  prefix="Message"
-                  field="message"
-                  errors={state.errors}
+                  minLength={10}
                 />
               </FormGroup>
               <Button type="submit" disabled={state.submitting}>
-                {language === "en" ? "Send" : "Enviar"}
+                {state.submitting ? "Sending..." : texts.en.contact.btn}
               </Button>
             </Column>
           </form>

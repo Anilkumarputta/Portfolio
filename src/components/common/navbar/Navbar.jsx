@@ -2,18 +2,17 @@ import useMediaQuery from "./../../../hooks/useMediaQuery";
 import Link from "./components/Link";
 import {
   Nav,
-  NavBrand,
+  NavBrandLink,
   NavContainer,
   NavLinkContainer,
 } from "./components/style";
-import Language from "./components/Language";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SideMenu from "./components/sideMenu/SideMenu";
-import sticker from "../../../assets/profile/sticker.png";
+import BrandLogo from "../BrandLogo";
 
-const Navbar = ({ selectedPage, setSelectedPage, language, setLanguage }) => {
+const Navbar = ({ selectedPage, setSelectedPage }) => {
   const desktop = useMediaQuery("(min-width: 1024px)");
-  const small = useMediaQuery("(max-width: 768px)");
+  const mobileNav = !desktop;
 
   return (
     <Nav>
@@ -25,50 +24,21 @@ const Navbar = ({ selectedPage, setSelectedPage, language, setLanguage }) => {
             color: "inherit",
           }}
         >
-          <NavBrand src={sticker} alt="Logo" />
+          <NavBrandLink>
+            <BrandLogo showText={desktop} size={desktop ? 52 : 44} />
+          </NavBrandLink>
         </AnchorLink>
         {desktop && (
           <NavLinkContainer>
-            <Link
-              page="home"
-              label={language === "pt" ? "início" : "home"}
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="about"
-              label={language === "pt" ? "sobre" : "about"}
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="skills"
-              label={language === "pt" ? "habilidades" : "skills"}
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="projects"
-              label={language === "pt" ? "projetos" : "projects"}
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="contact"
-              label={language === "pt" ? "contato" : "contact"}
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Language language={language} setLanguage={setLanguage} />
+            <Link page="home" label="home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <Link page="about" label="about" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <Link page="skills" label="skills" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <Link page="projects" label="projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <Link page="contact" label="contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
           </NavLinkContainer>
         )}
-        {small && (
-          <SideMenu
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-            language={language}
-            setLanguage={setLanguage}
-          />
+        {mobileNav && (
+          <SideMenu selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
         )}
       </NavContainer>
     </Nav>

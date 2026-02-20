@@ -1,16 +1,17 @@
 import styled from "styled-components";
-import { fonts } from "./../../../../styles/fonts";
-import { colors } from "../../../../styles/colors";
 
 const Nav = styled.nav`
   width: 100%;
-  background-color: ${colors["deep-purple"]};
+  background: rgba(247, 241, 222, 0.86);
+  border-bottom: 1px solid rgba(16, 24, 32, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 100;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0.75rem 0;
+  box-shadow: 0 8px 24px rgba(16, 24, 32, 0.08);
   height: fit-content;
 `;
 
@@ -19,25 +20,27 @@ const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 83%;
+  width: min(1120px, 92%);
 
   @media screen and (max-width: 768px) {
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 `;
 
-const NavBrand = styled.img`
-  height: 30px;
+const NavBrandLink = styled.span`
+  display: flex;
+  align-items: center;
 `;
 
 const NavLinkContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 64px;
-  font-family: ${fonts["source-code"]};
-  font-size: 14px;
-  font-weight: 600;
+  gap: 2.3rem;
+  font-family: var(--font-code);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: lowercase;
 `;
 
-export { Nav, NavContainer, NavBrand, NavLinkContainer };
+export { Nav, NavContainer, NavBrandLink, NavLinkContainer };

@@ -1,4 +1,5 @@
 export const fonts = {
-  "source-code": ["Source Code Pro, ", "monospace"],
-  poppins: ["Poppins, ", "sans-serif"],
+  "source-code": "'IBM Plex Mono', monospace",
+  poppins: "'Sora', sans-serif",
+  montserrat: "'Manrope', sans-serif",
 };

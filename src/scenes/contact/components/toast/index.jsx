@@ -7,13 +7,13 @@ const ToastContainer = styled.div`
     top: 70px;
     right: 20px;
     z-index: 1000;
-    background-color: #f9f9f9;
-    border-radius: 10px;
+    background-color: #fffdfa;
+    border-radius: 12px;
     padding: 1ch;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(16, 24, 32, 0.15);
     width: 280px;
-    color: black;
-    border-left: 6px solid #f574b9;
+    color: var(--text-strong);
+    border-left: 6px solid var(--brand-orange);
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     opacity: 0;
@@ -43,7 +43,7 @@ const ToastContainer = styled.div`
     width: 20px;
     height: 20px;
     padding: 5px;
-    background-color: #f574b9;
+    background-color: var(--brand-teal);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -58,11 +58,11 @@ const ToastContainer = styled.div`
 
   .text {
     font-size: 14px;
-    color: #666;
+    color: var(--text-soft);
   }
 
   .text-1 {
-    color: #333;
+    color: var(--text-strong);
     font-weight: 600;
   }
 
@@ -73,7 +73,7 @@ const ToastContainer = styled.div`
     height: 3px;
     width: 100%;
     border-radius: 10px;
-    background: #f9f9f9;
+    background: #fffdfa;
 
     &::before {
       content: "";
@@ -82,7 +82,7 @@ const ToastContainer = styled.div`
       left: 0;
       height: 100%;
       width: 100%;
-      background: #f574b9;
+      background: linear-gradient(90deg, var(--brand-teal), var(--brand-orange));
       border-radius: 10px;
       animation: progress 3s linear infinite;
     }
@@ -127,10 +127,13 @@ const ToastContainer = styled.div`
 const Toast = ({ title, text, type }) => {
   useEffect(() => {
     const toast = document.querySelector(".toast");
-
-    setTimeout(() => {
-      toast.classList.remove("show");
+    const timer = setTimeout(() => {
+      if (toast) {
+        toast.classList.remove("show");
+      }
     }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (

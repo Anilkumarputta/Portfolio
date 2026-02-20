@@ -1,9 +1,14 @@
 export const colors = {
-  "deep-purple": "#17072b",
-  purple: "#9067c6",
-  "light-purple": "#8d86c9",
-  pink: "#cac4ce",
-  "light-pink": "#f7ece1",
-  "pink-two": "rgba(245,116,185,1)",
-  blue: "rgba(89,97,223,1)"
-}
+  "deep-purple": "#101820",
+  purple: "#20b4aa",
+  "light-purple": "#64d6cf",
+  pink: "#f7f1de",
+  "light-pink": "#fff9ee",
+  "pink-two": "#ff6e2d",
+  blue: "#2a7ca5",
+  ink: "#101820",
+  slate: "#49606f",
+  sand: "#f7f1de",
+  orange: "#ff6e2d",
+  teal: "#20b4aa",
+};

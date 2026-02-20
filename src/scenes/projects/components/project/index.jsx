@@ -6,12 +6,17 @@ import {
 } from "./components/style";
 
 const Project = ({ project, language, handleClick }) => {
+  const subtitle =
+    typeof project.subtitle === "string"
+      ? project.subtitle
+      : project.subtitle?.[language] || "";
+
   return (
     <ProjectCard onClick={handleClick}>
-      <ProjectImage src={project.img} />
+      <ProjectImage className="project-image" src={project.img} />
       <div className="project-hover">
         <ProjectTitle>{project.title}</ProjectTitle>
-        <ProjectDescription>{project.subtitle[language]}</ProjectDescription>
+        <ProjectDescription>{subtitle}</ProjectDescription>
       </div>
     </ProjectCard>
   );

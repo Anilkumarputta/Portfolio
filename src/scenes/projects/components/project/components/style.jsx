@@ -1,76 +1,141 @@
 import styled from "styled-components";
-import { colors } from "../../../../../styles/colors";
-import { fonts } from "../../../../../styles/fonts";
 
 const ProjectCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background-color: ${colors.pink};
-  width: 100%;
-  height: 400px;
-  padding: 10px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.56));
+  border: 1px solid rgba(16, 24, 32, 0.1);
+  overflow: hidden;
+  width: min(100%, 340px);
+  height: 330px;
+  padding: 0.75rem;
   position: relative;
   cursor: pointer;
+  box-shadow: 0 14px 30px rgba(16, 24, 32, 0.12);
+  transition: transform 0.26s ease, box-shadow 0.26s ease;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -34% -28% auto;
+    height: 58%;
+    background: radial-gradient(circle, rgba(32, 180, 170, 0.24), rgba(32, 180, 170, 0));
+    filter: blur(12px);
+    pointer-events: none;
+    z-index: 0;
+  }
 
   .project-hover {
     position: absolute;
-    width: 100%;
+    z-index: 2;
+    width: calc(100% - 1.5rem);
     max-width: 100%;
-    overflow: scroll;
-    bottom: 0;
-    left: 0;
-    height: 40px;
-    background-color: ${colors.blue};
-    transition: all ease-in-out 0.3s;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    height: 3.3rem;
+    background: linear-gradient(125deg, rgba(16, 24, 32, 0.86), rgba(16, 24, 32, 0.64));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: height 0.26s ease;
     overflow: hidden;
-    border-radius: 0 100px 10px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 36px rgba(16, 24, 32, 0.18);
+  }
+
+  &:hover .project-hover {
+    height: 8.5rem;
+  }
+
+  &:hover .project-image {
+    transform: scale(1.06);
+    filter: saturate(1.08) contrast(1.04);
   }
 
   @media screen and (max-width: 768px) {
-    height: 200px;
+    height: 250px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1239px) {
+    width: calc(50% - 0.5rem);
+  }
+
+  @media screen and (min-width: 1240px) {
+    width: calc(33.333% - 0.75rem);
+  }
+
+  @media screen and (max-width: 480px) {
+    &:hover .project-hover {
+      height: 7.1rem;
+    }
   }
 `;
 
 const ProjectImage = styled.div`
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   background-size: cover;
   background-position: center;
   object-fit: cover;
+  overflow: hidden;
+  background-color: rgba(16, 24, 32, 0.12);
   background-image: url(${(props) =>
-    props.src ? props.src : "https://via.placeholder.com/150"});
+    props.src ? props.src : "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80"});
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.55s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(16, 24, 32, 0.04) 22%, rgba(16, 24, 32, 0.45) 100%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+  }
 `;
 
 const ProjectTitle = styled.h3`
-  font-size: 1.5rem;
-  font-family: ${fonts["source-code"]};
+  font-size: 1rem;
+  font-family: var(--font-code);
   font-weight: 700;
-  color: white;
-  padding: 0.5rem 1rem;
-  transition: all ease-in-out 0.5s;
+  color: #f7f1de;
+  padding: 0.7rem 0.9rem 0.45rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.82rem;
   }
 `;
 
 const ProjectDescription = styled.p`
-  font-size: 1rem;
-  font-family: ${fonts.poppins};
-  font-weight: 400;
-  color: white;
-  padding: 0.5rem 1rem;
-  transition: all ease-in-out 0.5s;
-
-  @media screen and (min-width: 1029px) {
-    max-width: 70%;
-  }
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: rgba(247, 241, 222, 0.9);
+  padding: 0 0.9rem 0.9rem;
+  transition: all 0.25s ease;
 
   @media screen and (max-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
   }
 `;
 
@@ -78,13 +143,13 @@ const ProjectTechnologies = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  font-family: ${fonts.poppins};
-  font-weight: 400;
-  color: white;
-  transition: all ease-in-out 0.5s;
-  background-color: ${colors.blue};
+  padding: 0.42rem 0.7rem;
+  font-size: 0.75rem;
+  font-family: var(--font-code);
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.25s ease;
+  background-color: var(--brand-sky);
   border-radius: 10px;
 
   @media screen and (max-width: 768px) {
@@ -94,29 +159,24 @@ const ProjectTechnologies = styled.div`
 
 const ProjectLink = styled.a`
   font-size: 0.8rem;
-  font-family: ${fonts.poppins};
-  font-weight: 400;
+  font-family: var(--font-code);
+  font-weight: 500;
   color: white;
-  padding: 0.5rem 1rem;
-  transition: all ease-in-out 0.5s;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.25s ease;
   text-decoration: none;
-  background: ${colors["deep-purple"]};
+  background: var(--surface-strong);
   cursor: pointer;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   gap: 8px;
-  transition: background ease-in-out 0.5s;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 
   &:hover {
-    transition: all ease-in-out 0.5s;
-    background: linear-gradient(
-      64.5deg,
-      rgba(245, 116, 185, 1) 14.7%,
-      rgba(89, 97, 223, 1) 88.7%
-    );
-    transition: background ease-in-out 0.5s;
+    background: linear-gradient(120deg, var(--brand-teal), var(--brand-orange));
   }
 
   @media screen and (max-width: 768px) {

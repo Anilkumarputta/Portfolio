@@ -6,17 +6,63 @@ import { texts } from "../../utils/texts";
 import Project from "./components/project";
 import { projects } from "./../../utils/projects";
 import Modal from "../../components/common/modal";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import {
+  Controls,
+  EmptyState,
+  FilterButton,
+  FilterRow,
+  ResetButton,
+  ResultsText,
+  SearchInput,
+} from "./components/style";
 
-const Projects = ({ language }) => {
+const Projects = () => {
   const desktop = useMediaQuery("(min-width: 1279px)");
   const [modal, setModal] = useState(false);
   const [project, setProject] = useState();
+  const [search, setSearch] = useState("");
+  const [activeTechnology, setActiveTechnology] = useState("All");
 
-  const handleModal = async (project) => {
-    await setProject(project);
+  const handleModal = (projectData) => {
+    setProject(projectData);
     setModal(true);
+  };
+
+  const technologies = useMemo(() => {
+    const uniqueTechnologies = new Set(
+      projects.flatMap((item) => item.technologies || [])
+    );
+    return ["All", ...Array.from(uniqueTechnologies).sort((a, b) => a.localeCompare(b))];
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    const normalizedSearch = search.trim().toLowerCase();
+
+    return projects.filter((item) => {
+      const matchesTechnology =
+        activeTechnology === "All" || item.technologies?.includes(activeTechnology);
+
+      if (!matchesTechnology) {
+        return false;
+      }
+
+      if (!normalizedSearch) {
+        return true;
+      }
+
+      const subtitle = typeof item.subtitle === "string" ? item.subtitle : "";
+      const combinedText =
+        `${item.title} ${subtitle} ${(item.technologies || []).join(" ")}`.toLowerCase();
+
+      return combinedText.includes(normalizedSearch);
+    });
+  }, [search, activeTechnology]);
+
+  const resetFilters = () => {
+    setSearch("");
+    setActiveTechnology("All");
   };
 
   return (
@@ -25,11 +71,11 @@ const Projects = ({ language }) => {
       id="projects"
       style={{
         flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: desktop ? "center" : "flex-start",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Column width={desktop ? "50%" : "100%"}>
+      <Column width={desktop ? "70%" : "100%"}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -40,29 +86,64 @@ const Projects = ({ language }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <PageTitle style={{ alignSelf: "flex-start" }}>
-            {texts[language].projects.title}
-          </PageTitle>
+          <PageTitle>{texts.en.projects.title}</PageTitle>
           <Divider width={"30%"} />
         </motion.div>
-        <p>{texts[language].projects.text}</p>
+        <p style={{ textAlign: "center" }}>{texts.en.projects.text}</p>
+        <Controls>
+          <SearchInput
+            type="text"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="Search by project name, keyword, or technology..."
+            aria-label="Search projects"
+          />
+          <FilterRow>
+            {technologies.map((technology) => (
+              <FilterButton
+                type="button"
+                key={technology}
+                $active={activeTechnology === technology}
+                onClick={() => setActiveTechnology(technology)}
+              >
+                {technology}
+              </FilterButton>
+            ))}
+          </FilterRow>
+          <ResultsText>
+            {filteredProjects.length} project{filteredProjects.length === 1 ? "" : "s"} shown
+          </ResultsText>
+        </Controls>
       </Column>
 
       {modal && (
-        <Modal setModal={setModal} project={project} language={language} />
+        <Modal setModal={setModal} project={project} />
       )}
 
-      <Row align="flex-start" style={{ marginTop: desktop ? "" : "1rem" }}>
-        {projects.map((project, index) => (
-          <Project
-            project={project}
-            language={language}
-            handleClick={() => handleModal(project)}
-            isMobile={project?.isMobile}
-            key={index}
-          />
-        ))}
-      </Row>
+      {filteredProjects.length > 0 ? (
+        <Row
+          align="flex-start"
+          justify="center"
+          gap="1rem"
+          style={{ marginTop: desktop ? "0" : "1rem" }}
+        >
+          {filteredProjects.map((project) => (
+            <Project
+              project={project}
+              handleClick={() => handleModal(project)}
+              isMobile={project?.isMobile}
+              key={project.title}
+            />
+          ))}
+        </Row>
+      ) : (
+        <EmptyState>
+          <p>No projects matched this filter. Try another search or reset filters.</p>
+          <ResetButton type="button" onClick={resetFilters}>
+            Reset Filters
+          </ResetButton>
+        </EmptyState>
+      )}
     </SceneLayout>
   );
 };

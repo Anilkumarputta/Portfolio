@@ -11,17 +11,17 @@ import PageTitle from "./../../components/common/PageTitle";
 import Divider from "./../../components/common/Divider";
 import { technologies } from "./../../utils/tech";
 import { colors } from "../../styles/colors";
-import profile from "../../assets/profile/profile.png";
+import profile from "../../assets/images/about.png";
 import PDFViewer from "../../components/PDFViewer";
 import { motion } from "framer-motion";
 
-const About = ({ language, selectedPage }) => {
+const About = () => {
   const desktop = useMediaQuery("(min-width: 1279px)");
 
-  const downloadPDF = (article) => {
+  const downloadPDF = (file) => {
     const link = document.createElement("a");
-    link.href = texts[language].cv.cv;
-    link.download = texts[language].cv.title;
+    link.href = file || texts.en.cv.cv;
+    link.download = texts.en.cv.title;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -32,7 +32,7 @@ const About = ({ language, selectedPage }) => {
       {desktop && (
         <RightSide>
           <RightSideContent>
-            <img src={profile} alt="Beatriz Neaime" />
+            <img src={profile} alt="Anil Kumar" />
           </RightSideContent>
         </RightSide>
       )}
@@ -48,20 +48,20 @@ const About = ({ language, selectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <PageTitle>{texts[language].about.title}</PageTitle>
+          <PageTitle>{texts.en.about.title}</PageTitle>
         </motion.div>
         <Divider width={"30%"} />
 
         <p>
-          {texts[language].about.text}{" "}
-          <a href={texts[language].about.link} className="empresa">
-            {texts[language].about.empresa}
+          {texts.en.about.text}{" "}
+          <a href={texts.en.about.link} className="empresa" target="_blank" rel="noopener noreferrer">
+            {texts.en.about.empresa}
           </a>
-          {texts[language].about.text2}
+          {texts.en.about.text2}
         </p>
 
         <Row
-          justify="flex-start"
+          justify={desktop ? "flex-start" : "center"}
           style={{
             margin: "1.5rem 0",
           }}
@@ -80,10 +80,10 @@ const About = ({ language, selectedPage }) => {
           ))}
         </Row>
 
-        <p style={{ marginTop: "1rem" }}>{texts[language].about.text3}</p>
+        <p style={{ marginTop: "1rem" }}>{texts.en.about.text3}</p>
 
-        <PDFViewer onClick={() => downloadPDF(texts[language].about.article)}>
-          <i className="fa-regular fa-file-pdf"></i> {texts[language].cv.btn}
+        <PDFViewer onClick={() => downloadPDF(texts.en.about.article)}>
+          <i className="fa-regular fa-file-pdf"></i> {texts.en.cv.btn}
         </PDFViewer>
       </LeftSide>
     </SceneLayout>

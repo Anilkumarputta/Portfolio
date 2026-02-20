@@ -12,14 +12,14 @@ import {
   ModalTitle,
 } from "./components/style";
 
-const Modal = ({ setModal, project, language }) => {
+const Modal = ({ setModal, project }) => {
   const handleModal = () => {
     setModal(false);
   };
 
   return (
     <ModalOverlay onClick={() => setModal(false)}>
-      <ModalContainer>
+      <ModalContainer onClick={(event) => event.stopPropagation()}>
         <ModalClose onClick={handleModal}>
           <i className="fa-solid fa-xmark"></i>
         </ModalClose>
@@ -28,18 +28,14 @@ const Modal = ({ setModal, project, language }) => {
             {project.title}
             <div className="divider"></div>
           </ModalTitle>
-          <ModalText>{project.subtitle[language]}</ModalText>
-          <ModalText>
-            {language === "pt" ? "Tecnologias utilizadas: " : "Technologies:"}
-          </ModalText>
+          <ModalText>{project.subtitle}</ModalText>
+          <ModalText>Technologies:</ModalText>
           <Row justify="flex-start">
             {project.technologies.map((tech, index) => (
               <ProjectTechnologies key={index}>{tech}</ProjectTechnologies>
             ))}
           </Row>
-          <ModalText style={{ marginTop: "1rem" }}>
-            {language === "pt" ? "Conheça mais:" : "Learn more:"}
-          </ModalText>
+          <ModalText style={{ marginTop: "1rem" }}>Learn more:</ModalText>
           <Row justify="flex-start">
             {project.git && (
               <ProjectLink target="_blank" href={project.git}>
@@ -54,11 +50,7 @@ const Modal = ({ setModal, project, language }) => {
                   }`}
                 ></i>{" "}
                 {project?.isMobile
-                  ? language === "pt"
-                    ? "Download para Android"
-                    : "Download for Android"
-                  : language === "pt"
-                  ? "Visitar"
+                  ? "Download for Android"
                   : "Visit"}
               </ProjectLink>
             )}

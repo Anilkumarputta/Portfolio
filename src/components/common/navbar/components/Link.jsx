@@ -1,24 +1,28 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { colors } from "./../../../../styles/colors";
 import styled from "styled-components";
-import { fonts } from "../../../../styles/fonts";
 
 const LinkComponent = styled.p`
-  color: ${colors.pink};
-  font-family: ${fonts["source-code"]};
+  color: var(--text-muted);
+  font-family: var(--font-code);
   position: relative;
+  transition: color 0.25s ease;
 
   &::after {
     content: "";
     display: block;
     width: ${(props) => (props.selected ? "100%" : "0")};
-    height: 2px;
-    background-color: ${colors["pink-two"]};
-    transition: width 1s;
+    height: 3px;
+    background-image: linear-gradient(90deg, var(--brand-teal), var(--brand-orange));
+    transition: width 0.35s ease;
+    border-radius: 3px;
   }
 
   &:hover::after {
     width: 100%;
+  }
+
+  &:hover {
+    color: var(--text-strong);
   }
 `;
 

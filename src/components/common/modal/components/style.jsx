@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../../../../styles/colors";
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -7,25 +6,28 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  background-color: rgba(16, 24, 32, 0.45);
+  z-index: 1200;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 `;
 
 const ModalContainer = styled.div`
-  background-color: white;
-  border-radius: 5px;
-  padding: 20px;
+  background-color: #fffdfa;
+  border-radius: 18px;
+  border: 1px solid rgba(16, 24, 32, 0.08);
+  padding: 1.3rem;
   width: 60%;
   position: relative;
   max-width: 1024px;
-  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.35s ease both;
+  box-shadow: 0 26px 44px rgba(16, 24, 32, 0.24);
 
   @keyframes slide-in-top {
     0% {
-      transform: translateY(-1000px);
+      transform: translateY(-24px);
       opacity: 0;
     }
     100% {
@@ -41,40 +43,38 @@ const ModalContainer = styled.div`
 
 const ModalClose = styled.span`
   position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 20px;
+  top: 0.9rem;
+  right: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  color: ${colors["pink-two"]};
+  color: var(--brand-orange);
 `;
 
 const ModalBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: black;
+  color: var(--text-strong);
 `;
 
 const ModalTitle = styled.h1`
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.45rem;
+  font-family: var(--font-display);
+  font-weight: 700;
   position: relative;
   width: max-content;
-  padding: 0 10px;
+  padding: 0 0.5rem;
   margin-bottom: 1rem;
 
   .divider {
     position: absolute;
     bottom: -10px;
     left: 0;
-    transform: translateX(20%);
+    transform: translateX(0%);
     width: 100%;
-    height: 2px;
-    background: linear-gradient(
-      64.5deg,
-      rgba(245, 116, 185, 1) 14.7%,
-      rgba(89, 97, 223, 1) 88.7%
-    );
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--brand-teal), var(--brand-orange));
   }
 
   @media screen and (max-width: 768px) {
@@ -87,8 +87,8 @@ const ModalTitle = styled.h1`
 
 const ModalText = styled.p`
   font-size: 1rem;
-  font-weight: 400;
-  color: black;
+  font-weight: 500;
+  color: var(--text-muted);
 `;
 
 export {

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { fonts } from "../../../../../styles/fonts";
 import { colors } from "../../../../../styles/colors";
 
 const SkillContainer = styled.div`
@@ -8,18 +7,18 @@ const SkillContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 10px;
-  gap: 10px;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
+  padding: 1rem;
+  gap: 0.55rem;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.56);
   height: max-content;
 
   &:hover {
-    transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.3);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    scale: 1.1;
+    border-color: rgba(32, 180, 170, 0.28);
+    box-shadow: 0 14px 26px rgba(16, 24, 32, 0.12);
+    transform: translateY(-3px);
   }
 
   @media screen and (min-width: 1279px) {
@@ -33,38 +32,41 @@ const SkillContainer = styled.div`
 `;
 
 const SkillNumber = styled.p`
-  font-family: ${fonts["source-code"]};
+  font-family: var(--font-code);
   font-weight: 600;
-  font-size: 40px;
+  font-size: 1.9rem;
+  color: var(--text-soft);
 `;
 
 const SkillTitle = styled.h3`
-  font-family: ${fonts["source-code"]};
-  font-weight: 600;
-  font-size: 1.8rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
   max-width: 70%;
   word-wrap: break-word;
+  color: var(--text-strong);
 
   @media screen and (max-width: 768px) {
     width: 100%;
     max-width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 `;
 
 const SkillMarker = styled.div`
   position: absolute;
-  top: 10px;
-  right: 0;
+  top: 0.95rem;
+  right: 0.95rem;
   width: 80%;
-  height: 30px;
+  height: 0.33rem;
+  border-radius: 999px;
   background-color: ${(props) => {
     switch (props.number) {
       case 1:
-        return colors.purple;
+        return colors.teal;
 
       case 2:
-        return colors["pink-two"];
+        return colors.orange;
 
       case 3:
         return colors.blue;
@@ -74,7 +76,7 @@ const SkillMarker = styled.div`
   }};
 
   @media screen and (max-width: 768px) {
-    width: 50%;
+    width: 36%;
   }
 `;
 

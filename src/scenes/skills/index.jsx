@@ -6,7 +6,7 @@ import Divider from "./../../components/common/Divider";
 import Skill from "./components/skill";
 import { motion } from "framer-motion";
 
-const Skills = ({ language }) => {
+const Skills = () => {
   const desktop = useMediaQuery("(min-width: 1279px)");
   return (
     <SceneLayout
@@ -14,11 +14,11 @@ const Skills = ({ language }) => {
       id="skills"
       style={{
         flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: desktop ? "center" : "flex-start",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Column width={desktop ? "50%" : "100%"}>
+      <Column width={desktop ? "70%" : "100%"}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -29,17 +29,15 @@ const Skills = ({ language }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <PageTitle style={{ alignSelf: "flex-start" }}>
-            {texts[language].skills.title}
-          </PageTitle>
+          <PageTitle>{texts.en.skills.title}</PageTitle>
           <Divider width={"30%"} />
         </motion.div>
-        <p>{texts[language].skills.text}</p>
+        <p style={{ textAlign: "center" }}>{texts.en.skills.text}</p>
       </Column>
-      <Row align="flex-start">
-        <Skill skill={texts[language].skills[1]} index={1} />
-        <Skill skill={texts[language].skills[2]} index={2} />
-        <Skill skill={texts[language].skills[3]} index={3} />
+      <Row align="flex-start" justify="center" gap="1rem">
+        <Skill skill={texts.en.skills[1]} index={1} />
+        <Skill skill={texts.en.skills[2]} index={2} />
+        <Skill skill={texts.en.skills[3]} index={3} />
       </Row>
     </SceneLayout>
   );

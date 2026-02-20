@@ -1,6 +1,5 @@
-# 🖥️ Personal Portfolio
-
-This is a personal portfolio project built using React and Styled Components, designed to showcase my work, skills, and professional experiences in a modern and interactive way.
+# 🖥️ Anil Kumar Portfolio
+This is Anil Kumar's personal portfolio project built using React and Styled Components, designed to showcase my work, skills, and professional experiences in a modern and interactive way.
 
 ## 🚀 Technologies Used
 
@@ -22,7 +21,7 @@ This is a personal portfolio project built using React and Styled Components, de
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/BeatrizNeaime/new-website.git
+   git clone https://github.com/Anilkumarputta/Anilkumarputta.git
    ```
 
 2. Install the dependencies
@@ -42,8 +41,8 @@ This is a personal portfolio project built using React and Styled Components, de
 
 ### Home Page
 
-![Home Page](./src//assets//screenshots/desktop/home.png)
+
 
 ### Skills Page
 
-![Skills Page](./src//assets//screenshots/desktop/skills.png)
+

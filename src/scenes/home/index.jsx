@@ -8,11 +8,11 @@ import {
 import { MainTitle, Subtitle } from "./components/style";
 import { motion } from "framer-motion";
 import { texts } from "./../../utils/texts";
-import profile from "./../../assets/profile/shaped-profile.png";
+import profile from "./../../assets/images/hero secction.png";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SocialMediaIcon from "../../components/SocialMediaIcon";
 
-const Home = ({ setSelectedPage, language, selectedPage }) => {
+const Home = () => {
   const desktop = useMediaQuery("(min-width: 1279px)");
 
   return (
@@ -34,30 +34,27 @@ const Home = ({ setSelectedPage, language, selectedPage }) => {
           }}
         >
           <MainTitle>
-            {`<Beatriz`}
+            {`<Anil`}
             <br />
-            {`Neaime/>`}
+            {`Kumar/>`}
           </MainTitle>
-          <Subtitle>{texts[language].landing.subtitle}</Subtitle>
+          <Subtitle>{texts.en.landing.subtitle}</Subtitle>
           <Row
             className="social-media"
-            justify={desktop ? "flex-start" : "space-evenly"}
+            justify="center"
             style={{
               margin: desktop ? "2rem 0" : "1rem 0",
             }}
           >
             <SocialMediaIcon
               icon={"fa-github"}
-              path={"https://github.com/BeatrizNeaime"}
+              path={"https://github.com/Anilkumarputta"}
             />
             <SocialMediaIcon
               icon={"fa-linkedin-in"}
-              path={"https://www.linkedin.com/in/beatriz-neaime-/"}
+              path={"http://linkedin.com/in/anil-putta"}
             />
-            <SocialMediaIcon
-              icon={"fa-instagram"}
-              path={"https://www.instagram.com/beatrizneaime/"}
-            />
+            {/* Instagram removed as requested */}
           </Row>
         </motion.div>
       </LeftSide>
