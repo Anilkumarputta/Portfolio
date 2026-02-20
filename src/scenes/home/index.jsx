@@ -16,7 +16,13 @@ const Home = () => {
   const desktop = useMediaQuery("(min-width: 1279px)");
 
   return (
-    <SceneLayout className="md" id="home">
+    <SceneLayout
+      className="md"
+      id="home"
+      style={{
+        minHeight: "auto",
+      }}
+    >
       <LeftSide>
         <motion.div
           initial="hidden"

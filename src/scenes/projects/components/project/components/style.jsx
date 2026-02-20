@@ -14,7 +14,7 @@ const ProjectCard = styled.div`
   position: relative;
   cursor: pointer;
   box-shadow: 0 12px 24px rgba(20, 28, 45, 0.12);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 
   .project-hover {
     position: absolute;
@@ -27,18 +27,34 @@ const ProjectCard = styled.div`
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 255, 0.84));
     overflow: hidden;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(25, 32, 48, 0.1);
     box-shadow: 0 8px 18px rgba(20, 28, 45, 0.12);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
   }
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 34px rgba(20, 28, 45, 0.2);
+    transform: translateY(-7px);
+    box-shadow: 0 24px 36px rgba(20, 28, 45, 0.22);
+    border-color: rgba(47, 134, 255, 0.32);
   }
 
   &:hover .project-image {
-    transform: scale(1.06);
-    filter: saturate(1.15);
+    transform: scale(1.08);
+    filter: saturate(1.18);
+  }
+
+  &:hover .project-image::before {
+    opacity: 0.34;
+  }
+
+  &:hover .project-hover {
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(242, 249, 255, 0.9));
+    box-shadow: 0 12px 20px rgba(20, 28, 45, 0.16);
+  }
+
+  &:active {
+    transform: translateY(-2px);
   }
 
   @media screen and (max-width: 768px) {
@@ -78,6 +94,17 @@ const ProjectImage = styled.div`
   background-image: url(${(props) =>
     props.src ? props.src : "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80"});
   transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(160deg, rgba(47, 134, 255, 0.2), rgba(241, 69, 181, 0.14), rgba(255, 127, 63, 0.08));
+    opacity: 0.18;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+  }
 
   &::after {
     content: "";

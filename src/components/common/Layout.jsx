@@ -133,46 +133,93 @@ const RightSide = styled.div`
 `;
 
 const RightSideContent = styled.div`
-  width: min(100%, 560px);
+  width: min(100%, 530px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.5rem, 1.5vw, 0.9rem);
+  padding: clamp(0.45rem, 1.3vw, 0.82rem);
   border-radius: clamp(16px, 2vw, 24px);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78));
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(242, 249, 255, 0.84));
+  border: 1px solid rgba(25, 32, 48, 0.14);
   box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -26% -20% auto;
+    height: 65%;
+    background:
+      radial-gradient(circle at 28% 44%, rgba(47, 134, 255, 0.26), rgba(47, 134, 255, 0)),
+      radial-gradient(circle at 72% 36%, rgba(241, 69, 181, 0.22), rgba(241, 69, 181, 0));
+    opacity: 0.78;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -88px;
+    bottom: -96px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 127, 63, 0.32), rgba(255, 127, 63, 0));
+    opacity: 0.72;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
   img {
+    position: relative;
+    z-index: 2;
     width: 100%;
-    max-width: 520px;
+    max-width: 500px;
     height: auto;
     object-fit: contain;
     border-radius: clamp(12px, 2vw, 18px);
     display: block;
-    transition: transform var(--transition-base), filter var(--transition-base);
+    box-shadow: 0 14px 24px rgba(20, 28, 45, 0.12);
+    transition: transform var(--transition-base), filter var(--transition-base), box-shadow var(--transition-base);
   }
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 34px rgba(20, 28, 45, 0.14);
+    transform: translateY(-5px);
+    box-shadow: 0 22px 36px rgba(20, 28, 45, 0.16);
+    border-color: rgba(47, 134, 255, 0.28);
+  }
+
+  &:hover::before {
+    transform: translateY(6px) scale(1.04);
+    opacity: 0.92;
+  }
+
+  &:hover::after {
+    transform: translate(-12px, -10px) scale(1.1);
+    opacity: 0.86;
   }
 
   &:hover img {
-    transform: scale(1.025);
-    filter: saturate(1.08);
+    transform: scale(1.045) translateY(-2px);
+    filter: saturate(1.14) contrast(1.03);
+    box-shadow: 0 18px 28px rgba(20, 28, 45, 0.18);
   }
 
   @media screen and (min-width: 1060px) {
     img {
-      max-height: 560px;
+      max-height: 520px;
     }
   }
 
   @media screen and (min-width: 481px) and (max-width: 768px) {
     img {
-      max-height: 460px;
+      max-height: 420px;
     }
   }
 
@@ -186,7 +233,7 @@ const RightSideContent = styled.div`
     border-radius: 16px;
 
     img {
-      width: min(100%, 300px);
+      width: min(100%, 280px);
     }
   }
 `;

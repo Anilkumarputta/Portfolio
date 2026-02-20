@@ -5,8 +5,8 @@ const Controls = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1.2rem;
-  padding: 0.9rem;
+  margin-top: 0.95rem;
+  padding: 0.8rem;
   border-radius: 14px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68));
   border: 1px solid rgba(25, 32, 48, 0.2);

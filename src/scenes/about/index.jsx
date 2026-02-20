@@ -28,7 +28,12 @@ const About = () => {
   };
 
   return (
-    <SceneLayout id="about">
+    <SceneLayout
+      id="about"
+      style={{
+        minHeight: "auto",
+      }}
+    >
       {desktop && (
         <RightSide>
           <RightSideContent>
@@ -52,12 +57,14 @@ const About = () => {
         </motion.div>
         <Divider width={"30%"} />
 
-        <p>{texts.en.about.text} {texts.en.about.text2}</p>
+        <p style={{ fontSize: "0.95rem", lineHeight: 1.62 }}>
+          {texts.en.about.text} {texts.en.about.text2}
+        </p>
 
         <Row
           justify={desktop ? "flex-start" : "center"}
           style={{
-            margin: "1.5rem 0",
+            margin: "1.2rem 0",
           }}
         >
           {technologies.map((tech, index) => (
@@ -74,7 +81,7 @@ const About = () => {
           ))}
         </Row>
 
-        <p style={{ marginTop: "1rem" }}>{texts.en.about.text3}</p>
+        <p style={{ marginTop: "0.8rem", fontSize: "0.92rem" }}>{texts.en.about.text3}</p>
 
         <PDFViewer onClick={() => downloadPDF(texts.en.about.article)}>
           <i className="fa-regular fa-file-pdf"></i> {texts.en.cv.btn}

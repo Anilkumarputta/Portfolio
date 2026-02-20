@@ -73,9 +73,10 @@ const Projects = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        minHeight: "auto",
       }}
     >
-      <Column width={desktop ? "76%" : "100%"}>
+      <Column width={desktop ? "74%" : "100%"}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -125,7 +126,7 @@ const Projects = () => {
           align="flex-start"
           justify="center"
           gap={desktop ? "1.1rem" : "0.9rem"}
-          style={{ marginTop: desktop ? "0" : "1rem" }}
+          style={{ marginTop: desktop ? "0" : "0.75rem" }}
         >
           {filteredProjects.map((project) => (
             <Project

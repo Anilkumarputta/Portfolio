@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MainTitle = styled.h1`
-  font-size: clamp(2.6rem, 1.9rem + 3vw, 4.2rem);
+  font-size: clamp(2.35rem, 1.75rem + 2.8vw, 3.85rem);
   line-height: 0.95;
   font-family: var(--font-display);
   text-align: center;
@@ -15,8 +15,18 @@ const MainTitle = styled.h1`
   z-index: 10;
   text-shadow: 0 14px 22px rgba(47, 134, 255, 0.2);
 
+  span {
+    display: inline-block;
+    transition: transform var(--transition-base), filter var(--transition-base);
+  }
+
   .accent {
     letter-spacing: 0.06em;
+  }
+
+  span:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.08);
   }
 
   @media screen and (max-width: 768px) {
@@ -41,7 +51,7 @@ const HeroSubtitle = styled(Subtitle)`
   letter-spacing: 0.02em;
   text-transform: none;
   color: var(--text-muted);
-  margin: 1.2rem 0 1.8rem;
+  margin: 1rem 0 1.45rem;
   line-height: 1.65;
 `;
 
