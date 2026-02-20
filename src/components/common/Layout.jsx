@@ -66,11 +66,11 @@ const SceneLayout = styled.div`
     linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.62)),
     linear-gradient(160deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
   box-shadow: var(--shadow);
-  backdrop-filter: blur(14px) saturate(145%);
-  -webkit-backdrop-filter: blur(14px) saturate(145%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background var(--transition-base);
   animation: sceneLift 520ms ease both;
 
@@ -98,8 +98,8 @@ const SceneLayout = styled.div`
     background:
       radial-gradient(circle at 20% 30%, var(--tone-a), rgba(47, 134, 255, 0)),
       radial-gradient(circle at 78% 42%, var(--tone-b), rgba(241, 69, 181, 0));
-    filter: blur(42px);
-    opacity: 0.25;
+    filter: blur(28px);
+    opacity: 0.18;
     pointer-events: none;
     z-index: 0;
     transition: opacity var(--transition-base), transform var(--transition-base);
@@ -200,8 +200,8 @@ const RightSideContent = styled.div`
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backface-visibility: hidden;
+  transform: translateZ(0);
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 
   &::before {

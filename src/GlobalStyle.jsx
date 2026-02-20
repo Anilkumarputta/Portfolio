@@ -95,9 +95,8 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 999px;
     pointer-events: none;
     z-index: -2;
-    filter: blur(62px);
-    opacity: 0.44;
-    will-change: transform;
+    filter: blur(48px);
+    opacity: 0.32;
   }
 
   body::before {
