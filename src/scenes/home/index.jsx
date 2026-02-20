@@ -8,7 +8,7 @@ import {
 import { MainTitle, Subtitle } from "./components/style";
 import { motion } from "framer-motion";
 import { texts } from "./../../utils/texts";
-import profile from "./../../assets/images/hero secction.png";
+import profile from "./../../assets/images/hero .png";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SocialMediaIcon from "../../components/SocialMediaIcon";
 
