@@ -5,10 +5,10 @@ import {
   Row,
   SceneLayout,
 } from "../../components/common/Layout";
-import { MainTitle, Subtitle } from "./components/style";
+import { HeroCta, HeroSubtitle, MainTitle } from "./components/style";
 import { motion } from "framer-motion";
 import { texts } from "./../../utils/texts";
-import profile from "./../../assets/images/hero .png";
+import profile from "./../../assets/images/hero.png";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SocialMediaIcon from "../../components/SocialMediaIcon";
 
@@ -17,11 +17,6 @@ const Home = () => {
 
   return (
     <SceneLayout className="md" id="home">
-      <RightSide>
-        <RightSideContent>
-          <img src={profile} alt="Landing" />
-        </RightSideContent>
-      </RightSide>
       <LeftSide>
         <motion.div
           initial="hidden"
@@ -38,12 +33,12 @@ const Home = () => {
             <br />
             {`Kumar/>`}
           </MainTitle>
-          <Subtitle>{texts.en.landing.subtitle}</Subtitle>
+          <HeroSubtitle>{texts.en.landing.subtitle}</HeroSubtitle>
           <Row
             className="social-media"
             justify="center"
             style={{
-              margin: desktop ? "2rem 0" : "1rem 0",
+              margin: desktop ? "2rem 0 1.2rem 0" : "1.2rem 0 1rem 0",
             }}
           >
             <SocialMediaIcon
@@ -54,10 +49,17 @@ const Home = () => {
               icon={"fa-linkedin-in"}
               path={"http://linkedin.com/in/anil-putta"}
             />
-            {/* Instagram removed as requested */}
           </Row>
+          <HeroCta href="#contact">
+            Let&apos;s Connect
+          </HeroCta>
         </motion.div>
       </LeftSide>
+      <RightSide>
+        <RightSideContent>
+          <img src={profile} alt="Anil Kumar hero portrait" />
+        </RightSideContent>
+      </RightSide>
     </SceneLayout>
   );
 };

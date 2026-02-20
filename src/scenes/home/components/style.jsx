@@ -29,4 +29,36 @@ const Subtitle = styled.p`
   margin-top: 1rem;
 `;
 
-export { MainTitle, Subtitle };
+const HeroSubtitle = styled(Subtitle)`
+  font-size: clamp(0.95rem, 0.82rem + 0.4vw, 1.1rem);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #1f4f63;
+  margin: 1.2rem 0 1.8rem;
+  line-height: 1.65;
+`;
+
+const HeroCta = styled.a`
+  display: inline-block;
+  background: linear-gradient(90deg, #20b4aa 0%, #ff6e2d 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.82rem 2rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(32, 180, 170, 0.16);
+  text-decoration: none;
+  margin-top: 0.5rem;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 110, 45, 0.2);
+    filter: saturate(1.06);
+  }
+`;
+
+export { MainTitle, Subtitle, HeroSubtitle, HeroCta };
