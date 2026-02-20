@@ -306,20 +306,18 @@ const Contact = () => {
                 </Button>
               </Column>
             </form>
-            {state.status !== "idle" && (
-              {showStatus && (
-                <StatusCenter>
-                  <FormStatus $type={state.status} role="status" aria-live="polite">
-                    <span className="status-icon" aria-hidden="true">
-                      {state.status === "success" ? "OK" : state.status === "warning" ? "!" : "x"}
-                    </span>
-                    <span className="status-body">
-                      <strong>{state.title}</strong>
-                      <small>{state.message}</small>
-                    </span>
-                  </FormStatus>
-                </StatusCenter>
-              )}
+            {showStatus && state.status !== "idle" && (
+              <StatusCenter>
+                <FormStatus $type={state.status} role="status" aria-live="polite">
+                  <span className="status-icon" aria-hidden="true">
+                    {state.status === "success" ? "OK" : state.status === "warning" ? "!" : "x"}
+                  </span>
+                  <span className="status-body">
+                    <strong>{state.title}</strong>
+                    <small>{state.message}</small>
+                  </span>
+                </FormStatus>
+              </StatusCenter>
             )}
           </ContactFormCard>
         </LeftSide>
@@ -329,4 +327,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
