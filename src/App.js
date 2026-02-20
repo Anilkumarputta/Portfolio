@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Layout } from "./components/common/Layout";
 import Navbar from "./components/common/navbar/Navbar";
 import Home from "./scenes/home";
@@ -16,6 +16,10 @@ import Preloader from "./components/common/Preloader";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [preloaderActive, setPreloaderActive] = useState(true);
+
+  const handleSectionEnter = useCallback((page) => {
+    setSelectedPage((previous) => (previous === page ? previous : page));
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -45,7 +49,7 @@ function App() {
       />
       <motion.div
         viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => setSelectedPage("home")}
+        onViewportEnter={() => handleSectionEnter("home")}
       >
         <Home />
       </motion.div>
@@ -54,7 +58,7 @@ function App() {
 
       <motion.div
         viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => setSelectedPage("about")}
+        onViewportEnter={() => handleSectionEnter("about")}
       >
         <About />
       </motion.div>
@@ -63,7 +67,7 @@ function App() {
 
       <motion.div
         viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => setSelectedPage("skills")}
+        onViewportEnter={() => handleSectionEnter("skills")}
       >
         <Skills />
       </motion.div>
@@ -72,7 +76,7 @@ function App() {
 
       <motion.div
         viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => setSelectedPage("projects")}
+        onViewportEnter={() => handleSectionEnter("projects")}
       >
         <Projects />
       </motion.div>
@@ -81,7 +85,7 @@ function App() {
 
       <motion.div
         viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => setSelectedPage("resume")}
+        onViewportEnter={() => handleSectionEnter("resume")}
       >
         <Resume />
       </motion.div>
@@ -90,7 +94,7 @@ function App() {
 
       <motion.div
         viewport={{ margin: "0px 0px -200px 0px", amount: 0.4 }}
-        onViewportEnter={() => setSelectedPage("contact")}
+        onViewportEnter={() => handleSectionEnter("contact")}
       >
         <Contact />
       </motion.div>

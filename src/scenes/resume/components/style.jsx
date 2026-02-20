@@ -46,9 +46,8 @@ const ResumeItem = styled.article`
   box-shadow: 0 14px 24px rgba(16, 27, 45, 0.12);
   padding: 0.95rem 1rem 1rem 1.12rem;
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
-  backdrop-filter: blur(10px) saturate(145%);
-  -webkit-backdrop-filter: blur(10px) saturate(145%);
   overflow: hidden;
+  will-change: transform;
 
   &::before {
     content: "";
@@ -78,9 +77,9 @@ const ResumeItem = styled.article`
   }
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: rgba(47, 134, 255, 0.34);
-    box-shadow: 0 20px 32px rgba(16, 27, 45, 0.18);
+    box-shadow: 0 16px 26px rgba(16, 27, 45, 0.16);
   }
 
   &:hover::after {

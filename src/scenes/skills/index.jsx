@@ -7,7 +7,7 @@ import Skill from "./components/skill";
 import { motion } from "framer-motion";
 
 const Skills = () => {
-  const desktop = useMediaQuery("(min-width: 1279px)");
+  const desktop = useMediaQuery("(min-width: 1024px)");
   return (
     <SceneLayout
       className="md"
@@ -35,7 +35,12 @@ const Skills = () => {
         </motion.div>
         <p style={{ textAlign: "center" }}>{texts.en.skills.text}</p>
       </Column>
-      <Row align="flex-start" justify="center" gap="1rem">
+      <Row
+        align="flex-start"
+        justify="center"
+        gap="1rem"
+        style={{ flexWrap: desktop ? "nowrap" : "wrap" }}
+      >
         <Skill skill={texts.en.skills[1]} index={1} />
         <Skill skill={texts.en.skills[2]} index={2} />
         <Skill skill={texts.en.skills[3]} index={3} />

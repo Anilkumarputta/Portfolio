@@ -16,11 +16,10 @@ const SkillContainer = styled.div`
     linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72)),
     linear-gradient(160deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
   height: max-content;
-  box-shadow: 0 14px 26px rgba(16, 27, 45, 0.12);
+  box-shadow: 0 12px 22px rgba(16, 27, 45, 0.1);
   overflow: hidden;
   isolation: isolate;
-  backdrop-filter: blur(10px) saturate(145%);
-  -webkit-backdrop-filter: blur(10px) saturate(145%);
+  will-change: transform;
 
   &::before {
     content: "";
@@ -61,15 +60,15 @@ const SkillContainer = styled.div`
     opacity: 0.95;
   }
 
-  @media screen and (min-width: 1279px) {
-    width: 30%;
+  @media screen and (min-width: 1024px) {
+    width: calc(33.333% - 0.67rem);
   }
 
-  @media screen and (min-width: 769px) and (max-width: 1278px) {
+  @media screen and (min-width: 700px) and (max-width: 1023px) {
     width: calc(50% - 0.6rem);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 699px) {
     width: 100%;
     margin-top: 1rem;
   }
