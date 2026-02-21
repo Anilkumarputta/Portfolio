@@ -1,3 +1,4 @@
+import pokerealmImg from "../assets/projects/pokerealm.png";
 import clockworkAtelierImg from "../assets/projects/clockwork-atelier.png";
 import adviceImg from "../assets/projects/advice.png";
 import calculatorImg from "../assets/projects/calculator.png";
@@ -53,6 +54,6 @@ export const projects = [
     technologies: ["JavaScript", "React", "REST API"],
     path: "https://poke-realm-beryl.vercel.app/",
     git: "https://github.com/Anilkumarputta/PokeRealm",
-    img: pokedexImg,
+    img: pokerealmImg,
   },
 ];
