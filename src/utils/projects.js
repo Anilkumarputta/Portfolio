@@ -1,4 +1,5 @@
 import adviceImg from "../assets/projects/advice.png";
+import calculatorImg from "../assets/projects/calculator.png";
 import arteImg from "../assets/projects/arte.png";
 import herbarioImg from "../assets/projects/herbario.png";
 import neuroImg from "../assets/projects/neuro.png";
@@ -28,7 +29,7 @@ export const projects = [
     technologies: ["JavaScript", "HTML", "CSS"],
     path: "https://anilkumarputta.github.io/Modern-Web-Calculator/",
     git: "https://github.com/Anilkumarputta/Modern-Web-Calculator",
-    img: splitterImg,
+    img: calculatorImg,
   },
   {
     title: "Easy Tip",
