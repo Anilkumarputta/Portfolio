@@ -1,3 +1,4 @@
+import tablesearchImg from "../assets/projects/tablesearch.png";
 import pokerealmImg from "../assets/projects/pokerealm.png";
 import clockworkAtelierImg from "../assets/projects/clockwork-atelier.png";
 import adviceImg from "../assets/projects/advice.png";
@@ -22,7 +23,7 @@ export const projects = [
     technologies: ["JavaScript", "React", "Filtering"],
     path: "",
     git: "https://github.com/Anilkumarputta/Table-Search",
-    img: adviceImg,
+    img: tablesearchImg,
   },
   {
     title: "Modern Web Calculator",
