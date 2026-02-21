@@ -1,12 +1,9 @@
 import tablesearchImg from "../assets/projects/tablesearch.png";
 import pokerealmImg from "../assets/projects/pokerealm.png";
 import clockworkAtelierImg from "../assets/projects/clockwork-atelier.png";
-import adviceImg from "../assets/projects/advice.png";
 import calculatorImg from "../assets/projects/calculator.png";
 import easyTipImg from "../assets/projects/easy-tip.png";
-import herbarioImg from "../assets/projects/herbario.png";
 import managerPortalImg from "../assets/projects/manager-portal.png";
-import pokedexImg from "../assets/projects/pokedex.png";
 
 export const projects = [
   {
