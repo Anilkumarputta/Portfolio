@@ -7,8 +7,8 @@ import managerPortalImg from "../assets/projects/manager-portal.png";
 
 export const projects = [
   {
-    title: "Employee POC Full Auth",
-    subtitle: "Authentication POC for employee workflows with secure end-to-end session handling.",
+    title: "PulseDesk Portal",
+    subtitle: "Secure employee portal with full authentication workflows and polished access controls.",
     technologies: ["JavaScript", "Node.js", "Express", "MongoDB", "JWT"],
     path: "https://employeepoc-frontend.vercel.app/",
     git: "https://github.com/Anilkumarputta/employee-poc-full-auth",
