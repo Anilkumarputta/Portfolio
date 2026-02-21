@@ -1,8 +1,8 @@
+import clockworkAtelierImg from "../assets/projects/clockwork-atelier.png";
 import adviceImg from "../assets/projects/advice.png";
 import calculatorImg from "../assets/projects/calculator.png";
 import easyTipImg from "../assets/projects/easy-tip.png";
 import herbarioImg from "../assets/projects/herbario.png";
-import neuroImg from "../assets/projects/neuro.png";
 import managerPortalImg from "../assets/projects/manager-portal.png";
 import pokedexImg from "../assets/projects/pokedex.png";
 
@@ -45,7 +45,7 @@ export const projects = [
     technologies: ["JavaScript", "React", "UX"],
     path: "https://anilkumarputta.github.io/Clockwork-Atelier/",
     git: "https://github.com/Anilkumarputta/Clockwork-Atelier",
-    img: herbarioImg,
+    img: clockworkAtelierImg,
   },
   {
     title: "PokeRealm",
