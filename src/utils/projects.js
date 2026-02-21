@@ -1,10 +1,10 @@
 import adviceImg from "../assets/projects/advice.png";
 import calculatorImg from "../assets/projects/calculator.png";
-import arteImg from "../assets/projects/arte.png";
+import easyTipImg from "../assets/projects/easy-tip.png";
 import herbarioImg from "../assets/projects/herbario.png";
 import neuroImg from "../assets/projects/neuro.png";
+import managerPortalImg from "../assets/projects/manager-portal.png";
 import pokedexImg from "../assets/projects/pokedex.png";
-import splitterImg from "../assets/projects/splitter.png";
 
 export const projects = [
   {
@@ -13,7 +13,7 @@ export const projects = [
     technologies: ["JavaScript", "Node.js", "Express", "MongoDB", "JWT"],
     path: "https://employeepoc-frontend.vercel.app/",
     git: "https://github.com/Anilkumarputta/employee-poc-full-auth",
-    img: neuroImg,
+    img: managerPortalImg,
   },
   {
     title: "Table Search",
@@ -37,7 +37,7 @@ export const projects = [
     technologies: ["JavaScript", "HTML", "CSS"],
     path: "https://easy-tip-pi.vercel.app/",
     git: "https://github.com/Anilkumarputta/Easy-Tip",
-    img: arteImg,
+    img: easyTipImg,
   },
   {
     title: "Clockwork Atelier",
